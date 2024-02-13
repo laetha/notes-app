@@ -1,0 +1,70 @@
+[20-Feb-2018 15:46:45 America/New_York] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/gameripp/public_html/tools/campaign-log/logprocess.php:2) in /home/gameripp/public_html/tools/campaign-log/logprocess.php on line 21
+[20-Feb-2018 15:47:53 America/New_York] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/gameripp/public_html/tools/campaign-log/logprocess.php:2) in /home/gameripp/public_html/tools/campaign-log/logprocess.php on line 21
+[20-Feb-2018 15:48:51 America/New_York] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/gameripp/public_html/tools/campaign-log/logprocess.php:2) in /home/gameripp/public_html/tools/campaign-log/logprocess.php on line 21
+[20-Feb-2018 15:50:34 America/New_York] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/gameripp/public_html/tools/campaign-log/logprocess.php:2) in /home/gameripp/public_html/tools/campaign-log/logprocess.php on line 21
+[20-Feb-2018 15:52:07 America/New_York] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/gameripp/public_html/tools/campaign-log/logprocess.php:2) in /home/gameripp/public_html/tools/campaign-log/logprocess.php on line 21
+[20-Feb-2018 15:52:15 America/New_York] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/gameripp/public_html/tools/campaign-log/logdelete.php on line 10
+[20-Feb-2018 15:52:15 America/New_York] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/gameripp/public_html/tools/campaign-log/logdelete.php:2) in /home/gameripp/public_html/tools/campaign-log/logdelete.php on line 21
+[20-Feb-2018 15:56:12 America/New_York] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/gameripp/public_html/tools/campaign-log/logprocess.php:2) in /home/gameripp/public_html/tools/campaign-log/logprocess.php on line 20
+[20-Feb-2018 15:56:37 America/New_York] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/gameripp/public_html/tools/campaign-log/logdelete.php on line 10
+[20-Feb-2018 15:56:37 America/New_York] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/gameripp/public_html/tools/campaign-log/logdelete.php:2) in /home/gameripp/public_html/tools/campaign-log/logdelete.php on line 21
+[20-Feb-2018 15:57:35 America/New_York] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/gameripp/public_html/tools/campaign-log/logdelete.php on line 9
+[20-Feb-2018 15:57:35 America/New_York] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/gameripp/public_html/tools/campaign-log/logdelete.php:2) in /home/gameripp/public_html/tools/campaign-log/logdelete.php on line 17
+[20-Feb-2018 15:59:39 America/New_York] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/gameripp/public_html/tools/campaign-log/logdelete.php on line 9
+[20-Feb-2018 16:00:02 America/New_York] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/gameripp/public_html/tools/campaign-log/logedit.php on line 10
+[20-Feb-2018 16:00:02 America/New_York] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/gameripp/public_html/tools/campaign-log/logedit.php:2) in /home/gameripp/public_html/tools/campaign-log/logedit.php on line 22
+[20-Feb-2018 16:00:42 America/New_York] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/gameripp/public_html/tools/campaign-log/logedit.php on line 10
+[20-Feb-2018 16:00:42 America/New_York] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/gameripp/public_html/tools/campaign-log/logedit.php:2) in /home/gameripp/public_html/tools/campaign-log/logedit.php on line 22
+[20-Feb-2018 16:01:42 America/New_York] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/gameripp/public_html/tools/campaign-log/logdelete.php on line 9
+[20-Feb-2018 16:03:15 America/New_York] PHP Parse error:  syntax error, unexpected 'else' (T_ELSE) in /home/gameripp/public_html/tools/campaign-log/logprocess.php on line 25
+[20-Feb-2018 16:04:23 America/New_York] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/gameripp/public_html/tools/campaign-log/logedit.php on line 10
+[20-Feb-2018 16:04:34 America/New_York] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/gameripp/public_html/tools/campaign-log/logdelete.php on line 9
+[21-Feb-2018 11:06:29 America/New_York] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/gameripp/public_html/tools/campaign-log/logedit.php on line 10
+[21-Feb-2018 11:06:55 America/New_York] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/gameripp/public_html/tools/campaign-log/logedit.php on line 10
+[21-Feb-2018 11:07:47 America/New_York] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/gameripp/public_html/tools/campaign-log/logdelete.php on line 9
+[21-Feb-2018 11:14:47 America/New_York] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/gameripp/public_html/tools/campaign-log/logdelete.php on line 9
+[21-Feb-2018 11:15:07 America/New_York] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/gameripp/public_html/tools/campaign-log/logedit.php on line 10
+[21-Feb-2018 11:15:41 America/New_York] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/gameripp/public_html/tools/campaign-log/logedit.php on line 10
+[02-Mar-2018 01:46:53 America/New_York] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/gameripp/public_html/tools/campaign-log/logdelete.php on line 9
+[02-Mar-2018 09:34:52 America/New_York] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/gameripp/public_html/tools/campaign-log/logdelete.php on line 9
+[02-Mar-2018 09:35:59 America/New_York] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/gameripp/public_html/tools/campaign-log/logdelete.php on line 9
+[02-Mar-2018 09:39:20 America/New_York] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/gameripp/public_html/tools/campaign-log/logdelete.php on line 9
+[02-Mar-2018 09:42:41 America/New_York] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/gameripp/public_html/tools/campaign-log/logdelete.php on line 9
+[02-Mar-2018 09:49:25 America/New_York] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/gameripp/public_html/tools/campaign-log/logdelete.php on line 9
+[02-Mar-2018 09:56:05 America/New_York] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/gameripp/public_html/tools/campaign-log/logdelete.php on line 9
+[02-Mar-2018 09:59:26 America/New_York] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/gameripp/public_html/tools/campaign-log/logdelete.php on line 9
+[02-Mar-2018 16:08:03 America/New_York] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/gameripp/public_html/tools/campaign-log/logdelete.php on line 9
+[02-Mar-2018 16:45:45 America/New_York] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/gameripp/public_html/tools/campaign-log/logdelete.php on line 9
+[02-Mar-2018 18:04:03 America/New_York] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/gameripp/public_html/tools/campaign-log/logdelete.php on line 9
+[02-Mar-2018 21:19:14 America/New_York] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/gameripp/public_html/tools/campaign-log/logdelete.php on line 9
+[02-Mar-2018 22:22:55 America/New_York] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/gameripp/public_html/tools/campaign-log/logdelete.php on line 9
+[02-Mar-2018 22:52:49 America/New_York] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/gameripp/public_html/tools/campaign-log/logdelete.php on line 9
+[07-Mar-2018 17:01:38 America/New_York] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/gameripp/public_html/tools/campaign-log/logdelete.php on line 9
+[07-Mar-2018 17:01:45 America/New_York] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/gameripp/public_html/tools/campaign-log/logdelete.php on line 9
+[07-Mar-2018 17:01:52 America/New_York] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/gameripp/public_html/tools/campaign-log/logdelete.php on line 9
+[07-Mar-2018 17:02:02 America/New_York] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/gameripp/public_html/tools/campaign-log/logdelete.php on line 9
+[07-Mar-2018 17:02:11 America/New_York] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/gameripp/public_html/tools/campaign-log/logdelete.php on line 9
+[07-Mar-2018 17:02:18 America/New_York] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/gameripp/public_html/tools/campaign-log/logdelete.php on line 9
+[07-Mar-2018 17:02:28 America/New_York] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/gameripp/public_html/tools/campaign-log/logdelete.php on line 9
+[20-Mar-2018 13:48:45 America/New_York] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/gameripp/public_html/tools/campaign-log/logedit.php on line 10
+[30-Mar-2018 22:49:38 America/New_York] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/gameripp/public_html/tools/campaign-log/logdelete.php on line 9
+[06-Apr-2018 13:12:04 America/New_York] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/gameripp/public_html/tools/campaign-log/logdelete.php on line 9
+[06-Apr-2018 13:15:55 America/New_York] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/gameripp/public_html/tools/campaign-log/logdelete.php on line 9
+[06-Apr-2018 13:20:30 America/New_York] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/gameripp/public_html/tools/campaign-log/logdelete.php on line 9
+[06-Apr-2018 13:21:26 America/New_York] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/gameripp/public_html/tools/campaign-log/logdelete.php on line 9
+[06-Apr-2018 13:22:26 America/New_York] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/gameripp/public_html/tools/campaign-log/logdelete.php on line 9
+[06-Apr-2018 13:33:25 America/New_York] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/gameripp/public_html/tools/campaign-log/logdelete.php on line 9
+[06-Apr-2018 13:33:38 America/New_York] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/gameripp/public_html/tools/campaign-log/logedit.php on line 10
+[09-Apr-2018 16:07:07 America/New_York] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/gameripp/public_html/tools/campaign-log/logdelete.php on line 9
+[25-Apr-2018 23:04:40 America/New_York] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/gameripp/public_html/tools/campaign-log/logedit.php on line 10
+[26-Apr-2018 09:56:25 America/New_York] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/gameripp/public_html/tools/campaign-log/logedit.php on line 10
+[01-May-2018 13:04:15 America/New_York] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/gameripp/public_html/tools/campaign-log/logedit.php on line 10
+[01-Jun-2018 09:08:50 America/New_York] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/gameripp/public_html/tools/campaign-log/logedit.php on line 10
+[06-Jun-2018 21:07:54 America/New_York] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/gameripp/public_html/tools/campaign-log/logedit.php on line 10
+[06-Jun-2018 21:08:46 America/New_York] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/gameripp/public_html/tools/campaign-log/logedit.php on line 10
+[20-Jun-2018 17:51:57 America/New_York] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/gameripp/public_html/tools/campaign-log/logedit.php on line 10
+[25-Jun-2018 12:12:46 America/New_York] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/gameripp/public_html/tools/campaign-log/logedit.php on line 10
+[04-Jul-2018 21:13:43 America/New_York] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/gameripp/public_html/tools/campaign-log/logdelete.php on line 9
+[04-Jul-2018 21:15:52 America/New_York] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/gameripp/public_html/tools/campaign-log/logedit.php on line 10
+[28-Aug-2018 13:02:13 UTC] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/gameripp/public_html/tools/campaign-log/logdelete.php on line 9
+[12-Oct-2018 15:10:32 UTC] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/gameripp/public_html/tools/campaign-log/logedit.php on line 10

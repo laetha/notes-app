@@ -1,0 +1,183 @@
+
+<subclass>
+	<name>blood hunter core</name>
+	<class>Blood Hunter</class>
+	<hd>10</hd>
+	<saves>Strength, Wisdom</saves>
+	<proficiency>Athletics, Acrobatics, Arcana, Insight, Investigation, Survival</proficiency>
+	<spellAbility>Intelligence</spellAbility>
+	<numSkills>2</numSkills>
+		<lvl01skill>
+			
+				<name>Starting Blood Hunter</name>
+				<text>As a 1st-level Blood Hunter, you begin play with 10+your Constitution modifier hit points.</text>
+				<text> </text>
+				<text>You are proficient with the following items, in addition to any proficiencies provided by your race or background.</text>
+				<text>&#8226; Armor: Light Armor. Medium Armor, Shields</text>
+				<text>&#8226; Weapons: Simple Weapons, Martial Weapons</text>
+				<text>&#8226; Tools: Alchemist's Supplies</text>
+				<text>&#8226; Skills: Choose two from Athletics, Acrobatics, Arcana, Insight, Investigation, and Survival</text>
+				<text> </text>
+				<text>You begin play with the following equipment, in addition to any equipment provided by your background.</text>
+				<text>&#8226; (a) a martial weapon or (b) two simple weapons</text>
+				<text>&#8226; (a) a light crossbow and 20 bolts or (b) hand crossbow and 20 bolts</text>
+				<text>&#8226; (a)studded leather armor or (b) scale mail armor</text>
+				<text>&#8226; An explorer's pack</text>
+				<text> </text>
+				<text>Alternatively, you may start with 4d4x10 gp and choose your own equipment.</text>
+				<text> </text>
+			
+		</lvl01skill>
+
+		<lvl01skill>
+			
+				<name>Hunter's Bane</name>
+				<text>Beginning at 1st level, you have survived the imbibing of the Hunter’s Bane, a poisonous alchemical concoction that alters your life’s blood, forever binding you to the darkness and honing your senses against it. You have advantage on Wisdom (Survival) checks to track Fey, Fiends, and undead , as well as on Intelligence checks to recall information about them. If you are actively tracking one of these creature types, you cannot be surprised by any creatures of that type. You can only be tracking one type of creature at a time.</text>
+				<text>	 </text>
+				<text>Upon reaching 11th level, you can flare the internal toxic scars from the ritual, using the pain to give clarity, or promote anger. You can choose to suffer damage equal to a roll of your crimson rite damage die to gain  advantage on a Wisdom (Insight ) check or Charisma (Intimidation) check.</text>
+				
+				<text>	</text>
+			
+		</lvl01skill>
+
+		<lvl01skill>
+			
+				<name>Crimson Rite</name>
+				<text>At 1st level, you learn to invoke a rite of blood magic within your weapon at the cost of your own vitality. Choose to learn one rite from the Primal Rites list below. You cannot change this choice.</text>
+				<text>As a bonus action, you imbue a single weapon with the elemental energy of a known rite until your next short or long rest. While active, attacks from this weapon deal an additional 1d4 rite damage of the chosen elemental type. Rite damage is considered  magical. The rite damage die changes as you gain blood hunter levels, as shown in the crimson rite damage die column of the blood hunter table. Should your weapon leave your grip, the rite fades immediately. An active rite on a weapon thrown fades directly after the attack is complete.</text>
+				<text>When a crimson rite is activated, you suffer damage equal to your character level, and you reduce your maximum hit points by an amount equal to your character level. These lost maximum hit points return once the rite fades and cannot be restored otherwise. When a rite fades, no hit points are regained as part of the restoring of maximum hit points.</text>
+				<text>Crimson rite can be used on multiple weapons, costing additional hit point loss. Most weapons can only be subject to a single rite at any given time. Each end of a polearm or quarterstaff is treated as a separate weapon for the purposes of this feature. A rite can be allowed to fade at any time on your turn (no action required ).
+				<text>You gain access to an additional Primal Rite at 6th level and 11th level. You may learn an Esoteric Rite at 14th level.</text>
+				<text></text>
+		</lvl01skill>
+
+		<lvl01skill>
+			
+				<name>Primal Rites</name>
+				<text>Choose from the following:</text>
+				<text>Rite of the Flame: Your rite damage is fire type.</text>
+				<text>Rite of the Frozen: Your rite damage is cold type.</text>
+				<text>Rite of the Storm: Your rite damage is Lightning type.</text>
+				<text></text>
+			
+		</lvl01skill>
+
+				<lvl02skill>
+			
+				<name>Fighting Style</name>
+				<text>At 2nd level, you adopt a style of fighting as your specialty. Choose one of the following options: Defense, Dueling, Great Weapon Fighting, Mariner, or Protection. You can&#8217;t take a Fighting Style option more than once, even if you later get to choose again.</text>
+				<text>	</text>
+			
+		</lvl02skill>
+
+				<lvl02skill>
+			
+				<name>Fighting Style: Archery</name>
+				<text>You gain a +2 bonus to attack rolls you make with ranged weapons.</text>
+				<text>	</text>
+		
+			
+		</lvl02skill>
+
+
+		<lvl02skill>
+			
+				<name>Fighting Style: Dueling</name>
+				<text>When you are wielding a melee weapon in one hand and no other weapons, you gain a +2 bonus to damage rolls with that weapon.</text>
+				<text>	</text>
+	
+			
+		</lvl02skill>
+
+		<lvl02skill>
+			
+				<name>Fighting Style: Great Weapon Fighting</name>
+				<text>When you roll a 1 or 2 on a damage die for an attack you make with a melee weapon that you are wielding with two hands, you can reroll the die and must use the new roll, even if the new roll is a 1 or a 2. The weapon must have the two-handed or versatile property for you to gain this benefit.</text>
+				<text>	</text>
+			
+		</lvl02skill>
+
+		<lvl02skill>
+			
+				<name>Fighting Style: Two-Weapon Fighting</name>
+				<text>When you engage in two-weapon fighting, you can add your ability modifier to the damage of the second attack.</text>
+				<text>	</text>
+			
+		</lvl02skill>
+
+		<lvl02skill>
+			
+				<name>Blood Maledict</name>
+				<text>At 2nd level, you gain the knowledge to further channel , and sacrifice, a part of your vital essence to curse and manipulate your enemies. You gain one blood curse of your choice, detailed in the “ blood curses” section below. You learn one additional blood curse of your choice at 5th, 9th, 13th, 16th, and 20th level.</text>
+				<text>When you use your Blood Maledict, you choose which curse to invoke. While invoking a blood curse, but before it affects the target , you may choose to amplify the curse by suffering damage equal to a roll of your crimson rite damage die. An amplified curse gains an additional effect, noted in the curse’s description. Creatures that do not have blood in their bodies are immune to blood curses (DM ’s discretion).</text>
+				<text>You can use this feature once. You regain expended uses when you finish a short or long rest. Beginning at 6th level, you can use your Blood Maledict feature twice between rests, at 11th level you can use it three times between rests, and at 17th level, you can use it four times between rests.</text>
+				<text>	</text>
+			
+		</lvl02skill>
+		
+		<lvl04skill>
+			
+				<name>Ability Score Improvement</name>
+				<text>When you reach 4th level, and again at 8th, 12th, 16th, and 19th level, you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can&#8217;t increase an ability score above 20 using this feature.</text>
+				<text>	If your DM uses the optional Feats, you can instead take a feat.</text>
+				<text>	</text>
+			
+		</lvl04skill>
+
+
+		<lvl08skill>
+			
+				<name>Ability Score Improvement (2nd)</name>
+				<text>When you reach 4th level, and again at 8th, 12th, 16th, and 19th level, you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can&#8217;t increase an ability score above 20 using this feature.</text>
+				<text>	If your DM uses the optional Feats, you can instead take a feat.</text>
+				<text>	</text>
+			
+		</lvl08skill>
+
+		
+		<lvl12skill>
+			
+				<name>Ability Score Improvement (3rd)</name>
+				<text>When you reach 4th level, and again at 8th, 12th, 16th, and 19th level, you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can&#8217;t increase an ability score above 20 using this feature.</text>
+				<text>	If your DM uses the optional Feats, you can instead take a feat.</text>
+				<text>	</text>
+			
+		</lvl12skill>
+
+		
+		<lvl16skill>
+			
+				<name>Ability Score Improvement (4th)</name>
+				<text>When you reach 4th level, and again at 8th, 12th, 16th, and 19th level, you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can&#8217;t increase an ability score above 20 using this feature.</text>
+				<text>	If your DM uses the optional Feats, you can instead take a feat.</text>
+				<text>	</text>
+			
+		</lvl16skill>
+
+		<lvl18skill>
+			
+				<name>Spell Mastery</name>
+				<text>At 18th level, you have achieved such mastery over certain spells that you can cast them at will. Choose a 1st-level wizard spell and a 2nd-level wizard spell that are in your spellbook. You can cast those spells at their lowest level without expending a spell slot when you have them prepared. If you want to cast either spell at a higher level, you must expend a spell slot as normal.</text>
+				<text>	By spending 8 hours in study, you can exchange one or both of the spells you chose for different spells of the same levels.</text>
+				<text>	</text>
+			
+		</lvl18skill>
+
+		<lvl19skill>
+			
+				<name>Ability Score Improvement (5th)</name>
+				<text>When you reach 4th level, and again at 8th, 12th, 16th, and 19th level, you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can&#8217;t increase an ability score above 20 using this feature.</text>
+				<text>	If your DM uses the optional Feats, you can instead take a feat.</text>
+				<text>	</text>
+			
+		</lvl19skill>
+
+		<lvl20skill>
+			
+				<name>Signature Spell</name>
+				<text>When you reach 20th level, you gain mastery over two powerful spells and can cast them with little effort. Choose two 3rd-level wizard spells in your spellbook as your signature spells. You always have these spells prepared, they don&#8217;t count against the number of spells you have prepared, and you can cast each of them once at 3rd level without expending a spell slot. When you do so, you can&#8217;t do so again until you finish a short or long rest.</text>
+				<text>	If you want to cast either spell at a higher level, you must expend a spell slot as normal.</text>
+				<text>	</text>
+			
+		</lvl20skill>
+</subclass>

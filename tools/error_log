@@ -1,0 +1,342 @@
+[15-Feb-2018 06:29:47 America/New_York] PHP Warning:  include(header.html): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 1
+[15-Feb-2018 06:29:47 America/New_York] PHP Warning:  include(header.html): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 1
+[15-Feb-2018 06:29:47 America/New_York] PHP Warning:  include(): Failed opening 'header.html' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/gameripp/public_html/tools/mapping.php on line 1
+[15-Feb-2018 06:29:47 America/New_York] PHP Warning:  include(footer.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 6
+[15-Feb-2018 06:29:47 America/New_York] PHP Warning:  include(footer.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 6
+[15-Feb-2018 06:29:47 America/New_York] PHP Warning:  include(): Failed opening 'footer.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/gameripp/public_html/tools/mapping.php on line 6
+[15-Feb-2018 14:20:15 America/New_York] PHP Warning:  include(header.html): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 1
+[15-Feb-2018 14:20:15 America/New_York] PHP Warning:  include(header.html): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 1
+[15-Feb-2018 14:20:15 America/New_York] PHP Warning:  include(): Failed opening 'header.html' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/gameripp/public_html/tools/mapping.php on line 1
+[15-Feb-2018 14:20:15 America/New_York] PHP Warning:  include(footer.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 6
+[15-Feb-2018 14:20:15 America/New_York] PHP Warning:  include(footer.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 6
+[15-Feb-2018 14:20:15 America/New_York] PHP Warning:  include(): Failed opening 'footer.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/gameripp/public_html/tools/mapping.php on line 6
+[18-Feb-2018 04:06:30 America/New_York] PHP Warning:  include(header.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 1
+[18-Feb-2018 04:06:30 America/New_York] PHP Warning:  include(header.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 1
+[18-Feb-2018 04:06:30 America/New_York] PHP Warning:  include(): Failed opening 'header.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/gameripp/public_html/tools/mapping.php on line 1
+[18-Feb-2018 04:06:30 America/New_York] PHP Warning:  include(footer.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 6
+[18-Feb-2018 04:06:30 America/New_York] PHP Warning:  include(footer.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 6
+[18-Feb-2018 04:06:30 America/New_York] PHP Warning:  include(): Failed opening 'footer.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/gameripp/public_html/tools/mapping.php on line 6
+[18-Feb-2018 07:30:31 America/New_York] PHP Warning:  include(header.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 1
+[18-Feb-2018 07:30:31 America/New_York] PHP Warning:  include(header.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 1
+[18-Feb-2018 07:30:31 America/New_York] PHP Warning:  include(): Failed opening 'header.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/gameripp/public_html/tools/mapping.php on line 1
+[18-Feb-2018 07:30:31 America/New_York] PHP Warning:  include(footer.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 6
+[18-Feb-2018 07:30:31 America/New_York] PHP Warning:  include(footer.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 6
+[18-Feb-2018 07:30:31 America/New_York] PHP Warning:  include(): Failed opening 'footer.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/gameripp/public_html/tools/mapping.php on line 6
+[19-Feb-2018 15:54:26 America/New_York] PHP Warning:  include(header.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 1
+[19-Feb-2018 15:54:26 America/New_York] PHP Warning:  include(header.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 1
+[19-Feb-2018 15:54:26 America/New_York] PHP Warning:  include(): Failed opening 'header.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/gameripp/public_html/tools/mapping.php on line 1
+[19-Feb-2018 15:54:26 America/New_York] PHP Warning:  include(footer.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 6
+[19-Feb-2018 15:54:26 America/New_York] PHP Warning:  include(footer.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 6
+[19-Feb-2018 15:54:26 America/New_York] PHP Warning:  include(): Failed opening 'footer.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/gameripp/public_html/tools/mapping.php on line 6
+[20-Feb-2018 03:38:52 America/New_York] PHP Warning:  include(header.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 1
+[20-Feb-2018 03:38:52 America/New_York] PHP Warning:  include(header.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 1
+[20-Feb-2018 03:38:52 America/New_York] PHP Warning:  include(): Failed opening 'header.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/gameripp/public_html/tools/mapping.php on line 1
+[20-Feb-2018 03:38:52 America/New_York] PHP Warning:  include(footer.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 6
+[20-Feb-2018 03:38:52 America/New_York] PHP Warning:  include(footer.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 6
+[20-Feb-2018 03:38:52 America/New_York] PHP Warning:  include(): Failed opening 'footer.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/gameripp/public_html/tools/mapping.php on line 6
+[20-Feb-2018 17:33:05 America/New_York] PHP Warning:  include(header.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 1
+[20-Feb-2018 17:33:05 America/New_York] PHP Warning:  include(header.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 1
+[20-Feb-2018 17:33:05 America/New_York] PHP Warning:  include(): Failed opening 'header.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/gameripp/public_html/tools/mapping.php on line 1
+[20-Feb-2018 17:33:05 America/New_York] PHP Warning:  include(footer.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 6
+[20-Feb-2018 17:33:05 America/New_York] PHP Warning:  include(footer.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 6
+[20-Feb-2018 17:33:05 America/New_York] PHP Warning:  include(): Failed opening 'footer.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/gameripp/public_html/tools/mapping.php on line 6
+[21-Feb-2018 09:05:28 America/New_York] PHP Warning:  include(header.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 1
+[21-Feb-2018 09:05:28 America/New_York] PHP Warning:  include(header.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 1
+[21-Feb-2018 09:05:28 America/New_York] PHP Warning:  include(): Failed opening 'header.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/gameripp/public_html/tools/mapping.php on line 1
+[21-Feb-2018 09:05:28 America/New_York] PHP Warning:  include(footer.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 6
+[21-Feb-2018 09:05:28 America/New_York] PHP Warning:  include(footer.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 6
+[21-Feb-2018 09:05:28 America/New_York] PHP Warning:  include(): Failed opening 'footer.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/gameripp/public_html/tools/mapping.php on line 6
+[21-Feb-2018 23:58:46 America/New_York] PHP Warning:  include(header.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 1
+[21-Feb-2018 23:58:46 America/New_York] PHP Warning:  include(header.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 1
+[21-Feb-2018 23:58:46 America/New_York] PHP Warning:  include(): Failed opening 'header.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/gameripp/public_html/tools/mapping.php on line 1
+[21-Feb-2018 23:58:46 America/New_York] PHP Warning:  include(footer.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 6
+[21-Feb-2018 23:58:46 America/New_York] PHP Warning:  include(footer.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 6
+[21-Feb-2018 23:58:46 America/New_York] PHP Warning:  include(): Failed opening 'footer.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/gameripp/public_html/tools/mapping.php on line 6
+[28-Feb-2018 06:19:52 America/New_York] PHP Warning:  include(header.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 1
+[28-Feb-2018 06:19:52 America/New_York] PHP Warning:  include(header.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 1
+[28-Feb-2018 06:19:52 America/New_York] PHP Warning:  include(): Failed opening 'header.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/gameripp/public_html/tools/mapping.php on line 1
+[28-Feb-2018 06:19:52 America/New_York] PHP Warning:  include(footer.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 6
+[28-Feb-2018 06:19:52 America/New_York] PHP Warning:  include(footer.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 6
+[28-Feb-2018 06:19:52 America/New_York] PHP Warning:  include(): Failed opening 'footer.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/gameripp/public_html/tools/mapping.php on line 6
+[03-Mar-2018 02:42:07 America/New_York] PHP Warning:  include(header.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 1
+[03-Mar-2018 02:42:07 America/New_York] PHP Warning:  include(header.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 1
+[03-Mar-2018 02:42:07 America/New_York] PHP Warning:  include(): Failed opening 'header.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/gameripp/public_html/tools/mapping.php on line 1
+[03-Mar-2018 02:42:07 America/New_York] PHP Warning:  include(footer.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 6
+[03-Mar-2018 02:42:07 America/New_York] PHP Warning:  include(footer.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 6
+[03-Mar-2018 02:42:07 America/New_York] PHP Warning:  include(): Failed opening 'footer.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/gameripp/public_html/tools/mapping.php on line 6
+[05-Mar-2018 00:12:25 America/New_York] PHP Warning:  include(header.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 1
+[05-Mar-2018 00:12:25 America/New_York] PHP Warning:  include(header.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 1
+[05-Mar-2018 00:12:25 America/New_York] PHP Warning:  include(): Failed opening 'header.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/gameripp/public_html/tools/mapping.php on line 1
+[05-Mar-2018 00:12:25 America/New_York] PHP Warning:  include(footer.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 6
+[05-Mar-2018 00:12:25 America/New_York] PHP Warning:  include(footer.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 6
+[05-Mar-2018 00:12:25 America/New_York] PHP Warning:  include(): Failed opening 'footer.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/gameripp/public_html/tools/mapping.php on line 6
+[05-Mar-2018 11:48:33 America/New_York] PHP Warning:  include(header.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 1
+[05-Mar-2018 11:48:33 America/New_York] PHP Warning:  include(header.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 1
+[05-Mar-2018 11:48:33 America/New_York] PHP Warning:  include(): Failed opening 'header.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/gameripp/public_html/tools/mapping.php on line 1
+[05-Mar-2018 11:48:33 America/New_York] PHP Warning:  include(footer.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 6
+[05-Mar-2018 11:48:33 America/New_York] PHP Warning:  include(footer.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 6
+[05-Mar-2018 11:48:33 America/New_York] PHP Warning:  include(): Failed opening 'footer.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/gameripp/public_html/tools/mapping.php on line 6
+[05-Mar-2018 16:24:07 America/New_York] PHP Warning:  include(header.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 1
+[05-Mar-2018 16:24:07 America/New_York] PHP Warning:  include(header.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 1
+[05-Mar-2018 16:24:07 America/New_York] PHP Warning:  include(): Failed opening 'header.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/gameripp/public_html/tools/mapping.php on line 1
+[05-Mar-2018 16:24:07 America/New_York] PHP Warning:  include(footer.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 6
+[05-Mar-2018 16:24:07 America/New_York] PHP Warning:  include(footer.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 6
+[05-Mar-2018 16:24:07 America/New_York] PHP Warning:  include(): Failed opening 'footer.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/gameripp/public_html/tools/mapping.php on line 6
+[06-Mar-2018 10:34:13 America/New_York] PHP Warning:  include(header.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 1
+[06-Mar-2018 10:34:13 America/New_York] PHP Warning:  include(header.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 1
+[06-Mar-2018 10:34:13 America/New_York] PHP Warning:  include(): Failed opening 'header.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/gameripp/public_html/tools/mapping.php on line 1
+[06-Mar-2018 10:34:13 America/New_York] PHP Warning:  include(footer.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 6
+[06-Mar-2018 10:34:13 America/New_York] PHP Warning:  include(footer.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 6
+[06-Mar-2018 10:34:13 America/New_York] PHP Warning:  include(): Failed opening 'footer.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/gameripp/public_html/tools/mapping.php on line 6
+[08-Mar-2018 13:03:42 America/New_York] PHP Warning:  include(header.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 1
+[08-Mar-2018 13:03:42 America/New_York] PHP Warning:  include(header.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 1
+[08-Mar-2018 13:03:42 America/New_York] PHP Warning:  include(): Failed opening 'header.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/gameripp/public_html/tools/mapping.php on line 1
+[08-Mar-2018 13:03:42 America/New_York] PHP Warning:  include(footer.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 6
+[08-Mar-2018 13:03:42 America/New_York] PHP Warning:  include(footer.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 6
+[08-Mar-2018 13:03:42 America/New_York] PHP Warning:  include(): Failed opening 'footer.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/gameripp/public_html/tools/mapping.php on line 6
+[15-Mar-2018 17:22:22 America/New_York] PHP Warning:  include(header.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 1
+[15-Mar-2018 17:22:22 America/New_York] PHP Warning:  include(header.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 1
+[15-Mar-2018 17:22:22 America/New_York] PHP Warning:  include(): Failed opening 'header.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/gameripp/public_html/tools/mapping.php on line 1
+[15-Mar-2018 17:22:22 America/New_York] PHP Warning:  include(footer.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 6
+[15-Mar-2018 17:22:22 America/New_York] PHP Warning:  include(footer.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 6
+[15-Mar-2018 17:22:22 America/New_York] PHP Warning:  include(): Failed opening 'footer.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/gameripp/public_html/tools/mapping.php on line 6
+[22-Mar-2018 02:15:42 America/New_York] PHP Warning:  include(header.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 1
+[22-Mar-2018 02:15:42 America/New_York] PHP Warning:  include(header.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 1
+[22-Mar-2018 02:15:42 America/New_York] PHP Warning:  include(): Failed opening 'header.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/gameripp/public_html/tools/mapping.php on line 1
+[22-Mar-2018 02:15:42 America/New_York] PHP Warning:  include(footer.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 6
+[22-Mar-2018 02:15:42 America/New_York] PHP Warning:  include(footer.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 6
+[22-Mar-2018 02:15:42 America/New_York] PHP Warning:  include(): Failed opening 'footer.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/gameripp/public_html/tools/mapping.php on line 6
+[05-Apr-2018 21:36:03 America/New_York] PHP Warning:  include(header.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 1
+[05-Apr-2018 21:36:03 America/New_York] PHP Warning:  include(header.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 1
+[05-Apr-2018 21:36:03 America/New_York] PHP Warning:  include(): Failed opening 'header.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/gameripp/public_html/tools/mapping.php on line 1
+[05-Apr-2018 21:36:03 America/New_York] PHP Warning:  include(footer.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 6
+[05-Apr-2018 21:36:03 America/New_York] PHP Warning:  include(footer.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 6
+[05-Apr-2018 21:36:03 America/New_York] PHP Warning:  include(): Failed opening 'footer.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/gameripp/public_html/tools/mapping.php on line 6
+[08-Apr-2018 16:36:26 America/New_York] PHP Warning:  include(header.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 1
+[08-Apr-2018 16:36:26 America/New_York] PHP Warning:  include(header.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 1
+[08-Apr-2018 16:36:26 America/New_York] PHP Warning:  include(): Failed opening 'header.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/gameripp/public_html/tools/mapping.php on line 1
+[08-Apr-2018 16:36:26 America/New_York] PHP Warning:  include(footer.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 6
+[08-Apr-2018 16:36:26 America/New_York] PHP Warning:  include(footer.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 6
+[08-Apr-2018 16:36:26 America/New_York] PHP Warning:  include(): Failed opening 'footer.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/gameripp/public_html/tools/mapping.php on line 6
+[09-Apr-2018 06:01:18 America/New_York] PHP Warning:  include(header.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 1
+[09-Apr-2018 06:01:18 America/New_York] PHP Warning:  include(header.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 1
+[09-Apr-2018 06:01:18 America/New_York] PHP Warning:  include(): Failed opening 'header.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/gameripp/public_html/tools/mapping.php on line 1
+[09-Apr-2018 06:01:18 America/New_York] PHP Warning:  include(footer.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 6
+[09-Apr-2018 06:01:18 America/New_York] PHP Warning:  include(footer.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 6
+[09-Apr-2018 06:01:18 America/New_York] PHP Warning:  include(): Failed opening 'footer.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/gameripp/public_html/tools/mapping.php on line 6
+[09-Apr-2018 20:14:03 America/New_York] PHP Warning:  include(header.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 1
+[09-Apr-2018 20:14:03 America/New_York] PHP Warning:  include(header.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 1
+[09-Apr-2018 20:14:03 America/New_York] PHP Warning:  include(): Failed opening 'header.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/gameripp/public_html/tools/mapping.php on line 1
+[09-Apr-2018 20:14:03 America/New_York] PHP Warning:  include(footer.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 6
+[09-Apr-2018 20:14:03 America/New_York] PHP Warning:  include(footer.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 6
+[09-Apr-2018 20:14:03 America/New_York] PHP Warning:  include(): Failed opening 'footer.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/gameripp/public_html/tools/mapping.php on line 6
+[10-Apr-2018 13:47:16 America/New_York] PHP Warning:  include(header.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 1
+[10-Apr-2018 13:47:16 America/New_York] PHP Warning:  include(header.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 1
+[10-Apr-2018 13:47:16 America/New_York] PHP Warning:  include(): Failed opening 'header.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/gameripp/public_html/tools/mapping.php on line 1
+[10-Apr-2018 13:47:16 America/New_York] PHP Warning:  include(footer.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 6
+[10-Apr-2018 13:47:16 America/New_York] PHP Warning:  include(footer.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 6
+[10-Apr-2018 13:47:16 America/New_York] PHP Warning:  include(): Failed opening 'footer.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/gameripp/public_html/tools/mapping.php on line 6
+[11-Apr-2018 09:44:34 America/New_York] PHP Warning:  include(header.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 1
+[11-Apr-2018 09:44:34 America/New_York] PHP Warning:  include(header.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 1
+[11-Apr-2018 09:44:34 America/New_York] PHP Warning:  include(): Failed opening 'header.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/gameripp/public_html/tools/mapping.php on line 1
+[11-Apr-2018 09:44:34 America/New_York] PHP Warning:  include(footer.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 6
+[11-Apr-2018 09:44:34 America/New_York] PHP Warning:  include(footer.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 6
+[11-Apr-2018 09:44:34 America/New_York] PHP Warning:  include(): Failed opening 'footer.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/gameripp/public_html/tools/mapping.php on line 6
+[11-Apr-2018 23:00:07 America/New_York] PHP Warning:  include(header.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 1
+[11-Apr-2018 23:00:07 America/New_York] PHP Warning:  include(header.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 1
+[11-Apr-2018 23:00:07 America/New_York] PHP Warning:  include(): Failed opening 'header.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/gameripp/public_html/tools/mapping.php on line 1
+[11-Apr-2018 23:00:07 America/New_York] PHP Warning:  include(footer.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 6
+[11-Apr-2018 23:00:07 America/New_York] PHP Warning:  include(footer.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 6
+[11-Apr-2018 23:00:07 America/New_York] PHP Warning:  include(): Failed opening 'footer.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/gameripp/public_html/tools/mapping.php on line 6
+[12-Apr-2018 00:59:50 America/New_York] PHP Warning:  include(header.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 1
+[12-Apr-2018 00:59:50 America/New_York] PHP Warning:  include(header.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 1
+[12-Apr-2018 00:59:50 America/New_York] PHP Warning:  include(): Failed opening 'header.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/gameripp/public_html/tools/mapping.php on line 1
+[12-Apr-2018 00:59:50 America/New_York] PHP Warning:  include(footer.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 6
+[12-Apr-2018 00:59:50 America/New_York] PHP Warning:  include(footer.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 6
+[12-Apr-2018 00:59:50 America/New_York] PHP Warning:  include(): Failed opening 'footer.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/gameripp/public_html/tools/mapping.php on line 6
+[13-Apr-2018 16:58:10 America/New_York] PHP Warning:  include(header.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 1
+[13-Apr-2018 16:58:10 America/New_York] PHP Warning:  include(header.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 1
+[13-Apr-2018 16:58:10 America/New_York] PHP Warning:  include(): Failed opening 'header.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/gameripp/public_html/tools/mapping.php on line 1
+[13-Apr-2018 16:58:10 America/New_York] PHP Warning:  include(footer.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 6
+[13-Apr-2018 16:58:10 America/New_York] PHP Warning:  include(footer.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 6
+[13-Apr-2018 16:58:10 America/New_York] PHP Warning:  include(): Failed opening 'footer.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/gameripp/public_html/tools/mapping.php on line 6
+[14-Apr-2018 12:42:54 America/New_York] PHP Warning:  include(header.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 1
+[14-Apr-2018 12:42:54 America/New_York] PHP Warning:  include(header.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 1
+[14-Apr-2018 12:42:54 America/New_York] PHP Warning:  include(): Failed opening 'header.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/gameripp/public_html/tools/mapping.php on line 1
+[14-Apr-2018 12:42:54 America/New_York] PHP Warning:  include(footer.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 6
+[14-Apr-2018 12:42:54 America/New_York] PHP Warning:  include(footer.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 6
+[14-Apr-2018 12:42:54 America/New_York] PHP Warning:  include(): Failed opening 'footer.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/gameripp/public_html/tools/mapping.php on line 6
+[15-Apr-2018 00:06:41 America/New_York] PHP Warning:  include(header.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 1
+[15-Apr-2018 00:06:41 America/New_York] PHP Warning:  include(header.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 1
+[15-Apr-2018 00:06:41 America/New_York] PHP Warning:  include(): Failed opening 'header.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/gameripp/public_html/tools/mapping.php on line 1
+[15-Apr-2018 00:06:41 America/New_York] PHP Warning:  include(footer.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 6
+[15-Apr-2018 00:06:41 America/New_York] PHP Warning:  include(footer.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 6
+[15-Apr-2018 00:06:41 America/New_York] PHP Warning:  include(): Failed opening 'footer.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/gameripp/public_html/tools/mapping.php on line 6
+[17-Apr-2018 00:55:20 America/New_York] PHP Warning:  include(header.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 1
+[17-Apr-2018 00:55:20 America/New_York] PHP Warning:  include(header.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 1
+[17-Apr-2018 00:55:20 America/New_York] PHP Warning:  include(): Failed opening 'header.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/gameripp/public_html/tools/mapping.php on line 1
+[17-Apr-2018 00:55:20 America/New_York] PHP Warning:  include(footer.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 6
+[17-Apr-2018 00:55:20 America/New_York] PHP Warning:  include(footer.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 6
+[17-Apr-2018 00:55:20 America/New_York] PHP Warning:  include(): Failed opening 'footer.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/gameripp/public_html/tools/mapping.php on line 6
+[17-Apr-2018 12:38:42 America/New_York] PHP Warning:  include(header.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 1
+[17-Apr-2018 12:38:42 America/New_York] PHP Warning:  include(header.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 1
+[17-Apr-2018 12:38:42 America/New_York] PHP Warning:  include(): Failed opening 'header.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/gameripp/public_html/tools/mapping.php on line 1
+[17-Apr-2018 12:38:42 America/New_York] PHP Warning:  include(footer.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 6
+[17-Apr-2018 12:38:42 America/New_York] PHP Warning:  include(footer.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 6
+[17-Apr-2018 12:38:42 America/New_York] PHP Warning:  include(): Failed opening 'footer.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/gameripp/public_html/tools/mapping.php on line 6
+[20-Apr-2018 06:37:00 America/New_York] PHP Warning:  include(header.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 1
+[20-Apr-2018 06:37:00 America/New_York] PHP Warning:  include(header.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 1
+[20-Apr-2018 06:37:00 America/New_York] PHP Warning:  include(): Failed opening 'header.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/gameripp/public_html/tools/mapping.php on line 1
+[20-Apr-2018 06:37:00 America/New_York] PHP Warning:  include(footer.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 6
+[20-Apr-2018 06:37:00 America/New_York] PHP Warning:  include(footer.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 6
+[20-Apr-2018 06:37:00 America/New_York] PHP Warning:  include(): Failed opening 'footer.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/gameripp/public_html/tools/mapping.php on line 6
+[22-Apr-2018 16:49:16 America/New_York] PHP Warning:  include(header.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 1
+[22-Apr-2018 16:49:16 America/New_York] PHP Warning:  include(header.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 1
+[22-Apr-2018 16:49:16 America/New_York] PHP Warning:  include(): Failed opening 'header.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/gameripp/public_html/tools/mapping.php on line 1
+[22-Apr-2018 16:49:16 America/New_York] PHP Warning:  include(footer.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 6
+[22-Apr-2018 16:49:16 America/New_York] PHP Warning:  include(footer.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 6
+[22-Apr-2018 16:49:16 America/New_York] PHP Warning:  include(): Failed opening 'footer.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/gameripp/public_html/tools/mapping.php on line 6
+[23-Apr-2018 05:40:30 America/New_York] PHP Warning:  include(header.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 1
+[23-Apr-2018 05:40:30 America/New_York] PHP Warning:  include(header.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 1
+[23-Apr-2018 05:40:30 America/New_York] PHP Warning:  include(): Failed opening 'header.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/gameripp/public_html/tools/mapping.php on line 1
+[23-Apr-2018 05:40:30 America/New_York] PHP Warning:  include(footer.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 6
+[23-Apr-2018 05:40:30 America/New_York] PHP Warning:  include(footer.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 6
+[23-Apr-2018 05:40:30 America/New_York] PHP Warning:  include(): Failed opening 'footer.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/gameripp/public_html/tools/mapping.php on line 6
+[28-Apr-2018 20:00:20 America/New_York] PHP Warning:  include(header.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 1
+[28-Apr-2018 20:00:20 America/New_York] PHP Warning:  include(header.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 1
+[28-Apr-2018 20:00:20 America/New_York] PHP Warning:  include(): Failed opening 'header.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/gameripp/public_html/tools/mapping.php on line 1
+[28-Apr-2018 20:00:20 America/New_York] PHP Warning:  include(footer.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 6
+[28-Apr-2018 20:00:20 America/New_York] PHP Warning:  include(footer.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 6
+[28-Apr-2018 20:00:20 America/New_York] PHP Warning:  include(): Failed opening 'footer.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/gameripp/public_html/tools/mapping.php on line 6
+[11-May-2018 00:25:17 America/New_York] PHP Warning:  include(header.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 1
+[11-May-2018 00:25:17 America/New_York] PHP Warning:  include(header.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 1
+[11-May-2018 00:25:17 America/New_York] PHP Warning:  include(): Failed opening 'header.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/gameripp/public_html/tools/mapping.php on line 1
+[11-May-2018 00:25:17 America/New_York] PHP Warning:  include(footer.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 6
+[11-May-2018 00:25:17 America/New_York] PHP Warning:  include(footer.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 6
+[11-May-2018 00:25:17 America/New_York] PHP Warning:  include(): Failed opening 'footer.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/gameripp/public_html/tools/mapping.php on line 6
+[23-May-2018 19:09:26 America/New_York] PHP Warning:  include(header.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 1
+[23-May-2018 19:09:26 America/New_York] PHP Warning:  include(header.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 1
+[23-May-2018 19:09:26 America/New_York] PHP Warning:  include(): Failed opening 'header.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/gameripp/public_html/tools/mapping.php on line 1
+[23-May-2018 19:09:26 America/New_York] PHP Warning:  include(footer.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 6
+[23-May-2018 19:09:26 America/New_York] PHP Warning:  include(footer.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 6
+[23-May-2018 19:09:26 America/New_York] PHP Warning:  include(): Failed opening 'footer.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/gameripp/public_html/tools/mapping.php on line 6
+[01-Jun-2018 22:04:59 America/New_York] PHP Warning:  include(header.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 1
+[01-Jun-2018 22:04:59 America/New_York] PHP Warning:  include(header.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 1
+[01-Jun-2018 22:04:59 America/New_York] PHP Warning:  include(): Failed opening 'header.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/gameripp/public_html/tools/mapping.php on line 1
+[01-Jun-2018 22:04:59 America/New_York] PHP Warning:  include(footer.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 6
+[01-Jun-2018 22:04:59 America/New_York] PHP Warning:  include(footer.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 6
+[01-Jun-2018 22:04:59 America/New_York] PHP Warning:  include(): Failed opening 'footer.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/gameripp/public_html/tools/mapping.php on line 6
+[17-Jun-2018 09:51:41 America/New_York] PHP Warning:  include(header.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 1
+[17-Jun-2018 09:51:41 America/New_York] PHP Warning:  include(header.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 1
+[17-Jun-2018 09:51:41 America/New_York] PHP Warning:  include(): Failed opening 'header.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/gameripp/public_html/tools/mapping.php on line 1
+[17-Jun-2018 09:51:41 America/New_York] PHP Warning:  include(footer.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 6
+[17-Jun-2018 09:51:41 America/New_York] PHP Warning:  include(footer.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 6
+[17-Jun-2018 09:51:41 America/New_York] PHP Warning:  include(): Failed opening 'footer.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/gameripp/public_html/tools/mapping.php on line 6
+[28-Jun-2018 07:43:08 America/New_York] PHP Warning:  include(header.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 1
+[28-Jun-2018 07:43:08 America/New_York] PHP Warning:  include(header.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 1
+[28-Jun-2018 07:43:08 America/New_York] PHP Warning:  include(): Failed opening 'header.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/gameripp/public_html/tools/mapping.php on line 1
+[28-Jun-2018 07:43:08 America/New_York] PHP Warning:  include(footer.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 6
+[28-Jun-2018 07:43:08 America/New_York] PHP Warning:  include(footer.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 6
+[28-Jun-2018 07:43:08 America/New_York] PHP Warning:  include(): Failed opening 'footer.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/gameripp/public_html/tools/mapping.php on line 6
+[28-Jun-2018 19:28:40 America/New_York] PHP Warning:  include(header.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 1
+[28-Jun-2018 19:28:40 America/New_York] PHP Warning:  include(header.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 1
+[28-Jun-2018 19:28:40 America/New_York] PHP Warning:  include(): Failed opening 'header.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/gameripp/public_html/tools/mapping.php on line 1
+[28-Jun-2018 19:28:40 America/New_York] PHP Warning:  include(footer.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 6
+[28-Jun-2018 19:28:40 America/New_York] PHP Warning:  include(footer.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 6
+[28-Jun-2018 19:28:40 America/New_York] PHP Warning:  include(): Failed opening 'footer.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/gameripp/public_html/tools/mapping.php on line 6
+[17-Jul-2018 23:47:58 America/New_York] PHP Warning:  include(header.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 1
+[17-Jul-2018 23:47:58 America/New_York] PHP Warning:  include(header.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 1
+[17-Jul-2018 23:47:58 America/New_York] PHP Warning:  include(): Failed opening 'header.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/gameripp/public_html/tools/mapping.php on line 1
+[17-Jul-2018 23:47:58 America/New_York] PHP Warning:  include(footer.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 6
+[17-Jul-2018 23:47:58 America/New_York] PHP Warning:  include(footer.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 6
+[17-Jul-2018 23:47:58 America/New_York] PHP Warning:  include(): Failed opening 'footer.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/gameripp/public_html/tools/mapping.php on line 6
+[21-Jul-2018 10:30:48 America/New_York] PHP Warning:  include(header.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 1
+[21-Jul-2018 10:30:48 America/New_York] PHP Warning:  include(header.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 1
+[21-Jul-2018 10:30:48 America/New_York] PHP Warning:  include(): Failed opening 'header.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/gameripp/public_html/tools/mapping.php on line 1
+[21-Jul-2018 10:30:48 America/New_York] PHP Warning:  include(footer.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 6
+[21-Jul-2018 10:30:48 America/New_York] PHP Warning:  include(footer.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 6
+[21-Jul-2018 10:30:48 America/New_York] PHP Warning:  include(): Failed opening 'footer.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/gameripp/public_html/tools/mapping.php on line 6
+[21-Jul-2018 18:17:55 America/New_York] PHP Warning:  include(header.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 1
+[21-Jul-2018 18:17:55 America/New_York] PHP Warning:  include(header.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 1
+[21-Jul-2018 18:17:55 America/New_York] PHP Warning:  include(): Failed opening 'header.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/gameripp/public_html/tools/mapping.php on line 1
+[21-Jul-2018 18:17:55 America/New_York] PHP Warning:  include(footer.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 6
+[21-Jul-2018 18:17:55 America/New_York] PHP Warning:  include(footer.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 6
+[21-Jul-2018 18:17:55 America/New_York] PHP Warning:  include(): Failed opening 'footer.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/gameripp/public_html/tools/mapping.php on line 6
+[24-Jul-2018 22:57:16 America/New_York] PHP Warning:  include(header.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 1
+[24-Jul-2018 22:57:16 America/New_York] PHP Warning:  include(header.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 1
+[24-Jul-2018 22:57:16 America/New_York] PHP Warning:  include(): Failed opening 'header.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/gameripp/public_html/tools/mapping.php on line 1
+[24-Jul-2018 22:57:16 America/New_York] PHP Warning:  include(footer.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 6
+[24-Jul-2018 22:57:16 America/New_York] PHP Warning:  include(footer.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 6
+[24-Jul-2018 22:57:16 America/New_York] PHP Warning:  include(): Failed opening 'footer.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/gameripp/public_html/tools/mapping.php on line 6
+[29-Jul-2018 20:01:52 America/New_York] PHP Warning:  include(header.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 1
+[29-Jul-2018 20:01:52 America/New_York] PHP Warning:  include(header.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 1
+[29-Jul-2018 20:01:52 America/New_York] PHP Warning:  include(): Failed opening 'header.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/gameripp/public_html/tools/mapping.php on line 1
+[29-Jul-2018 20:01:52 America/New_York] PHP Warning:  include(footer.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 6
+[29-Jul-2018 20:01:52 America/New_York] PHP Warning:  include(footer.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 6
+[29-Jul-2018 20:01:52 America/New_York] PHP Warning:  include(): Failed opening 'footer.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/gameripp/public_html/tools/mapping.php on line 6
+[06-Aug-2018 10:25:39 America/New_York] PHP Warning:  include(header.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 1
+[06-Aug-2018 10:25:39 America/New_York] PHP Warning:  include(header.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 1
+[06-Aug-2018 10:25:39 America/New_York] PHP Warning:  include(): Failed opening 'header.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/gameripp/public_html/tools/mapping.php on line 1
+[06-Aug-2018 10:25:39 America/New_York] PHP Warning:  include(footer.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 6
+[06-Aug-2018 10:25:39 America/New_York] PHP Warning:  include(footer.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 6
+[06-Aug-2018 10:25:39 America/New_York] PHP Warning:  include(): Failed opening 'footer.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/gameripp/public_html/tools/mapping.php on line 6
+[17-Aug-2018 10:44:09 UTC] PHP Warning:  include(header.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 1
+[17-Aug-2018 10:44:09 UTC] PHP Warning:  include(header.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 1
+[17-Aug-2018 10:44:09 UTC] PHP Warning:  include(): Failed opening 'header.php' for inclusion (include_path='.:/opt/cpanel/ea-php72/root/usr/share/pear') in /home/gameripp/public_html/tools/mapping.php on line 1
+[17-Aug-2018 10:44:09 UTC] PHP Warning:  include(footer.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 6
+[17-Aug-2018 10:44:09 UTC] PHP Warning:  include(footer.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 6
+[17-Aug-2018 10:44:09 UTC] PHP Warning:  include(): Failed opening 'footer.php' for inclusion (include_path='.:/opt/cpanel/ea-php72/root/usr/share/pear') in /home/gameripp/public_html/tools/mapping.php on line 6
+[30-Aug-2018 09:53:33 UTC] PHP Warning:  include(header.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 1
+[30-Aug-2018 09:53:33 UTC] PHP Warning:  include(header.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 1
+[30-Aug-2018 09:53:33 UTC] PHP Warning:  include(): Failed opening 'header.php' for inclusion (include_path='.:/opt/cpanel/ea-php72/root/usr/share/pear') in /home/gameripp/public_html/tools/mapping.php on line 1
+[30-Aug-2018 09:53:33 UTC] PHP Warning:  include(footer.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 6
+[30-Aug-2018 09:53:33 UTC] PHP Warning:  include(footer.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 6
+[30-Aug-2018 09:53:33 UTC] PHP Warning:  include(): Failed opening 'footer.php' for inclusion (include_path='.:/opt/cpanel/ea-php72/root/usr/share/pear') in /home/gameripp/public_html/tools/mapping.php on line 6
+[17-Sep-2018 11:19:12 UTC] PHP Warning:  include(header.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 1
+[17-Sep-2018 11:19:12 UTC] PHP Warning:  include(header.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 1
+[17-Sep-2018 11:19:12 UTC] PHP Warning:  include(): Failed opening 'header.php' for inclusion (include_path='.:/opt/cpanel/ea-php72/root/usr/share/pear') in /home/gameripp/public_html/tools/mapping.php on line 1
+[17-Sep-2018 11:19:12 UTC] PHP Warning:  include(footer.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 6
+[17-Sep-2018 11:19:12 UTC] PHP Warning:  include(footer.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 6
+[17-Sep-2018 11:19:12 UTC] PHP Warning:  include(): Failed opening 'footer.php' for inclusion (include_path='.:/opt/cpanel/ea-php72/root/usr/share/pear') in /home/gameripp/public_html/tools/mapping.php on line 6
+[29-Sep-2018 07:01:50 UTC] PHP Warning:  include(header.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 1
+[29-Sep-2018 07:01:50 UTC] PHP Warning:  include(header.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 1
+[29-Sep-2018 07:01:50 UTC] PHP Warning:  include(): Failed opening 'header.php' for inclusion (include_path='.:/opt/cpanel/ea-php72/root/usr/share/pear') in /home/gameripp/public_html/tools/mapping.php on line 1
+[29-Sep-2018 07:01:50 UTC] PHP Warning:  include(footer.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 6
+[29-Sep-2018 07:01:50 UTC] PHP Warning:  include(footer.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 6
+[29-Sep-2018 07:01:50 UTC] PHP Warning:  include(): Failed opening 'footer.php' for inclusion (include_path='.:/opt/cpanel/ea-php72/root/usr/share/pear') in /home/gameripp/public_html/tools/mapping.php on line 6
+[06-Oct-2018 03:22:47 UTC] PHP Warning:  include(header.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 1
+[06-Oct-2018 03:22:47 UTC] PHP Warning:  include(header.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 1
+[06-Oct-2018 03:22:47 UTC] PHP Warning:  include(): Failed opening 'header.php' for inclusion (include_path='.:/opt/cpanel/ea-php72/root/usr/share/pear') in /home/gameripp/public_html/tools/mapping.php on line 1
+[06-Oct-2018 03:22:47 UTC] PHP Warning:  include(footer.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 6
+[06-Oct-2018 03:22:47 UTC] PHP Warning:  include(footer.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 6
+[06-Oct-2018 03:22:47 UTC] PHP Warning:  include(): Failed opening 'footer.php' for inclusion (include_path='.:/opt/cpanel/ea-php72/root/usr/share/pear') in /home/gameripp/public_html/tools/mapping.php on line 6
+[15-Oct-2018 12:28:37 UTC] PHP Warning:  include(header.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 1
+[15-Oct-2018 12:28:37 UTC] PHP Warning:  include(header.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 1
+[15-Oct-2018 12:28:37 UTC] PHP Warning:  include(): Failed opening 'header.php' for inclusion (include_path='.:/opt/cpanel/ea-php72/root/usr/share/pear') in /home/gameripp/public_html/tools/mapping.php on line 1
+[15-Oct-2018 12:28:37 UTC] PHP Warning:  include(footer.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 6
+[15-Oct-2018 12:28:37 UTC] PHP Warning:  include(footer.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 6
+[15-Oct-2018 12:28:37 UTC] PHP Warning:  include(): Failed opening 'footer.php' for inclusion (include_path='.:/opt/cpanel/ea-php72/root/usr/share/pear') in /home/gameripp/public_html/tools/mapping.php on line 6
+[20-Oct-2018 21:17:19 UTC] PHP Warning:  include(header.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 1
+[20-Oct-2018 21:17:19 UTC] PHP Warning:  include(header.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 1
+[20-Oct-2018 21:17:19 UTC] PHP Warning:  include(): Failed opening 'header.php' for inclusion (include_path='.:/opt/cpanel/ea-php72/root/usr/share/pear') in /home/gameripp/public_html/tools/mapping.php on line 1
+[20-Oct-2018 21:17:19 UTC] PHP Warning:  include(footer.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 6
+[20-Oct-2018 21:17:19 UTC] PHP Warning:  include(footer.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 6
+[20-Oct-2018 21:17:19 UTC] PHP Warning:  include(): Failed opening 'footer.php' for inclusion (include_path='.:/opt/cpanel/ea-php72/root/usr/share/pear') in /home/gameripp/public_html/tools/mapping.php on line 6
+[25-Oct-2018 14:55:48 UTC] PHP Warning:  include(header.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 1
+[25-Oct-2018 14:55:48 UTC] PHP Warning:  include(header.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 1
+[25-Oct-2018 14:55:48 UTC] PHP Warning:  include(): Failed opening 'header.php' for inclusion (include_path='.:/opt/cpanel/ea-php72/root/usr/share/pear') in /home/gameripp/public_html/tools/mapping.php on line 1
+[25-Oct-2018 14:55:48 UTC] PHP Warning:  include(footer.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 6
+[25-Oct-2018 14:55:48 UTC] PHP Warning:  include(footer.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 6
+[25-Oct-2018 14:55:48 UTC] PHP Warning:  include(): Failed opening 'footer.php' for inclusion (include_path='.:/opt/cpanel/ea-php72/root/usr/share/pear') in /home/gameripp/public_html/tools/mapping.php on line 6
+[26-Oct-2018 03:35:18 UTC] PHP Warning:  include(header.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 1
+[26-Oct-2018 03:35:18 UTC] PHP Warning:  include(header.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 1
+[26-Oct-2018 03:35:18 UTC] PHP Warning:  include(): Failed opening 'header.php' for inclusion (include_path='.:/opt/cpanel/ea-php72/root/usr/share/pear') in /home/gameripp/public_html/tools/mapping.php on line 1
+[26-Oct-2018 03:35:18 UTC] PHP Warning:  include(footer.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 6
+[26-Oct-2018 03:35:18 UTC] PHP Warning:  include(footer.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 6
+[26-Oct-2018 03:35:18 UTC] PHP Warning:  include(): Failed opening 'footer.php' for inclusion (include_path='.:/opt/cpanel/ea-php72/root/usr/share/pear') in /home/gameripp/public_html/tools/mapping.php on line 6
+[27-Oct-2018 01:56:18 UTC] PHP Warning:  include(header.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 1
+[27-Oct-2018 01:56:18 UTC] PHP Warning:  include(header.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 1
+[27-Oct-2018 01:56:18 UTC] PHP Warning:  include(): Failed opening 'header.php' for inclusion (include_path='.:/opt/cpanel/ea-php72/root/usr/share/pear') in /home/gameripp/public_html/tools/mapping.php on line 1
+[27-Oct-2018 01:56:18 UTC] PHP Warning:  include(footer.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 6
+[27-Oct-2018 01:56:18 UTC] PHP Warning:  include(footer.php): failed to open stream: No such file or directory in /home/gameripp/public_html/tools/mapping.php on line 6
+[27-Oct-2018 01:56:18 UTC] PHP Warning:  include(): Failed opening 'footer.php' for inclusion (include_path='.:/opt/cpanel/ea-php72/root/usr/share/pear') in /home/gameripp/public_html/tools/mapping.php on line 6

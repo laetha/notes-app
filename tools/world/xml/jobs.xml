@@ -1,0 +1,543 @@
+<world version="5" auto_indent="NO">
+
+<npcentry><title>Adventurer</title><type>job</type></npcentry>
+<npcentry><title>Adventurer</title><type>job</type></npcentry>
+<npcentry><title>Apprentice</title><type>job</type></npcentry>
+<npcentry><title>Apprentice</title><type>job</type></npcentry>
+<npcentry><title>Apprentice</title><type>job</type></npcentry>
+<npcentry><title>Apprentice</title><type>job</type></npcentry>
+<npcentry><title>Apprentice</title><type>job</type></npcentry>
+<npcentry><title>Apprentice</title><type>job</type></npcentry>
+<npcentry><title>Apprentice</title><type>job</type></npcentry>
+<npcentry><title>Armorsmith</title><type>job</type></npcentry>
+<npcentry><title>Armorsmith</title><type>job</type></npcentry>
+<npcentry><title>Armorsmith</title><type>job</type></npcentry>
+<npcentry><title>Armorsmith</title><type>job</type></npcentry>
+<npcentry><title>Armorsmith</title><type>job</type></npcentry>
+<npcentry><title>Armorsmith</title><type>job</type></npcentry>
+<npcentry><title>Armorsmith</title><type>job</type></npcentry>
+<npcentry><title>Armorsmith</title><type>job</type></npcentry>
+<npcentry><title>Armorsmith</title><type>job</type></npcentry>
+<npcentry><title>Armorsmith</title><type>job</type></npcentry>
+<npcentry><title>Armorsmith</title><type>job</type></npcentry>
+<npcentry><title>Armorsmith</title><type>job</type></npcentry>
+<npcentry><title>Assistant</title><type>job</type></npcentry>
+<npcentry><title>Assistant</title><type>job</type></npcentry>
+<npcentry><title>Assistant</title><type>job</type></npcentry>
+<npcentry><title>Assistant</title><type>job</type></npcentry>
+<npcentry><title>Assistant</title><type>job</type></npcentry>
+<npcentry><title>Assistant</title><type>job</type></npcentry>
+<npcentry><title>Assistant</title><type>job</type></npcentry>
+<npcentry><title>Assistant</title><type>job</type></npcentry>
+<npcentry><title>Baker</title><type>job</type></npcentry>
+<npcentry><title>Baker</title><type>job</type></npcentry>
+<npcentry><title>Baker</title><type>job</type></npcentry>
+<npcentry><title>Baker</title><type>job</type></npcentry>
+<npcentry><title>Baker</title><type>job</type></npcentry>
+<npcentry><title>Baker</title><type>job</type></npcentry>
+<npcentry><title>Baker</title><type>job</type></npcentry>
+<npcentry><title>Baker</title><type>job</type></npcentry>
+<npcentry><title>Baker</title><type>job</type></npcentry>
+<npcentry><title>Baker</title><type>job</type></npcentry>
+<npcentry><title>Baker</title><type>job</type></npcentry>
+<npcentry><title>Baker</title><type>job</type></npcentry>
+<npcentry><title>Baker</title><type>job</type></npcentry>
+<npcentry><title>Barber</title><type>job</type></npcentry>
+<npcentry><title>Bartender</title><type>job</type></npcentry>
+<npcentry><title>Beggar</title><type>job</type></npcentry>
+<npcentry><title>Beggar</title><type>job</type></npcentry>
+<npcentry><title>Beggar</title><type>job</type></npcentry>
+<npcentry><title>Beggar</title><type>job</type></npcentry>
+<npcentry><title>Beggar</title><type>job</type></npcentry>
+<npcentry><title>Beggar</title><type>job</type></npcentry>
+<npcentry><title>Beggar</title><type>job</type></npcentry>
+<npcentry><title>Beggar</title><type>job</type></npcentry>
+<npcentry><title>Beggar</title><type>job</type></npcentry>
+<npcentry><title>Beggar</title><type>job</type></npcentry>
+<npcentry><title>Beggar</title><type>job</type></npcentry>
+<npcentry><title>Beggar</title><type>job</type></npcentry>
+<npcentry><title>Brewer</title><type>job</type></npcentry>
+<npcentry><title>Brewer</title><type>job</type></npcentry>
+<npcentry><title>Brewer</title><type>job</type></npcentry>
+<npcentry><title>Brewer</title><type>job</type></npcentry>
+<npcentry><title>Brewer</title><type>job</type></npcentry>
+<npcentry><title>Brewer</title><type>job</type></npcentry>
+<npcentry><title>Brewer</title><type>job</type></npcentry>
+<npcentry><title>Brewer</title><type>job</type></npcentry>
+<npcentry><title>Brewer</title><type>job</type></npcentry>
+<npcentry><title>Brewer</title><type>job</type></npcentry>
+<npcentry><title>Brewer</title><type>job</type></npcentry>
+<npcentry><title>Brewer</title><type>job</type></npcentry>
+<npcentry><title>Brewer</title><type>job</type></npcentry>
+<npcentry><title>Brewer</title><type>job</type></npcentry>
+<npcentry><title>Butcher</title><type>job</type></npcentry>
+<npcentry><title>Child/Cutpurse</title><type>job</type></npcentry>
+<npcentry><title>Child/Cutpurse</title><type>job</type></npcentry>
+<npcentry><title>Child/Cutpurse</title><type>job</type></npcentry>
+<npcentry><title>Child/Cutpurse</title><type>job</type></npcentry>
+<npcentry><title>Child</title><type>job</type></npcentry>
+<npcentry><title>Child</title><type>job</type></npcentry>
+<npcentry><title>Child</title><type>job</type></npcentry>
+<npcentry><title>Child</title><type>job</type></npcentry>
+<npcentry><title>Child</title><type>job</type></npcentry>
+<npcentry><title>Child</title><type>job</type></npcentry>
+<npcentry><title>Child</title><type>job</type></npcentry>
+<npcentry><title>Child</title><type>job</type></npcentry>
+<npcentry><title>Clerk</title><type>job</type></npcentry>
+<npcentry><title>Clerk</title><type>job</type></npcentry>
+<npcentry><title>Clerk</title><type>job</type></npcentry>
+<npcentry><title>Clerk</title><type>job</type></npcentry>
+<npcentry><title>Clerk</title><type>job</type></npcentry>
+<npcentry><title>Clerk</title><type>job</type></npcentry>
+<npcentry><title>Clerk</title><type>job</type></npcentry>
+<npcentry><title>Cook</title><type>job</type></npcentry>
+<npcentry><title>Cook</title><type>job</type></npcentry>
+<npcentry><title>Cook</title><type>job</type></npcentry>
+<npcentry><title>Cook</title><type>job</type></npcentry>
+<npcentry><title>Cook</title><type>job</type></npcentry>
+<npcentry><title>Cook</title><type>job</type></npcentry>
+<npcentry><title>Cook</title><type>job</type></npcentry>
+<npcentry><title>Cook</title><type>job</type></npcentry>
+<npcentry><title>Cook</title><type>job</type></npcentry>
+<npcentry><title>Cook</title><type>job</type></npcentry>
+<npcentry><title>Cook</title><type>job</type></npcentry>
+<npcentry><title>Cook</title><type>job</type></npcentry>
+<npcentry><title>Cook</title><type>job</type></npcentry>
+<npcentry><title>Cook</title><type>job</type></npcentry>
+<npcentry><title>Cook</title><type>job</type></npcentry>
+<npcentry><title>Cook</title><type>job</type></npcentry>
+<npcentry><title>Cook</title><type>job</type></npcentry>
+<npcentry><title>Cook</title><type>job</type></npcentry>
+<npcentry><title>Cook</title><type>job</type></npcentry>
+<npcentry><title>Cook</title><type>job</type></npcentry>
+<npcentry><title>Cook</title><type>job</type></npcentry>
+<npcentry><title>Cook</title><type>job</type></npcentry>
+<npcentry><title>Cook</title><type>job</type></npcentry>
+<npcentry><title>Cooper</title><type>job</type></npcentry>
+<npcentry><title>Cooper</title><type>job</type></npcentry>
+<npcentry><title>Cooper</title><type>job</type></npcentry>
+<npcentry><title>Cutpurse</title><type>job</type></npcentry>
+<npcentry><title>Cutpurse</title><type>job</type></npcentry>
+<npcentry><title>Cutpurse</title><type>job</type></npcentry>
+<npcentry><title>Cutpurse</title><type>job</type></npcentry>
+<npcentry><title>Doctor</title><type>job</type></npcentry>
+<npcentry><title>Explorer</title><type>job</type></npcentry>
+<npcentry><title>Explorer</title><type>job</type></npcentry>
+<npcentry><title>Explorer</title><type>job</type></npcentry>
+<npcentry><title>Explorer</title><type>job</type></npcentry>
+<npcentry><title>Explorer</title><type>job</type></npcentry>
+<npcentry><title>Explorer</title><type>job</type></npcentry>
+<npcentry><title>Explorer</title><type>job</type></npcentry>
+<npcentry><title>Explorer</title><type>job</type></npcentry>
+<npcentry><title>Farmer</title><type>job</type></npcentry>
+<npcentry><title>farmer</title><type>job</type></npcentry>
+<npcentry><title>Farmer</title><type>job</type></npcentry>
+<npcentry><title>Farmer</title><type>job</type></npcentry>
+<npcentry><title>Farmer</title><type>job</type></npcentry>
+<npcentry><title>farmer</title><type>job</type></npcentry>
+<npcentry><title>Farmer</title><type>job</type></npcentry>
+<npcentry><title>Farmer</title><type>job</type></npcentry>
+<npcentry><title>Farmer</title><type>job</type></npcentry>
+<npcentry><title>Farmer</title><type>job</type></npcentry>
+<npcentry><title>farmer</title><type>job</type></npcentry>
+<npcentry><title>Farmer</title><type>job</type></npcentry>
+<npcentry><title>Farmer</title><type>job</type></npcentry>
+<npcentry><title>Farmer</title><type>job</type></npcentry>
+<npcentry><title>farmer</title><type>job</type></npcentry>
+<npcentry><title>Farmer</title><type>job</type></npcentry>
+<npcentry><title>Farmer</title><type>job</type></npcentry>
+<npcentry><title>Farmer</title><type>job</type></npcentry>
+<npcentry><title>Farmer</title><type>job</type></npcentry>
+<npcentry><title>Farmer</title><type>job</type></npcentry>
+<npcentry><title>Farmer</title><type>job</type></npcentry>
+<npcentry><title>farmer</title><type>job</type></npcentry>
+<npcentry><title>farmer</title><type>job</type></npcentry>
+<npcentry><title>Farmer</title><type>job</type></npcentry>
+<npcentry><title>Farmer</title><type>job</type></npcentry>
+<npcentry><title>farmer</title><type>job</type></npcentry>
+<npcentry><title>Farmer</title><type>job</type></npcentry>
+<npcentry><title>Farmer</title><type>job</type></npcentry>
+<npcentry><title>Farmer</title><type>job</type></npcentry>
+<npcentry><title>Farmer</title><type>job</type></npcentry>
+<npcentry><title>Farmer</title><type>job</type></npcentry>
+<npcentry><title>Farmer</title><type>job</type></npcentry>
+<npcentry><title>Farmer</title><type>job</type></npcentry>
+<npcentry><title>Farmer</title><type>job</type></npcentry>
+<npcentry><title>Farmer</title><type>job</type></npcentry>
+<npcentry><title>Farmer</title><type>job</type></npcentry>
+<npcentry><title>Farmer</title><type>job</type></npcentry>
+<npcentry><title>Farmer</title><type>job</type></npcentry>
+<npcentry><title>Farmer</title><type>job</type></npcentry>
+<npcentry><title>Farmer</title><type>job</type></npcentry>
+<npcentry><title>Farmer</title><type>job</type></npcentry>
+<npcentry><title>Farmer</title><type>job</type></npcentry>
+<npcentry><title>Farmer</title><type>job</type></npcentry>
+<npcentry><title>Farmer</title><type>job</type></npcentry>
+<npcentry><title>Farmer</title><type>job</type></npcentry>
+<npcentry><title>Farmer</title><type>job</type></npcentry>
+<npcentry><title>Farmer</title><type>job</type></npcentry>
+<npcentry><title>farmer</title><type>job</type></npcentry>
+<npcentry><title>Farmer</title><type>job</type></npcentry>
+<npcentry><title>Farmer</title><type>job</type></npcentry>
+<npcentry><title>Farmer</title><type>job</type></npcentry>
+<npcentry><title>Farmer</title><type>job</type></npcentry>
+<npcentry><title>Farmer</title><type>job</type></npcentry>
+<npcentry><title>Farmer</title><type>job</type></npcentry>
+<npcentry><title>Farmer</title><type>job</type></npcentry>
+<npcentry><title>Farmer</title><type>job</type></npcentry>
+<npcentry><title>Farmer</title><type>job</type></npcentry>
+<npcentry><title>Farmer</title><type>job</type></npcentry>
+<npcentry><title>Farmer</title><type>job</type></npcentry>
+<npcentry><title>Farmer</title><type>job</type></npcentry>
+<npcentry><title>Farmer</title><type>job</type></npcentry>
+<npcentry><title>farmer</title><type>job</type></npcentry>
+<npcentry><title>Farmer</title><type>job</type></npcentry>
+<npcentry><title>Farmer</title><type>job</type></npcentry>
+<npcentry><title>Farmer</title><type>job</type></npcentry>
+<npcentry><title>Farmer</title><type>job</type></npcentry>
+<npcentry><title>Farmer</title><type>job</type></npcentry>
+<npcentry><title>Farmer</title><type>job</type></npcentry>
+<npcentry><title>Farmer</title><type>job</type></npcentry>
+<npcentry><title>Farmer</title><type>job</type></npcentry>
+<npcentry><title>Farmer</title><type>job</type></npcentry>
+<npcentry><title>Farmer</title><type>job</type></npcentry>
+<npcentry><title>Farmer</title><type>job</type></npcentry>
+<npcentry><title>farmer</title><type>job</type></npcentry>
+<npcentry><title>Farmer</title><type>job</type></npcentry>
+<npcentry><title>farmer</title><type>job</type></npcentry>
+<npcentry><title>Farmer/Guardsman</title><type>job</type></npcentry>
+<npcentry><title>Farmer/Guardsman</title><type>job</type></npcentry>
+<npcentry><title>Farmer/Guardsman</title><type>job</type></npcentry>
+<npcentry><title>Farmer/Guardsman</title><type>job</type></npcentry>
+<npcentry><title>Farmer/Guardsman</title><type>job</type></npcentry>
+<npcentry><title>Farmer/Off-Duty Mercenary</title><type>job</type></npcentry>
+<npcentry><title>Farmer/Retired Soldier</title><type>job</type></npcentry>
+<npcentry><title>Farmer/Unemployed Mercenary</title><type>job</type></npcentry>
+<npcentry><title>Farmer/Unemployed Mercenary</title><type>job</type></npcentry>
+<npcentry><title>Fisherman</title><type>job</type></npcentry>
+<npcentry><title>Fisherman</title><type>job</type></npcentry>
+<npcentry><title>Fisherman</title><type>job</type></npcentry>
+<npcentry><title>Fisherman</title><type>job</type></npcentry>
+<npcentry><title>Fisherman</title><type>job</type></npcentry>
+<npcentry><title>Fisherman</title><type>job</type></npcentry>
+<npcentry><title>Fisherman</title><type>job</type></npcentry>
+<npcentry><title>Fisherman</title><type>job</type></npcentry>
+<npcentry><title>Fisherman</title><type>job</type></npcentry>
+<npcentry><title>Fisherman</title><type>job</type></npcentry>
+<npcentry><title>Fisherman</title><type>job</type></npcentry>
+<npcentry><title>Fisherman</title><type>job</type></npcentry>
+<npcentry><title>Fisherman</title><type>job</type></npcentry>
+<npcentry><title>Fisherman</title><type>job</type></npcentry>
+<npcentry><title>Fisherman</title><type>job</type></npcentry>
+<npcentry><title>Fisherman</title><type>job</type></npcentry>
+<npcentry><title>Fisherman</title><type>job</type></npcentry>
+<npcentry><title>Fisherman</title><type>job</type></npcentry>
+<npcentry><title>Fisherman</title><type>job</type></npcentry>
+<npcentry><title>Fisherman</title><type>job</type></npcentry>
+<npcentry><title>Fisherman</title><type>job</type></npcentry>
+<npcentry><title>Fisherman</title><type>job</type></npcentry>
+<npcentry><title>Fisherman</title><type>job</type></npcentry>
+<npcentry><title>Fisherman</title><type>job</type></npcentry>
+<npcentry><title>Fisherman</title><type>job</type></npcentry>
+<npcentry><title>Fisherman</title><type>job</type></npcentry>
+<npcentry><title>Fisherman</title><type>job</type></npcentry>
+<npcentry><title>Fisherman</title><type>job</type></npcentry>
+<npcentry><title>Fisherman</title><type>job</type></npcentry>
+<npcentry><title>Fisherman</title><type>job</type></npcentry>
+<npcentry><title>Furrier</title><type>job</type></npcentry>
+<npcentry><title>Furrier</title><type>job</type></npcentry>
+<npcentry><title>Furrier</title><type>job</type></npcentry>
+<npcentry><title>General Blacksmith</title><type>job</type></npcentry>
+<npcentry><title>General Blacksmith</title><type>job</type></npcentry>
+<npcentry><title>General Blacksmith</title><type>job</type></npcentry>
+<npcentry><title>General Blacksmith</title><type>job</type></npcentry>
+<npcentry><title>General Blacksmith</title><type>job</type></npcentry>
+<npcentry><title>General Blacksmith</title><type>job</type></npcentry>
+<npcentry><title>General Blacksmith</title><type>job</type></npcentry>
+<npcentry><title>General Blacksmith</title><type>job</type></npcentry>
+<npcentry><title>General Blacksmith</title><type>job</type></npcentry>
+<npcentry><title>General Blacksmith</title><type>job</type></npcentry>
+<npcentry><title>General Blacksmith</title><type>job</type></npcentry>
+<npcentry><title>General Blacksmith</title><type>job</type></npcentry>
+<npcentry><title>General Blacksmith</title><type>job</type></npcentry>
+<npcentry><title>General Blacksmith</title><type>job</type></npcentry>
+<npcentry><title>General Blacksmith</title><type>job</type></npcentry>
+<npcentry><title>Guardsman</title><type>job</type></npcentry>
+<npcentry><title>Guardsman</title><type>job</type></npcentry>
+<npcentry><title>Guardsman</title><type>job</type></npcentry>
+<npcentry><title>Guardsman</title><type>job</type></npcentry>
+<npcentry><title>Hired Hand/Adventurer</title><type>job</type></npcentry>
+<npcentry><title>Hired Hand/Adventurer</title><type>job</type></npcentry>
+<npcentry><title>Hired Hand/Adventurer</title><type>job</type></npcentry>
+<npcentry><title>Hired Hand/Adventurer</title><type>job</type></npcentry>
+<npcentry><title>Hired Hand/Adventurer</title><type>job</type></npcentry>
+<npcentry><title>Hired Hand/Adventurer</title><type>job</type></npcentry>
+<npcentry><title>Hired Hand/Cutpurse</title><type>job</type></npcentry>
+<npcentry><title>Hired Hand/Cutpurse</title><type>job</type></npcentry>
+<npcentry><title>Hired Hand/Explorer</title><type>job</type></npcentry>
+<npcentry><title>Hired Hand/Explorer</title><type>job</type></npcentry>
+<npcentry><title>Hired Hand/Explorer</title><type>job</type></npcentry>
+<npcentry><title>Hired Hand/Explorer</title><type>job</type></npcentry>
+<npcentry><title>Hired Hand/Explorer</title><type>job</type></npcentry>
+<npcentry><title>Hired Hand/Explorer</title><type>job</type></npcentry>
+<npcentry><title>Hired Hand/Explorer</title><type>job</type></npcentry>
+<npcentry><title>Hired Hand/Guardsman</title><type>job</type></npcentry>
+<npcentry><title>Hired Hand/Pirate</title><type>job</type></npcentry>
+<npcentry><title>Hired Hand/Retired Soldier</title><type>job</type></npcentry>
+<npcentry><title>Hired Hand/Retired Soldier</title><type>job</type></npcentry>
+<npcentry><title>Hired Hand/Retired Soldier</title><type>job</type></npcentry>
+<npcentry><title>Hired Hand/Unemployed Mercenary</title><type>job</type></npcentry>
+<npcentry><title>Hired Hand/Unemployed Mercenary</title><type>job</type></npcentry>
+<npcentry><title>Injury Discharged Soldier</title><type>job</type></npcentry>
+<npcentry><title>Injury Discharged Soldier</title><type>job</type></npcentry>
+<npcentry><title>Injury Discharged Soldier</title><type>job</type></npcentry>
+<npcentry><title>Injury Discharged Soldier</title><type>job</type></npcentry>
+<npcentry><title>Inkeeper</title><type>job</type></npcentry>
+<npcentry><title>Laborer</title><type>job</type></npcentry>
+<npcentry><title>Laborer</title><type>job</type></npcentry>
+<npcentry><title>Laborer</title><type>job</type></npcentry>
+<npcentry><title>Laborer</title><type>job</type></npcentry>
+<npcentry><title>Laborer</title><type>job</type></npcentry>
+<npcentry><title>Laborer</title><type>job</type></npcentry>
+<npcentry><title>Laborer</title><type>job</type></npcentry>
+<npcentry><title>Laborer</title><type>job</type></npcentry>
+<npcentry><title>Laborer</title><type>job</type></npcentry>
+<npcentry><title>Laborer</title><type>job</type></npcentry>
+<npcentry><title>Laborer</title><type>job</type></npcentry>
+<npcentry><title>Laborer</title><type>job</type></npcentry>
+<npcentry><title>Laborer</title><type>job</type></npcentry>
+<npcentry><title>Laborer</title><type>job</type></npcentry>
+<npcentry><title>Laborer</title><type>job</type></npcentry>
+<npcentry><title>Laborer</title><type>job</type></npcentry>
+<npcentry><title>Laborer</title><type>job</type></npcentry>
+<npcentry><title>Laborer</title><type>job</type></npcentry>
+<npcentry><title>Laborer</title><type>job</type></npcentry>
+<npcentry><title>Laborer</title><type>job</type></npcentry>
+<npcentry><title>Laborer</title><type>job</type></npcentry>
+<npcentry><title>Laborer</title><type>job</type></npcentry>
+<npcentry><title>Laborer</title><type>job</type></npcentry>
+<npcentry><title>Laborer</title><type>job</type></npcentry>
+<npcentry><title>Laborer</title><type>job</type></npcentry>
+<npcentry><title>Logger</title><type>job</type></npcentry>
+<npcentry><title>Logger</title><type>job</type></npcentry>
+<npcentry><title>Logger</title><type>job</type></npcentry>
+<npcentry><title>Logger</title><type>job</type></npcentry>
+<npcentry><title>Logger</title><type>job</type></npcentry>
+<npcentry><title>Logger</title><type>job</type></npcentry>
+<npcentry><title>Logger</title><type>job</type></npcentry>
+<npcentry><title>Logger</title><type>job</type></npcentry>
+<npcentry><title>Logger</title><type>job</type></npcentry>
+<npcentry><title>Logger</title><type>job</type></npcentry>
+<npcentry><title>Logger</title><type>job</type></npcentry>
+<npcentry><title>Logger</title><type>job</type></npcentry>
+<npcentry><title>Maid</title><type>job</type></npcentry>
+<npcentry><title>Maid</title><type>job</type></npcentry>
+<npcentry><title>Maid</title><type>job</type></npcentry>
+<npcentry><title>Maid</title><type>job</type></npcentry>
+<npcentry><title>Maid</title><type>job</type></npcentry>
+<npcentry><title>Maid</title><type>job</type></npcentry>
+<npcentry><title>Maid</title><type>job</type></npcentry>
+<npcentry><title>Maid</title><type>job</type></npcentry>
+<npcentry><title>Maid</title><type>job</type></npcentry>
+<npcentry><title>Maid</title><type>job</type></npcentry>
+<npcentry><title>Maid</title><type>job</type></npcentry>
+<npcentry><title>Maid</title><type>job</type></npcentry>
+<npcentry><title>Maid</title><type>job</type></npcentry>
+<npcentry><title>Maid</title><type>job</type></npcentry>
+<npcentry><title>Maid</title><type>job</type></npcentry>
+<npcentry><title>Maid</title><type>job</type></npcentry>
+<npcentry><title>Maid</title><type>job</type></npcentry>
+<npcentry><title>Maid</title><type>job</type></npcentry>
+<npcentry><title>Merchant</title><type>job</type></npcentry>
+<npcentry><title>Merchant</title><type>job</type></npcentry>
+<npcentry><title>Merchant</title><type>job</type></npcentry>
+<npcentry><title>Merchant</title><type>job</type></npcentry>
+<npcentry><title>Merchant</title><type>job</type></npcentry>
+<npcentry><title>Merchant</title><type>job</type></npcentry>
+<npcentry><title>Merchant</title><type>job</type></npcentry>
+<npcentry><title>Merchant</title><type>job</type></npcentry>
+<npcentry><title>Merchant</title><type>job</type></npcentry>
+<npcentry><title>Merchant</title><type>job</type></npcentry>
+<npcentry><title>Merchant</title><type>job</type></npcentry>
+<npcentry><title>Merchant</title><type>job</type></npcentry>
+<npcentry><title>Miller</title><type>job</type></npcentry>
+<npcentry><title>Miller</title><type>job</type></npcentry>
+<npcentry><title>Miller</title><type>job</type></npcentry>
+<npcentry><title>Miller</title><type>job</type></npcentry>
+<npcentry><title>Miller</title><type>job</type></npcentry>
+<npcentry><title>Miller</title><type>job</type></npcentry>
+<npcentry><title>Orphanage Master</title><type>job</type></npcentry>
+<npcentry><title>Owner</title><type>job</type></npcentry>
+<npcentry><title>Owner</title><type>job</type></npcentry>
+<npcentry><title>Owner</title><type>job</type></npcentry>
+<npcentry><title>Owner</title><type>job</type></npcentry>
+<npcentry><title>Owner</title><type>job</type></npcentry>
+<npcentry><title>Pirate</title><type>job</type></npcentry>
+<npcentry><title>Pirate</title><type>job</type></npcentry>
+<npcentry><title>Pirate</title><type>job</type></npcentry>
+<npcentry><title>Pirate</title><type>job</type></npcentry>
+<npcentry><title>Pirate</title><type>job</type></npcentry>
+<npcentry><title>Pirate</title><type>job</type></npcentry>
+<npcentry><title>Private Guard</title><type>job</type></npcentry>
+<npcentry><title>Private Guard</title><type>job</type></npcentry>
+<npcentry><title>Private Guard</title><type>job</type></npcentry>
+<npcentry><title>Private Guard</title><type>job</type></npcentry>
+<npcentry><title>Private Guard</title><type>job</type></npcentry>
+<npcentry><title>Private Guard</title><type>job</type></npcentry>
+<npcentry><title>Private Guard</title><type>job</type></npcentry>
+<npcentry><title>Private Guard</title><type>job</type></npcentry>
+<npcentry><title>Private Guard</title><type>job</type></npcentry>
+<npcentry><title>Private Guard</title><type>job</type></npcentry>
+<npcentry><title>Retired Soldier</title><type>job</type></npcentry>
+<npcentry><title>Retired Soldier</title><type>job</type></npcentry>
+<npcentry><title>Retired Soldier</title><type>job</type></npcentry>
+<npcentry><title>Retired Soldier</title><type>job</type></npcentry>
+<npcentry><title>Retired Soldier</title><type>job</type></npcentry>
+<npcentry><title>Retired Soldier</title><type>job</type></npcentry>
+<npcentry><title>Servers</title><type>job</type></npcentry>
+<npcentry><title>Tailor</title><type>job</type></npcentry>
+<npcentry><title>Tailor</title><type>job</type></npcentry>
+<npcentry><title>Tailor</title><type>job</type></npcentry>
+<npcentry><title>Tailor</title><type>job</type></npcentry>
+<npcentry><title>Tailor</title><type>job</type></npcentry>
+<npcentry><title>Tailor</title><type>job</type></npcentry>
+<npcentry><title>Tailor</title><type>job</type></npcentry>
+<npcentry><title>Tailor</title><type>job</type></npcentry>
+<npcentry><title>Tailor</title><type>job</type></npcentry>
+<npcentry><title>Tailor</title><type>job</type></npcentry>
+<npcentry><title>Tailor</title><type>job</type></npcentry>
+<npcentry><title>Tailor</title><type>job</type></npcentry>
+<npcentry><title>Tailor</title><type>job</type></npcentry>
+<npcentry><title>Teen/Cutpurse</title><type>job</type></npcentry>
+<npcentry><title>Teen/Explorer</title><type>job</type></npcentry>
+<npcentry><title>Teen/Explorer</title><type>job</type></npcentry>
+<npcentry><title>Teen/Explorer</title><type>job</type></npcentry>
+<npcentry><title>Teen/Guardsman</title><type>job</type></npcentry>
+<npcentry><title>Teen/Guardsman</title><type>job</type></npcentry>
+<npcentry><title>Teen/Off-Duty Mercenary</title><type>job</type></npcentry>
+<npcentry><title>Teen/Off-Duty Mercenary</title><type>job</type></npcentry>
+<npcentry><title>Teen/Off-Duty Mercenary</title><type>job</type></npcentry>
+<npcentry><title>Teen/Retired Soldier</title><type>job</type></npcentry>
+<npcentry><title>Teen/Retired Soldier</title><type>job</type></npcentry>
+<npcentry><title>Teen/Unemployed Mercenary</title><type>job</type></npcentry>
+<npcentry><title>Town Watch Member</title><type>job</type></npcentry>
+<npcentry><title>Town Watch Member</title><type>job</type></npcentry>
+<npcentry><title>Town Watch Member</title><type>job</type></npcentry>
+<npcentry><title>Town Watch Member</title><type>job</type></npcentry>
+<npcentry><title>Town Watch Member</title><type>job</type></npcentry>
+<npcentry><title>Town Watch Member</title><type>job</type></npcentry>
+<npcentry><title>Town Watch Member</title><type>job</type></npcentry>
+<npcentry><title>unemployed</title><type>job</type></npcentry>
+<npcentry><title>unemployed</title><type>job</type></npcentry>
+<npcentry><title>Unemployed</title><type>job</type></npcentry>
+<npcentry><title>Unemployed</title><type>job</type></npcentry>
+<npcentry><title>Unemployed</title><type>job</type></npcentry>
+<npcentry><title>Unemployed</title><type>job</type></npcentry>
+<npcentry><title>Unemployed Mercenary</title><type>job</type></npcentry>
+<npcentry><title>Weaponsmith</title><type>job</type></npcentry>
+<npcentry><title>Weaponsmith</title><type>job</type></npcentry>
+<npcentry><title>Weaponsmith</title><type>job</type></npcentry>
+<npcentry><title>Weaponsmith</title><type>job</type></npcentry>
+<npcentry><title>Weaponsmith</title><type>job</type></npcentry>
+<npcentry><title>Weaponsmith</title><type>job</type></npcentry>
+<npcentry><title>Weaponsmith</title><type>job</type></npcentry>
+<npcentry><title>Weaponsmith</title><type>job</type></npcentry>
+<npcentry><title>Weaponsmith</title><type>job</type></npcentry>
+<npcentry><title>Weaponsmith</title><type>job</type></npcentry>
+<npcentry><title>Weaponsmith</title><type>job</type></npcentry>
+<npcentry><title>Weaponsmith</title><type>job</type></npcentry>
+<npcentry><title>Weaponsmith</title><type>job</type></npcentry>
+<npcentry><title>Weaponsmith</title><type>job</type></npcentry>
+<npcentry><title>Weaponsmith</title><type>job</type></npcentry>
+<npcentry><title>Weaponsmith</title><type>job</type></npcentry>
+<npcentry><title>Weaponsmith</title><type>job</type></npcentry>
+<npcentry><title>Weaponsmith</title><type>job</type></npcentry>
+<npcentry><title>Worker</title><type>job</type></npcentry>
+<npcentry><title>Worker</title><type>job</type></npcentry>
+<npcentry><title>Worker</title><type>job</type></npcentry>
+<npcentry><title>Worker</title><type>job</type></npcentry>
+<npcentry><title>Worker</title><type>job</type></npcentry>
+<npcentry><title>Worker</title><type>job</type></npcentry>
+<npcentry><title>Worker</title><type>job</type></npcentry>
+<npcentry><title>Worker</title><type>job</type></npcentry>
+<npcentry><title>Worker</title><type>job</type></npcentry>
+<npcentry><title>Worker</title><type>job</type></npcentry>
+<npcentry><title>Worker</title><type>job</type></npcentry>
+<npcentry><title>Worker</title><type>job</type></npcentry>
+<npcentry><title>Worker</title><type>job</type></npcentry>
+<npcentry><title>Worker</title><type>job</type></npcentry>
+<npcentry><title>Worker</title><type>job</type></npcentry>
+<npcentry><title>Worker</title><type>job</type></npcentry>
+<npcentry><title>Worker</title><type>job</type></npcentry>
+<npcentry><title>Worker</title><type>job</type></npcentry>
+<npcentry><title>Worker</title><type>job</type></npcentry>
+<npcentry><title>Worker</title><type>job</type></npcentry>
+<npcentry><title>Worker</title><type>job</type></npcentry>
+<npcentry><title>Worker</title><type>job</type></npcentry>
+<npcentry><title>Worker</title><type>job</type></npcentry>
+<npcentry><title>Worker</title><type>job</type></npcentry>
+<npcentry><title>Worker</title><type>job</type></npcentry>
+<npcentry><title>Worker</title><type>job</type></npcentry>
+<npcentry><title>Worker</title><type>job</type></npcentry>
+<npcentry><title>Worker</title><type>job</type></npcentry>
+<npcentry><title>Worker</title><type>job</type></npcentry>
+<npcentry><title>Worker</title><type>job</type></npcentry>
+<npcentry><title>Worker</title><type>job</type></npcentry>
+<npcentry><title>Mercer</title><type>job</type></npcentry>
+<npcentry><title>Child</title><type>job</type></npcentry>
+<npcentry><title>Child</title><type>job</type></npcentry>
+<npcentry><title>Child</title><type>job</type></npcentry>
+<npcentry><title>Child</title><type>job</type></npcentry>
+<npcentry><title>Child</title><type>job</type></npcentry>
+<npcentry><title>Child</title><type>job</type></npcentry>
+<npcentry><title>Child</title><type>job</type></npcentry>
+<npcentry><title>Child</title><type>job</type></npcentry>
+<npcentry><title>Child</title><type>job</type></npcentry>
+<npcentry><title>Child</title><type>job</type></npcentry>
+<npcentry><title>Child</title><type>job</type></npcentry>
+<npcentry><title>Child</title><type>job</type></npcentry>
+<npcentry><title>Child</title><type>job</type></npcentry>
+<npcentry><title>Child</title><type>job</type></npcentry>
+<npcentry><title>Child</title><type>job</type></npcentry>
+<npcentry><title>Child</title><type>job</type></npcentry>
+<npcentry><title>Child</title><type>job</type></npcentry>
+<npcentry><title>Child</title><type>job</type></npcentry>
+<npcentry><title>Child</title><type>job</type></npcentry>
+<npcentry><title>Child</title><type>job</type></npcentry>
+<npcentry><title>Child</title><type>job</type></npcentry>
+<npcentry><title>Child</title><type>job</type></npcentry>
+<npcentry><title>Guild 1 Member</title><type>job</type></npcentry>
+<npcentry><title>Guild 1 Member</title><type>job</type></npcentry>
+<npcentry><title>Guild 1 Member</title><type>job</type></npcentry>
+<npcentry><title>Guild 1 Member</title><type>job</type></npcentry>
+<npcentry><title>Guild 1 Member</title><type>job</type></npcentry>
+<npcentry><title>Guild 1 Member</title><type>job</type></npcentry>
+<npcentry><title>Guild 2 Member</title><type>job</type></npcentry>
+<npcentry><title>Guild 2 Member</title><type>job</type></npcentry>
+<npcentry><title>Guild 2 Member</title><type>job</type></npcentry>
+<npcentry><title>Guild 2 Member</title><type>job</type></npcentry>
+<npcentry><title>Guild 2 Member</title><type>job</type></npcentry>
+<npcentry><title>Guild 2 Member</title><type>job</type></npcentry>
+<npcentry><title>Guild 3 Member</title><type>job</type></npcentry>
+<npcentry><title>Guild 3 Member</title><type>job</type></npcentry>
+<npcentry><title>Guild 3 Member</title><type>job</type></npcentry>
+<npcentry><title>Guild 3 Member</title><type>job</type></npcentry>
+<npcentry><title>Guild 3 Member</title><type>job</type></npcentry>
+<npcentry><title>Guild 3 Member</title><type>job</type></npcentry>
+<npcentry><title>Guild 3 Member</title><type>job</type></npcentry>
+<npcentry><title>Guild 4 Member</title><type>job</type></npcentry>
+<npcentry><title>Guild 4 Member</title><type>job</type></npcentry>
+<npcentry><title>Guild 4 Member</title><type>job</type></npcentry>
+<npcentry><title>Guild 4 Member</title><type>job</type></npcentry>
+<npcentry><title>Guild 4 Member</title><type>job</type></npcentry>
+<npcentry><title>Guild 4 Member</title><type>job</type></npcentry>
+<npcentry><title>Guild 4 Member</title><type>job</type></npcentry>
+<npcentry><title>Guild 4 Member</title><type>job</type></npcentry>
+<npcentry><title>Guild 5 Member</title><type>job</type></npcentry>
+<npcentry><title>Guild 5 Member</title><type>job</type></npcentry>
+<npcentry><title>Guild 5 Member</title><type>job</type></npcentry>
+<npcentry><title>Guild 5 Member</title><type>job</type></npcentry>
+<npcentry><title>Guild 5 Member</title><type>job</type></npcentry>
+<npcentry><title>Guild 5 Member</title><type>job</type></npcentry>
+<npcentry><title>Guild 5 Member</title><type>job</type></npcentry>
+</world>
