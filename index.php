@@ -104,7 +104,38 @@ function leftpane(){
     type: 'GET',
     success: function(data)
     {
-      $('#toc').html(data);
+     var newData = JSON.parse(data);
+     //var newHTML = '';
+     for (let i = 0; i < newData.length; i = i + 2){
+      var j = i + 1;
+      if (!newData[i].includes('-')){
+      $('#toc').append('<div id="' + newData[i] + 'head" onClick=showpanel(' + newData[i] + ')>' + '<div style="display:inline-block;" name="right-arrow" id="' + newData[i] + 'nav"></div>' + newData[j] + '</div>'
+      + '<div class="nonav" id="' + newData[i] + 'children"></div>');
+     }
+      else {
+        var lineage = newData[i].split("-");
+        var currentID = lineage[lineage.length -1];
+        var parent = lineage[lineage.length - 2];
+        var parentDIV = '#' + parent + 'children';
+        var parentHead = '#' + parent + 'head';
+        var indent = '';
+        var navigation = '';
+        for (let x = 1; x <= lineage.length; x++){
+          indent += '&nbsp;&nbsp;';
+        }
+        if (lineage.length !== 1){
+          $('#' + parent + 'nav').html('<svg onClick=shownav(' + parent + ') xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right-short" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8"/></svg>');
+          $('#' + parent + 'head').css('margin-left','-15px');
+          //$('#' + parent + 'nav').css('display:inline-block; margin-left:-15px; padding-right: 2px;');
+        }
+        $(parentDIV).append('<div id="' + currentID + 'head" onClick=showpanel(' + currentID + ')>' + indent + '<div style="display:inline-block;" name="right-arrow" id="' + currentID + 'nav"></div>' + newData[j] + '</div>'
+      + '<div class="nonav" id="' + currentID + 'children"></div>');
+      }
+  //<div id="'.$row['id'].'children"></div>');
+     }
+     //$('#toc').html(newHTML);
+
+
     },
     error: function (jqXHR, status, errorThrown)
     {
@@ -114,7 +145,19 @@ function leftpane(){
   });
 }
 
-
+function shownav(value){
+  var navID = '#' + value + 'children';
+  var navNav = '#' + value + 'nav';
+  $(navID).slideToggle("fast");
+  if ($(navNav).attr('name') == 'right-arrow'){
+    $(navNav).html('<svg onClick=shownav('+ value +') xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-down-short" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8 4a.5.5 0 0 1 .5.5v5.793l2.146-2.147a.5.5 0 0 1 .708.708l-3 3a.5.5 0 0 1-.708 0l-3-3a.5.5 0 1 1 .708-.708L7.5 10.293V4.5A.5.5 0 0 1 8 4"/></svg>');
+    $(navNav).attr('name','down-arrow');
+  }
+  else {
+    $(navNav).html('<svg onClick=shownav(' + value + ') xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right-short" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8"/></svg>');
+    $(navNav).attr('name','right-arrow');
+  }
+}
 
 function showpanel(value){
 
