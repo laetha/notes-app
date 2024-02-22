@@ -28,10 +28,10 @@ import { SelectAll } from '@ckeditor/ckeditor5-select-all';
 import { Table, TableToolbar } from '@ckeditor/ckeditor5-table';
 import { TextTransformation } from '@ckeditor/ckeditor5-typing';
 import { Undo } from '@ckeditor/ckeditor5-undo';
-import { Base64UploadAdapter } from '@ckeditor/ckeditor5-upload';
+import { SimpleUploadAdapter } from '@ckeditor/ckeditor5-upload';
 import { WordCount } from '@ckeditor/ckeditor5-word-count';
 declare class Editor extends ClassicEditor {
-    static builtinPlugins: (typeof Alignment | typeof AutoLink | typeof Autoformat | typeof Autosave | typeof Base64UploadAdapter | typeof BlockQuote | typeof Bold | typeof Code | typeof CodeBlock | typeof Essentials | typeof FindAndReplace | typeof FontBackgroundColor | typeof FontColor | typeof FontFamily | typeof FontSize | typeof Heading | typeof HorizontalLine | typeof Image | typeof ImageCaption | typeof ImageInsert | typeof ImageResize | typeof ImageStyle | typeof ImageToolbar | typeof ImageUpload | typeof Indent | typeof IndentBlock | typeof Italic | typeof Link | typeof List | typeof Markdown | typeof MediaEmbed | typeof Mention | typeof Paragraph | typeof PasteFromOffice | typeof SelectAll | typeof Strikethrough | typeof Table | typeof TableToolbar | typeof TextTransformation | typeof Title | typeof TodoList | typeof Underline | typeof Undo | typeof WordCount)[];
+    static builtinPlugins: (typeof Alignment | typeof AutoLink | typeof Autoformat | typeof Autosave | typeof BlockQuote | typeof Bold | typeof Code | typeof CodeBlock | typeof Essentials | typeof FindAndReplace | typeof FontBackgroundColor | typeof FontColor | typeof FontFamily | typeof FontSize | typeof Heading | typeof HorizontalLine | typeof Image | typeof ImageCaption | typeof ImageInsert | typeof ImageResize | typeof ImageStyle | typeof ImageToolbar | typeof ImageUpload | typeof Indent | typeof IndentBlock | typeof Italic | typeof Link | typeof List | typeof Markdown | typeof MediaEmbed | typeof Mention | typeof Paragraph | typeof PasteFromOffice | typeof SelectAll | typeof SimpleUploadAdapter | typeof Strikethrough | typeof Table | typeof TableToolbar | typeof TextTransformation | typeof Title | typeof TodoList | typeof Underline | typeof Undo | typeof WordCount)[];
     static defaultConfig: EditorConfig;
 }
 export default Editor;

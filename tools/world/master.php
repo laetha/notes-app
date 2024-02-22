@@ -417,7 +417,7 @@ $("#notebody").keyup(function(e) {
     $('#mapdiv').addClass('nonav');
   }
 
-})
+});
 
 $('#mapframe').on('load', function() {
   var iframe = $(this).contents();

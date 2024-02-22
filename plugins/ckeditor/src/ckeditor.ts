@@ -38,7 +38,8 @@ import { SelectAll } from '@ckeditor/ckeditor5-select-all';
 import { Table, TableToolbar } from '@ckeditor/ckeditor5-table';
 import { TextTransformation } from '@ckeditor/ckeditor5-typing';
 import { Undo } from '@ckeditor/ckeditor5-undo';
-import { Base64UploadAdapter } from '@ckeditor/ckeditor5-upload';
+//import { Base64UploadAdapter } from '@ckeditor/ckeditor5-upload';
+import { SimpleUploadAdapter } from '@ckeditor/ckeditor5-upload';
 import { WordCount } from '@ckeditor/ckeditor5-word-count';
 
 // You can read more about extending the build with additional plugins in the "Installing plugins" guide.
@@ -50,7 +51,6 @@ class Editor extends ClassicEditor {
 		AutoLink,
 		Autoformat,
 		Autosave,
-		Base64UploadAdapter,
 		BlockQuote,
 		Bold,
 		Code,
@@ -81,6 +81,7 @@ class Editor extends ClassicEditor {
 		Paragraph,
 		PasteFromOffice,
 		SelectAll,
+		SimpleUploadAdapter,
 		Strikethrough,
 		Table,
 		TableToolbar,
