@@ -10,7 +10,11 @@
    $headpath .= "/header.php";
    include_once($headpath);
    if (empty($_GET['id'])) {
-    $pageid = 1;
+    $sql = "SELECT id, edited FROM notes ORDER BY edited DESC LIMIT 1";
+    $sqldata = mysqli_query($dbcon, $sql) or die('error getting data');
+    while($row =  mysqli_fetch_array($sqldata, MYSQLI_ASSOC)) {
+      $pageid = $row['id'];
+    }
    }
    else {
     $pageid = $_GET['id'];
@@ -34,8 +38,9 @@
 <!--<script src="https://unpkg.com/leaflet@1.3.1/dist/leaflet.js"
   integrity="sha512-/Nsx9X4HebavoBvEBuyp3I7od5tA0UzAxs+j83KgC8PU0kgB4XiK4Lfe4y4cgBtaRJQEIFCW+oC506aPT2L1zw=="
   crossorigin=""></script> -->
- 
+
    <div class="mainbox col-lg-12 col-xs-12" style="padding-right:0%;">
+   <button class="btn btn-primary" id="navtoggle" onClick="toggleNav()" style="position:absolute; top: 10px; left: 0px; z-index: 1; padding: 2px 4px 2px 4px;">></button>
 
      <!-- Page Header -->
      <div class="col-md-12">
@@ -43,7 +48,9 @@
    </div>
      <div class="body sidebartext col-xs-12" style="padding-left:0%; padding-right: 0%;" id="body">
      <div id="test"></div>
-      <div class="col-sm-3" id="nav-pane" height="100%" style="background-color:#16181a; border-radius:25px; margin-top:10px;">
+     <div id="menustatus" class="nonav">closed</div>
+      <div class="sidenav" id="nav-pane" height="100%" style="background-color:#16181a;">
+        <a href="javascript:void(0)" class="closebtn" onclick="toggleNav()">&times;</a>
         <input id="searchbar" type="text" onkeyup="livesearch()" style="text-align:left; color:black;"></input>
         <div id="left-pane">
         <!--<button class="btn btn-primary" id="expandcollapse" onClick="expandCollapse()">Expand All</button>-->
@@ -69,13 +76,14 @@
         <textarea type="text" id="notebody" style="background-color:#1f2123; color:#fff; margin-left:0px;"></textarea><div id="namesuggest"></div>
         <div id="toreplace" class="nonav"></div>
       </div>-->
-      <div class="col-sm-8 col-xs-12" id="mainpanel" style="padding-left:0px; padding-right:0px;">
+      <div class="col-md-8 col-sm-12" id="mainpanel" style="padding-left:0px; padding-right:0px;">
         <div id="container" class="nonav" style="min-height:400px;">
         <!-- <input type="text" id="filetitle" value=""></input> -->
 
 
        <!-- <input type="text" id="filepath" value=""></input> -->
         <div id="fileID" class="nonav"></div>
+        <div id="noteHistory" class="nonav"></div>
           <textarea name="editor" id="editor" class="nonav"></textarea>
           <div id="folderPreview"></div><p>
           <div class="col-md-12" id="lastsaved"></div>
@@ -96,6 +104,32 @@
 </div>
 
 <script>
+    var navToggle = $('#navtoggle').html();
+
+function toggleNav() {
+  navToggle = $('#menustatus').html();
+
+  if(navToggle == 'closed'){
+    document.getElementById("nav-pane").style.width = "350px";
+    if (window.innerWidth > 800) {
+      document.getElementById("mainpanel").style.marginLeft = "350px";
+    }
+    //$('#navtoggle').html('<');
+    $('#menustatus').html('open');
+  }
+else if(navToggle == 'open'){
+    document.getElementById("nav-pane").style.width = "0";
+    if (window.innerWidth > 800) {
+      document.getElementById("mainpanel").style.marginLeft = "0";
+    }
+    //$('#navtoggle').html('>');
+    $('#menustatus').html('closed');
+  }
+}
+
+
+
+      var noteHistory = '';
       var allMentions;
       ClassicEditor.create( document.querySelector( '#editor' ), {
 
@@ -118,6 +152,13 @@ $(document).ready(function(){
   $("h1").text('');
   leftpane();
   showpanel('<?php echo $pageid; ?>');
+  if (window.innerWidth > 800) {
+    $('#menustatus').html('closed');
+  }
+  else {
+    $('#menustatus').html('open');    
+  }
+  toggleNav();
 });
 
 
@@ -177,7 +218,9 @@ function leftpane(){
         }
         if (lineage.length !== 1){
           $('#' + parent + 'nav').html('<svg onClick=shownav(' + parent + ') xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right-short" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8"/></svg>');
+          if (lineage.length !== 2){
           $('#' + parent + 'head').css('margin-left','-15px');
+          }
           //$('#' + parent + 'nav').css('display:inline-block; margin-left:-15px; padding-right: 2px;');
         }
         $(parentDIV).append('<div id="' + currentID + 'head" onClick=showpanel(' + currentID + ')>' + indent + '<div style="display:inline-block;" name="right-arrow" id="' + currentID + 'nav"></div>' + newData[j] + '</div>'
@@ -194,10 +237,6 @@ function leftpane(){
 
       }
      }
-     for (let i = 0; i < newData.length; i = i + 2){
-
-     }
-
 
     },
     error: function (jqXHR, status, errorThrown)
@@ -305,6 +344,16 @@ $.ajax({
 function showpanel(value){
   $('#mainpanel').addClass('nonav');
   $('#container').addClass('nonav');
+  if (noteHistory == ''){
+    noteHistory = value;
+  }
+  else {
+    if (!noteHistory.endsWith('-' + value)){
+    noteHistory = noteHistory + '-' + value;
+  }
+}
+  $('#noteHistory').html(noteHistory);
+
 
   editor.destroy().catch( error => {
     console.log( error );
@@ -384,8 +433,10 @@ $.ajax({
         <button type="button" data-toggle="modal" data-target="#dropmenu" style="background-color:purple; border-radius:10px; padding:0px 5px 0px 5px;">Move</button>\
       </div>\
         <button class="btn btn-danger" id="delnote" onClick="deleteNote()" style="background-color:#a00; border-radius:10px; padding:0px 5px 0px 5px;">Delete</button>\
-        <button class="btn btn-info" style="display:inline-block; background-color:#0043c4; border-radius:10px; padding:0px 5px 0px 5px;" onClick="toggleside()">><</button>'
-      );
+        <button class="btn btn-warning" id="exportnote" onClick="exportNote()" style="background-color:#00aa82; border-radius:10px; padding:0px 5px 0px 5px;">Export</button>\
+        <button class="btn btn-info" style="display:inline-block; background-color:#0043c4; border-radius:10px; padding:0px 5px 0px 5px;" onClick="goBack()">Back</button>'
+      
+        );
       
       $("input:checked").each(function() {
         $(this).closest("li").addClass('strike');
@@ -440,6 +491,46 @@ $.ajax({
     });
 
   }
+
+function exportNote(){
+  var exportID = $('#fileID').html();
+
+  $.ajax ({
+    url: 'exportnote.php',
+    type: 'GET',
+    data: { 'exportID' : exportID},
+
+    success: function (){
+      $('#test').html('file exported!');
+    },
+    error: function(){
+      
+    }
+  });
+}
+
+function goBack(){
+  //history as string
+  noteHistory = $('#noteHistory').html();
+  //history as array
+  var backHistory = noteHistory.split('-');
+  if (backHistory.length != 1){
+    //index of 2nd last entry
+  var lastNote = backHistory.length - 2;
+  //id of 2nd last entry
+  var lastID = backHistory[lastNote];
+  var newHistory = backHistory.slice(0,backHistory.length - 2);
+  var historyString = newHistory.toString();
+  //$('#noteHistory').html(historyString);
+  historyString = historyString.replaceAll(',','-');
+  noteHistory = historyString;
+
+  $('#noteHistory').html(lastID);
+  //$('#test').html(newHistory);
+  showpanel(lastID);
+  }
+  
+}
 
 function saveData(value){
   var noteTitle = $(".ck-content h1").text();
@@ -506,6 +597,8 @@ function deleteNote(){
 </div>
 </div>
 </div>
+
+
 <style>
   .ck .ck-editor__main > .ck-editor__editable.ck-read-only {
   background-color: #1F2123;
@@ -766,6 +859,58 @@ div[id$="head"] {
     /* -- Overrides the default colors used by the ckeditor5-link package. ---------------------- */
 
     --ck-color-link-default: hsl(190, 100%, 75%);
+
+   /* The side navigation menu */
+.sidenav {
+  padding-left: 5px;
+  height: 100%; /* 100% Full-height */
+  width: 0px; /* 0 width - change this with JavaScript */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Stay on top */
+  top: 0; /* Stay at the top */
+  left: 0;
+  background-color: #111; /* Black*/
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 20px; /* Place content 60px from the top */
+  transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+}
+
+/* The navigation menu links */
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+/* Position and style the close button (top right corner) */
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+#mainpanel {
+  transition: margin-left .5s;
+  padding: 20px;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+} 
+
 }
 
   </style>

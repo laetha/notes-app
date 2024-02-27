@@ -11,8 +11,8 @@ $sql1data = mysqli_query($dbcon, $sql1) or die('error getting data');
 while($row1 =  mysqli_fetch_array($sql1data, MYSQLI_ASSOC)) {
   $lineage = $row1['lineage'];
 }
-
-$sql = "INSERT INTO notes (title,type,body,lineage) VALUES ('$title','','$body','')";
+$edited = date('ymdHi');
+$sql = "INSERT INTO notes (title,type,body,lineage,edited) VALUES ('$title','','$body','','$edited')";
 
         if ($dbcon->query($sql) === TRUE) {
           $last_id = $dbcon->insert_id;
