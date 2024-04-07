@@ -26,9 +26,13 @@ echo ('<script>window.location.replace("/oops.php"); </script>');
   $stripid = str_replace("'", "", $id);
   $stripid = stripslashes($stripid);
   $id = addslashes($id);
-  $worldtitle = "SELECT * FROM `world` WHERE `title` LIKE '$id'";
+  $worldtitle = "SELECT * FROM world WHERE title LIKE $id OR id LIKE $id";
   $titledata = mysqli_query($dbcon, $worldtitle) or die('error getting data');
   while($row =  mysqli_fetch_array($titledata, MYSQLI_ASSOC)) {
+    $id = $row['title'];
+    $stripid = str_replace("'", "", $id);
+    $stripid = stripslashes($stripid);
+    $id = addslashes($id);
     if ($loguser !== $row['worlduser']) {
     echo ('<script>window.location.replace("/oops.php"); </script>');
     }

@@ -4,8 +4,9 @@ include_once($sqlpath);
 
 $title = 'Untitled';
 $body = '';
+$edited = date('ymdHi');
 
-$sql = "INSERT INTO notes (title,type,body,lineage) VALUES ('$title','','$body','')";
+$sql = "INSERT INTO notes (title,type,body,lineage,edited) VALUES ('$title','','$body','','$edited')";
 
         if ($dbcon->query($sql) === TRUE) {
           $last_id = $dbcon->insert_id;

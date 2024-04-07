@@ -19,9 +19,8 @@
    else {
     $pageid = $_GET['id'];
    }
-   /*if ($loguser !== 'tarfuin') {
-   echo ('<script>window.location.replace("/oops.php"); </script>');
- }*/
+
+
    ?>
    <script src="/plugins/ckeditor/build/ckeditor.js" type="text/javascript"></script>
    <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js" type="text/javascript"></script>
@@ -31,13 +30,7 @@
    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap.min.css">
    <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.1/css/responsive.bootstrap.min.css">
-   <!--<link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.1/dist/leaflet.css"
-   integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ=="
-   crossorigin=""/>-->
-   <!-- Make sure you put this AFTER Leaflet's CSS -->
-<!--<script src="https://unpkg.com/leaflet@1.3.1/dist/leaflet.js"
-  integrity="sha512-/Nsx9X4HebavoBvEBuyp3I7od5tA0UzAxs+j83KgC8PU0kgB4XiK4Lfe4y4cgBtaRJQEIFCW+oC506aPT2L1zw=="
-  crossorigin=""></script> -->
+
 
    <div class="mainbox col-lg-12 col-xs-12" style="padding-right:0%;">
    <button class="btn btn-primary" id="navtoggle" onClick="toggleNav()" style="position:absolute; top: 10px; left: 0px; z-index: 1; padding: 2px 4px 2px 4px;">></button>
@@ -47,11 +40,10 @@
 
    </div>
      <div class="body sidebartext col-xs-12" style="padding-left:0%; padding-right: 0%;" id="body">
-     <div id="test"></div>
      <div id="menustatus" class="nonav">closed</div>
-      <div class="sidenav" id="nav-pane" height="100%" style="background-color:#16181a;">
+      <div class="sidenav" id="nav-pane" height="100%" style="background-color:#181c20;">
         <a href="javascript:void(0)" class="closebtn" onclick="toggleNav()">&times;</a>
-        <input id="searchbar" type="text" onkeyup="livesearch()" style="text-align:left; color:black;"></input>
+        <input id="searchbar" type="text" onkeyup="livesearch()" style="text-align:left; color:black;"></input><input id="dndcheck" type="checkbox" style="margin-left: 5px;"> DnD</input>
         <div id="left-pane">
         <!--<button class="btn btn-primary" id="expandcollapse" onClick="expandCollapse()">Expand All</button>-->
         <div id="createnote" style="color:#42f486;" onClick="newNote()">Create New +</div>
@@ -77,6 +69,7 @@
         <div id="toreplace" class="nonav"></div>
       </div>-->
       <div class="col-md-8 col-sm-12" id="mainpanel" style="padding-left:0px; padding-right:0px;">
+      <div id="test"></div>
         <div id="container" class="nonav" style="min-height:400px;">
         <!-- <input type="text" id="filetitle" value=""></input> -->
 
@@ -87,6 +80,7 @@
           <textarea name="editor" id="editor" class="nonav"></textarea>
           <div id="folderPreview"></div><p>
           <div class="col-md-12" id="lastsaved"></div>
+          <div class="col-md-12" id="dndshow"></div>
 
         </div>
       </div>
@@ -104,6 +98,8 @@
 </div>
 
 <script>
+    var noteMentions = new Array();
+    var dndMentions = new Array();
     var navToggle = $('#navtoggle').html();
 
 function toggleNav() {
@@ -130,7 +126,7 @@ else if(navToggle == 'open'){
 
 
       var noteHistory = '';
-      var allMentions;
+
       ClassicEditor.create( document.querySelector( '#editor' ), {
 
     //removePlugins: [ 'Title' ],
@@ -165,12 +161,13 @@ $(document).ready(function(){
 function livesearch(){
   var value = $('#searchbar').val();
   var searchLength = value.length;
+  var dndCheck = document.getElementById("dndcheck").checked;
   if (searchLength >= 3){
    
   $.ajax({
     url : 'livesearch.php',
     type: 'GET',
-    data : { "value" : value },
+    data : { "value" : value, "dndcheck" : dndCheck },
     success: function(searchdata)
     {
       $('#flex-nav').html(searchdata);
@@ -221,7 +218,6 @@ function leftpane(){
           if (lineage.length !== 2){
           $('#' + parent + 'head').css('margin-left','-15px');
           }
-          //$('#' + parent + 'nav').css('display:inline-block; margin-left:-15px; padding-right: 2px;');
         }
         $(parentDIV).append('<div id="' + currentID + 'head" onClick=showpanel(' + currentID + ')>' + indent + '<div style="display:inline-block;" name="right-arrow" id="' + currentID + 'nav"></div>' + newData[j] + '</div>'
       + '<div class="nonav" id="' + currentID + 'children"></div>');
@@ -237,6 +233,7 @@ function leftpane(){
 
       }
      }
+     sortItems();
 
     },
     error: function (jqXHR, status, errorThrown)
@@ -245,6 +242,61 @@ function leftpane(){
     }
 
   });
+}
+
+function sortItems(){
+
+  // get all divs with id including "children"
+  var allParents = document.querySelectorAll("[id$='children']");
+
+  var parentItems = new Array();
+  // for each 'children' div
+  for (let i=0;i<allParents.length;i++){
+    //get the children of that div
+    var childNodes = $(allParents[i]).children();
+    var newChildren = new Array();
+    var childrenIndex = new Array();
+    var parentID = allParents[i].id;
+    //for every child of the current parent
+    for (let x=0;x<childNodes.length;x++){
+      //get only the headers
+      if (childNodes[x].id.includes('head')){      
+      //get text of header
+      let tempChild = $(childNodes[x]).text();
+      //push to array
+      childrenIndex.push(tempChild);
+      }
+    }
+
+    //sort alphabetically, reversed if certain parents
+    if (allParents[i].id == '93children' || allParents[i].id == '58children'){
+      childrenIndex.sort();
+      childrenIndex.reverse();
+    }
+    else {
+      childrenIndex.sort();
+    }
+
+    // for every child.text
+    for (let x=0;x<childrenIndex.length;x++){
+      //...and for every child node
+      for (let z=0;z<childNodes.length;z++){
+        let q = z + 1;
+        var cIndex = childrenIndex[x];
+        var cNode = $(childNodes[z]).text();
+        // when the child index matches the child node
+        if (cNode == cIndex){
+          //push the header
+          newChildren.push(childNodes[z]);
+          //push the matching children div
+          newChildren.push(childNodes[q]);
+          $(allParents[i]).html(newChildren);
+
+        }
+      }
+    }
+
+  }
 }
 
 function toggleside(){
@@ -282,8 +334,7 @@ function moveNote(value){
 
     success: function(data){
       leftpane();
-      //$('#fileID').html(data);
-      //showpanel(data);
+
     },
     error: function(){
     }
@@ -308,7 +359,7 @@ function createNote(){
     
     error: function (jqXHR, status, errorThrown)
     {
-      //editor.setData(status);
+
     }
     });
 };
@@ -342,6 +393,7 @@ $.ajax({
 }
 
 function showpanel(value){
+  $('#dndshow').html('');
   $('#mainpanel').addClass('nonav');
   $('#container').addClass('nonav');
   if (noteHistory == ''){
@@ -362,6 +414,16 @@ function showpanel(value){
 $("h1").text('');
 
 var bodyID = value;
+
+var allHeads = document.querySelectorAll("[id$='head']");
+for (let x=0;x<allHeads.length;x++){
+  let currentHead = allHeads[x].id;
+  $('#' + currentHead).css('backdrop-filter','brightness(100%)');
+  $('#' + currentHead).css('color','#e8e8e8');
+}
+
+$('#' + bodyID + 'head').css('backdrop-filter','brightness(150%)');
+$('#' + bodyID + 'head').css('color','#00e7ff');
 
 $.ajax({
     url : 'getbody.php',
@@ -389,15 +451,22 @@ $.ajax({
       }
     });
 
+
     $.ajax({
       url: 'getmentions.php',
       type: 'GET',
       success: function(data){
-        allMentions = JSON.parse(data);
-        
-        for (let x=0; x < allMentions.length; x = x + 2){
-          //var y = x + 1;
-          allMentions[x] = '@' + allMentions[x];
+        dndMentions = new Array();
+        noteMentions = new Array();
+        var allMentions = JSON.parse(data);
+        for (let i=0; i < allMentions.length; i = i + 2){
+          var j = i + 1;
+          if (allMentions[i].startsWith('#')){
+            dndMentions.push(allMentions[i],allMentions[j]);
+          }
+          else {
+            noteMentions.push(allMentions[i],allMentions[j]);
+          }
         }
         
       ClassicEditor
@@ -420,7 +489,12 @@ $.ajax({
             feeds: [
                 {
                     marker: '@',
-                    feed: allMentions,
+                    feed: noteMentions,
+                    minimumCharacters: 1
+                },
+                {
+                    marker: '#',
+                    feed: dndMentions,
                     minimumCharacters: 1
                 }
             ]
@@ -479,8 +553,7 @@ $.ajax({
 
       $('#container').removeClass('nonav');
       $('#mainpanel').removeClass('nonav');
-
-
+      var currentItem = '#' + data + 'head';
 
     },
     
@@ -526,7 +599,6 @@ function goBack(){
   noteHistory = historyString;
 
   $('#noteHistory').html(lastID);
-  //$('#test').html(newHistory);
   showpanel(lastID);
   }
   
@@ -540,14 +612,28 @@ function saveData(value){
   var mentionReplace;
   var newValue = value;
   var regex;
-  var mentionID;
+  var noteMentionID;
+  var dndMentionID;
+  var mentionText;
+
   for (i=0; i < mentionArray.length; i++){
-    let mentionText = mentionArray[i].innerHTML;
-    mentionID = allMentions.indexOf(mentionText);
-    mentionReplace = '[' + mentionText + '](https://notes.bkconnor.com?id=' + allMentions[mentionID + 1] + ')';
-    regex = new RegExp(mentionText,"g");
-    newValue = newValue.replace(regex, mentionReplace);
+    var mentionText = mentionArray[i].innerHTML;
+    noteMentionID = noteMentions.indexOf(mentionText);
+    dndMentionID = dndMentions.indexOf(mentionText);
+    if (noteMentionID != -1){
+      mentionReplace = '[' + mentionText + '](https://notes.bkconnor.com?id=' + noteMentions[noteMentionID + 1] + ')';
+      regex = new RegExp(mentionText,"g");
+      newValue = newValue.replaceAll(regex, mentionReplace);
+      noteMentionID = -1;
+    }
+    if (dndMentionID != -1){
+      mentionReplace = '[' + mentionText + '](https://dnd.bkconnor.com/tools/world/world.php?id=' + dndMentions[dndMentionID + 1] + ')';
+      regex = new RegExp(mentionText,"g");
+      newValue = newValue.replaceAll(regex, mentionReplace);
+      dndMentionID = -1;
+    }
   }
+
   
   $.ajax({
     url: 'savedata.php',
@@ -592,6 +678,27 @@ function deleteNote(){
 
   });
 }
+
+function showDnD(value){
+  //value = value.replace(/\_/g, ' ');
+
+  $.ajax({
+    url : 'getdnd.php',
+    type: 'GET',
+    data : { "bodyID" : value },
+    success: function(data)
+    {
+      var newdata = data;
+      $('#dndshow').html(newdata);
+    },
+    error: function (jqXHR, status, errorThrown)
+    {
+
+    }
+    });
+}
+
+
   </script>
 
 </div>
@@ -600,6 +707,15 @@ function deleteNote(){
 
 
 <style>
+
+body {
+  opacity: 1.0;
+}
+
+.mainbox {
+  background-color: #1c2127;
+}
+
   .ck .ck-editor__main > .ck-editor__editable.ck-read-only {
   background-color: #1F2123;
 }
@@ -676,6 +792,16 @@ div.folderpreview:hover {
   background-color:#1F2123;
 }
 
+.livesearch {
+
+  padding: 0px !important;
+  text-decoration: none;
+  font-size: 12px !important;
+  color: #818181;
+  display: block;
+  transition: 0.0s !important;
+}
+
 p strong {
   color: #ff7bc5;;
 }
@@ -691,8 +817,10 @@ h1 {
 }
 
 h2 {
-	color: #e8e8e8;
+	color: #e0adde;
   border-bottom: 1px solid #808080;;
+  font-size: 1.6em;
+  margin-top:30px;
 }
 
 h4 {
@@ -755,10 +883,10 @@ div[id$="head"] {
     --ck-font-size-base: 14px;
 
     /* Helper variables to avoid duplication in the colors. */
-    --ck-custom-background: #1F2123;
+    --ck-custom-background: #1c2127;
     --ck-custom-foreground: hsl(255, 3%, 18%);
-    --ck-color-base-background: #1f2123;
-    --ck-background-base: #1F2123;
+    --ck-color-base-background: #1c2127;
+    --ck-background-base: #1c2127;
     --ck-color-base-border: #393a3a;
     --ck-custom-white: hsl(0, 0%, 100%);
 
