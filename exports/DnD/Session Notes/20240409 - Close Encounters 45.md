@@ -1,0 +1,4 @@
+*   The party leaves the drow lair and heads to [#Craggle Rock](https://dnd.bkconnor.com/tools/world/world.php?id=4391) to resupply before heading back home.
+*   With [#Zeke](https://dnd.bkconnor.com/tools/world/world.php?id=4158) leading the way, the party gets lost leaving the underdark, but [#Flor the Apathetic](https://dnd.bkconnor.com/tools/world/world.php?id=4404) finds a swarm of bats and talks them into leading them out in exchange for honey.
+*   [#Flor the Apathetic](https://dnd.bkconnor.com/tools/world/world.php?id=4404) dimension door's everyone out of the underdark and they have successfully finished their mission.
+*   On their journey back to [#The Pike](https://dnd.bkconnor.com/tools/world/world.php?id=4051) , they see the [#Temple of Exsanguination](https://dnd.bkconnor.com/tools/world/world.php?id=4397) as it descends upon the Yuan-ti city.

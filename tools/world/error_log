@@ -1,7 +1,0 @@
-[15-Jun-2018 14:27:00 America/New_York] PHP Warning:  opendir(/home/gameripp/public_html/tools/world/assets/images/bg/): failed to open dir: No such file or directory in /home/gameripp/public_html/tools/world/world1.php on line 20
-[15-Jun-2018 14:27:00 America/New_York] PHP Warning:  readdir() expects parameter 1 to be resource, boolean given in /home/gameripp/public_html/tools/world/world1.php on line 21
-[15-Jun-2018 14:27:00 America/New_York] PHP Warning:  closedir() expects parameter 1 to be resource, boolean given in /home/gameripp/public_html/tools/world/world1.php on line 29
-[15-Jun-2018 14:27:00 America/New_York] PHP Warning:  sort() expects parameter 1 to be array, null given in /home/gameripp/public_html/tools/world/world1.php on line 31
-[18-Jul-2018 12:03:17 America/New_York] PHP Warning:  unlink(uploads/&lt;a href=): No such file or directory in /home/gameripp/public_html/tools/world/index.php on line 109
-[18-Jul-2018 12:03:24 America/New_York] PHP Warning:  unlink(uploads/&lt;a href=): No such file or directory in /home/gameripp/public_html/tools/world/index.php on line 109
-[18-Jul-2018 12:06:02 America/New_York] PHP Warning:  unlink(uploads/&lt;a href=): No such file or directory in /home/gameripp/public_html/tools/world/index.php on line 109

@@ -1,0 +1,3 @@
+*   The party encounters the pirate ship at the island. They take a couple cannon hits but manage to make a rough landing at shore.
+*   [#Flynt Tidecaller](https://dnd.bkconnor.com/tools/world/world.php?id=4156) stole [#Princess Penelope](https://dnd.bkconnor.com/tools/world/world.php?id=4157) 's pigments to fix the mast, when he returned them, he subtly informed Penny that he knew about the tiara that she stole.
+*   Upon the shore, they are attacked by drowned sailors. They defeat the sailors.

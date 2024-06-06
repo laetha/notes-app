@@ -3,14 +3,30 @@
 $sqlpath .= "/sql-connect.php";
 include_once($sqlpath);
 
+
 $value = $_REQUEST['value'];
 $dndcheck = $_REQUEST['dndcheck'];
 $sql = "SELECT * FROM notes WHERE title LIKE '%$value%'";
 $sqldata = mysqli_query($dbcon, $sql) or die('error getting data');
 while($row =  mysqli_fetch_array($sqldata, MYSQLI_ASSOC)) {
-  echo ('<div onClick=showpanel("'.$row['id'].'")><span class="greentitle" style="font-size:18px; cursor:pointer;">'.$row['title'].'</span><br/>');
+  $lineage = $row['lineage'];
+  $sql1 = "SELECT * FROM notes WHERE lineage LIKE '%$lineage-%'";
+  $sql1data = mysqli_query($dbcon, $sql1) or die('error getting data');
+  while($row1 =  mysqli_fetch_array($sql1data, MYSQLI_ASSOC)) { 
+    $path = explode("-",$row1['lineage']);
+    $pathstring = '';
+    foreach ($path as $x){
+      $sql2 = "SELECT * FROM notes WHERE id LIKE '$x'";
+      $sql2data = mysqli_query($dbcon, $sql2) or die('error getting data');
+      while($row2 =  mysqli_fetch_array($sql2data, MYSQLI_ASSOC)) { 
+        $pathstring = $pathstring.'/'.$row2['title'];
+      }
+    }
+
+  echo ('<div onClick=showpanel("'.$row1['id'].'")><span class="greentitle" style="font-size:18px; cursor:pointer;">'.$pathstring.'</span><br/>');
   echo ('<hr>');
   echo ('</div>');
+  }
 }
 
 

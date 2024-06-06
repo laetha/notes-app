@@ -1,0 +1,1 @@
+*   BMD site Geo Constraints

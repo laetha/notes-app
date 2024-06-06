@@ -30,6 +30,7 @@
    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap.min.css">
    <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.1/css/responsive.bootstrap.min.css">
+   <link rel="manifest" href="manifest.json">
 
 
    <div class="mainbox col-lg-12 col-xs-12" style="padding-right:0%;">
@@ -155,7 +156,50 @@ $(document).ready(function(){
     $('#menustatus').html('open');    
   }
   toggleNav();
+  exportAll();
 });
+
+function exportAll(){
+  <?php
+
+$dir = "exports";
+if(file_exists($dir)){
+    $di = new RecursiveDirectoryIterator($dir, FilesystemIterator::SKIP_DOTS);
+    $ri = new RecursiveIteratorIterator($di, RecursiveIteratorIterator::CHILD_FIRST);
+    foreach ( $ri as $file ) {
+        $file->isDir() ?  rmdir($file) : unlink($file);
+    }
+}
+
+$sql = "SELECT title,body,lineage FROM notes";
+$sqldata = mysqli_query($dbcon, $sql) or die('error getting data');
+while($row =  mysqli_fetch_array($sqldata, MYSQLI_ASSOC)) {
+  $title = $row['title'];
+  $remtitle = '# '.$row['title'];
+  $body = ltrim(substr($row['body'],strlen($remtitle)));
+  $path = explode('-', $row['lineage']);
+  array_pop($path);
+  $newpath = '';
+  foreach($path as $x){
+   
+    $sql1 = "SELECT title FROM notes WHERE id LIKE '$x'";
+    $sqldata1 = mysqli_query($dbcon, $sql1) or die('error getting data');
+    while($row =  mysqli_fetch_array($sqldata1, MYSQLI_ASSOC)) { 
+
+      $newpath = $newpath.$row['title'].'/';
+
+    }
+  }
+
+  if (!is_dir('exports/'.$newpath)) {
+    // dir doesn't exist, make it
+    mkdir('exports/'.$newpath, 0777, true);
+  }
+
+  echo file_put_contents('exports/'.$newpath.$title.'.md', $body);
+}
+  ?>
+}
 
 
 function livesearch(){
@@ -541,7 +585,7 @@ $.ajax({
           for (i=0; i < folderPreviews.length; i = i + 2){
             var j = i + 1;
             if (folderPreviews[j] !== bodyID){
-            $('#folderPreview').append('<div class="col-md-4 folderpreview" onClick="showpanel(' + folderPreviews[j] + ')">' +  marked.parse(folderPreviews[i]) + '</div>'); 
+            $('#folderPreview').append('<div class="col-md-4 folderpreview" onClick="showpanel(' + folderPreviews[j] + ')">' + folderPreviews[i] + '</div>'); 
             }
           }
         },
@@ -616,13 +660,19 @@ function saveData(value){
   var dndMentionID;
   var mentionText;
 
+  
+  // Replace hashtag mentions with hyperlinks to DnD website pages
+
+  // for each [data-mention]
   for (i=0; i < mentionArray.length; i++){
+    // get the innerHTML of [data-mention]
     var mentionText = mentionArray[i].innerHTML;
     noteMentionID = noteMentions.indexOf(mentionText);
+    // count and number the amount of mentions
     dndMentionID = dndMentions.indexOf(mentionText);
     if (noteMentionID != -1){
       mentionReplace = '[' + mentionText + '](https://notes.bkconnor.com?id=' + noteMentions[noteMentionID + 1] + ')';
-      regex = new RegExp(mentionText,"g");
+      regex = new RegExp(mentionText,"(?<=[),g");
       newValue = newValue.replaceAll(regex, mentionReplace);
       noteMentionID = -1;
     }
@@ -1037,7 +1087,17 @@ div[id$="head"] {
 @media screen and (max-height: 450px) {
   .sidenav {padding-top: 15px;}
   .sidenav a {font-size: 18px;}
-} 
+}
+
+.livesearchtext h1{
+  font-size: 12px;
+}
+
+.livesearchtext a {
+  font-size: 12px;
+  display: inline-block;
+  padding: 0 0 0 0;
+}
 
 }
 

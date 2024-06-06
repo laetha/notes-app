@@ -1,0 +1,4 @@
+*   The party gathers with the true goliaths [[#Threadwatcher](https://dnd.bkconnor.com/tools/world/world.php?id=4383)](https://dnd.bkconnor.com/tools/world/world.php?id=4383), [#Dreamvigor](https://dnd.bkconnor.com/tools/world/world.php?id=4387), and [#Hardshot](https://dnd.bkconnor.com/tools/world/world.php?id=4386) to plan to retake the goliath camp.
+*   The party fights through some goliaths on their way into the camp, fighting off a small group and knocking one unconscious, but not killing any.
+*   The goliaths get to the center of camp and #Threadwatcher successfully makes the challenge to the heretic leaders, which is accepted.
+*   The party applies what [@Goliath Buffs](https://notes.bkconnor.com?id=89) they can to the Goliaths, and gets ready to observe the challenge

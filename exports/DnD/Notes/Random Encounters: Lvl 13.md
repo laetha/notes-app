@@ -1,0 +1,5 @@
+*   [x] 1× Death's Head of Bhaal, 1× Devourer (11,800 XP)
+*   [ ] 1× Spectral Cloud, 1× Wyvern (12,300 XP)
+*   [ ] 1× Neothelid, 1× Young Deep Dragon (11,800 XP)
+*   [ ] 1× Arclight Phoenix, 1× Woe Strider (11,300 XP)
+*   [ ] 1× Grim Champion of Pestilence, 1× Humanoid Mutate (14,100 XP)

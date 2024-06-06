@@ -1,0 +1,1 @@
+After the killing of [#Boris the Parched](https://dnd.bkconnor.com/tools/world/world.php?id=4259) , The Blood Twins will have taken acute notice of the party. If Boris was handled quickly, the attack on the Yuan-ti settlement may be halted partway through. These events will anger [#The Blood Twins](https://dnd.bkconnor.com/tools/world/world.php?id=4164)

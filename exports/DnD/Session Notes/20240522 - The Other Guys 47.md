@@ -1,0 +1,5 @@
+*   The party resumes their journey to Eliingcord Wood.
+*   The party resumes with the driftglobe still in [#Aturi](https://dnd.bkconnor.com/tools/world/world.php?id=4175) ‘s possession, but the Sending stone in the bag of holding, in [[#Hammer Down](https://dnd.bkconnor.com/tools/world/world.php?id=4172)](https://dnd.bkconnor.com/tools/world/world.php?id=4172) ’s possession.
+*   They get to edge of the woods and track along it. [[#Hammer Down](https://dnd.bkconnor.com/tools/world/world.php?id=4172)](https://dnd.bkconnor.com/tools/world/world.php?id=4172) finds some tracks leading into the woods.
+*   [#Tuk Muk](https://dnd.bkconnor.com/tools/world/world.php?id=4171) negotiated with a crow, giving it ball bearings in exchange for pointing the way towards the lair.
+*   In the night, the party heard some sounds coming from the north, during the next day they're attacked by a horror of body parts and some Slaad. The slaad seem to particularly hate [#Hammer Down](https://dnd.bkconnor.com/tools/world/world.php?id=4172)
