@@ -12,7 +12,7 @@ while($row1 =  mysqli_fetch_array($sql1data, MYSQLI_ASSOC)) {
   $lineage = $row1['lineage'];
 }
 $edited = date('ymdHi');
-$sql = "INSERT INTO notes (title,type,body,lineage,edited) VALUES ('$title','','$body','','$edited')";
+$sql = "INSERT INTO notes (title,type,body,lineage,edited,viewed) VALUES ('$title','','$body','','$edited','$edited')";
 
         if ($dbcon->query($sql) === TRUE) {
           $last_id = $dbcon->insert_id;

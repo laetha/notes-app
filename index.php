@@ -10,7 +10,7 @@
    $headpath .= "/header.php";
    include_once($headpath);
    if (empty($_GET['id'])) {
-    $sql = "SELECT id, edited FROM notes ORDER BY edited DESC LIMIT 1";
+    $sql = "SELECT id, viewed FROM notes ORDER BY viewed DESC LIMIT 1";
     $sqldata = mysqli_query($dbcon, $sql) or die('error getting data');
     while($row =  mysqli_fetch_array($sqldata, MYSQLI_ASSOC)) {
       $pageid = $row['id'];
@@ -34,7 +34,6 @@
 
 
    <div class="mainbox col-lg-12 col-xs-12" style="padding-right:0%;">
-   <button class="btn btn-primary" id="navtoggle" onClick="toggleNav()" style="position:absolute; top: 10px; left: 0px; z-index: 1; padding: 2px 4px 2px 4px;">></button>
 
      <!-- Page Header -->
      <div class="col-md-12">
@@ -98,6 +97,20 @@
   </div>
 </div>
 
+      <!-- Modal -->
+      <div class="modal fade" id="delwarning" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-body" id="delbody">
+        Delete note (including all subnotes)?
+        <button class="btn btn-success" onclick="deleteNote()">Yes</button>
+        <button class="btn btn-danger" id="delno">No</button>
+
+      </div>
+    </div>
+  </div>
+</div>
+
 <script>
     var noteMentions = new Array();
     var dndMentions = new Array();
@@ -151,9 +164,12 @@ $(document).ready(function(){
   showpanel('<?php echo $pageid; ?>');
   if (window.innerWidth > 800) {
     $('#menustatus').html('closed');
+
   }
   else {
-    $('#menustatus').html('open');    
+    $('#menustatus').html('open');
+    $('body').css('padding-top','20px');
+
   }
   toggleNav();
   exportAll();
@@ -164,10 +180,11 @@ function exportAll(){
 
 $dir = "exports";
 if(file_exists($dir)){
-    $di = new RecursiveDirectoryIterator($dir, FilesystemIterator::SKIP_DOTS);
-    $ri = new RecursiveIteratorIterator($di, RecursiveIteratorIterator::CHILD_FIRST);
+    $di = new RecursiveDirectoryIterator($dir);
+    $di->setFlags(RecursiveDirectoryIterator::SKIP_DOTS);
+    $ri = new RecursiveIteratorIterator($di);
     foreach ( $ri as $file ) {
-        $file->isDir() ?  rmdir($file) : unlink($file);
+          $file->isDir() ?  rmdir($file) : unlink($file);
     }
 }
 
@@ -367,6 +384,10 @@ function shownav(value){
   }*/
 }
 
+$('#delno').click(function(){
+  $('#delwarning').modal('toggle');
+});
+
 function moveNote(value){
   var moveID = $('#fileID').html();
   $('#dropmenu').modal('toggle');
@@ -477,7 +498,6 @@ $.ajax({
     {
       $("h1").text(value);
       var newData = JSON.parse(data);
-
       $('#fileID').html(value);
 
       $.ajax({
@@ -546,12 +566,12 @@ $.ajax({
     } )
     .then( editor => {
         window.editor = editor;
+        $('.ck-toolbar__items').prepend('<div style="background-color:#c7c5c5; border-radius:10px; padding:0px 5px 0px 5px;" id="navtoggle" onClick="toggleNav()"><img src="/assets/list.svg" /></button>');
         $('.ck-toolbar__items').append('<div id="subnote" style="background-color:#004f5b; border-radius:10px; padding:0px 5px 0px 5px;" onClick="createNote()">New Sub-note</div>\
         <div class="dropdown" style="display:inline-block;">\
         <button type="button" data-toggle="modal" data-target="#dropmenu" style="background-color:purple; border-radius:10px; padding:0px 5px 0px 5px;">Move</button>\
       </div>\
-        <button class="btn btn-danger" id="delnote" onClick="deleteNote()" style="background-color:#a00; border-radius:10px; padding:0px 5px 0px 5px;">Delete</button>\
-        <button class="btn btn-warning" id="exportnote" onClick="exportNote()" style="background-color:#00aa82; border-radius:10px; padding:0px 5px 0px 5px;">Export</button>\
+        <button class="btn btn-danger" id="delnote" onClick="delWarning()" style="background-color:#a00; border-radius:10px; padding:0px 5px 0px 5px;">Delete</button>\
         <button class="btn btn-info" style="display:inline-block; background-color:#0043c4; border-radius:10px; padding:0px 5px 0px 5px;" onClick="goBack()">Back</button>'
       
         );
@@ -564,7 +584,7 @@ $.ajax({
         $(this).closest("li").removeClass('strike');
       });
 
-
+    
     } )
     .catch( err => {
         console.error( err.stack );
@@ -585,7 +605,7 @@ $.ajax({
           for (i=0; i < folderPreviews.length; i = i + 2){
             var j = i + 1;
             if (folderPreviews[j] !== bodyID){
-            $('#folderPreview').append('<div class="col-md-4 folderpreview" onClick="showpanel(' + folderPreviews[j] + ')">' + folderPreviews[i] + '</div>'); 
+            $('#folderPreview').append('<div class="col-md-4 folderpreview" onClick="showpanel(' + folderPreviews[j] + ')">' + marked.parse(folderPreviews[i]) + '</div>'); 
             }
           }
         },
@@ -672,7 +692,7 @@ function saveData(value){
     dndMentionID = dndMentions.indexOf(mentionText);
     if (noteMentionID != -1){
       mentionReplace = '[' + mentionText + '](https://notes.bkconnor.com?id=' + noteMentions[noteMentionID + 1] + ')';
-      regex = new RegExp(mentionText,"(?<=[),g");
+      regex = new RegExp(mentionText,"g");
       newValue = newValue.replaceAll(regex, mentionReplace);
       noteMentionID = -1;
     }
@@ -710,6 +730,10 @@ function saveData(value){
   });
 }
 
+function delWarning(){
+  $('#delwarning').modal('toggle');
+}
+
 function deleteNote(){
   var delID = $('#fileID').html();
 
@@ -719,6 +743,7 @@ function deleteNote(){
     data: { 'delID' : delID },
 
     success: function(data){
+      delWarning();
       leftpane();
       showpanel(1);
     },
@@ -760,6 +785,7 @@ function showDnD(value){
 
 body {
   opacity: 1.0;
+  padding-bottom:300px;
 }
 
 .mainbox {
@@ -842,6 +868,11 @@ div.folderpreview:hover {
   background-color:#1F2123;
 }
 
+.tealtitle {
+  color:#00e7ff;
+  font-size:16px;
+}
+
 .livesearch {
 
   padding: 0px !important;
@@ -856,6 +887,10 @@ p strong {
   color: #ff7bc5;;
 }
 
+p {
+  margin: 0 0 5px;
+}
+
 .ck-content pre code {
   color: #aebaff;
   font-size: 1.3em;
@@ -864,6 +899,57 @@ p strong {
 h1 {
   border-bottom: 2px solid #808080;
   color:#00e7ff;
+}
+
+.folderpreview {
+  font-size: 14px;
+}
+
+.folderpreview h1 {
+  font-size:20px;
+}
+.folderpreview h2 {
+  font-size:18px;
+  margin-top:5px;
+}
+.folderpreview h3 {
+  font-size:16px;
+}
+.folderpreview h4 {
+  font-size:14px;
+}
+
+.searchresult {
+  font-size: 14px;
+  height:170px;
+  overflow:hidden;
+  border-top: 1px solid #808080;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  opacity: 0.95;
+}
+
+.searchresult h1 {
+  font-size:20px;
+  margin-top:5px;
+}
+.searchresult h2 {
+  font-size:18px;
+  margin-top:5px;
+}
+.searchresult h3 {
+  font-size:16px;
+  margin-top:5px;
+}
+.searchresult h4 {
+  font-size:14px;
+  margin-top:5px;
+}
+
+.searchresult a {
+  font-size:12px;
+  display:inline-block;
+  padding: 0px 0px 0px 0px;
 }
 
 h2 {
@@ -875,6 +961,11 @@ h2 {
 
 h4 {
   color: #eeae75;
+  margin-top: 20px;
+}
+
+h2, h3, h4 {
+  margin-bottom: 3px;
 }
 
 .ck-content pre {
@@ -901,7 +992,7 @@ h4 {
 }
 
 li {
-  margin-bottom:5px;
+  margin-bottom:2px;
 }
 
 div[id$="children"] {
@@ -1054,14 +1145,14 @@ div[id$="head"] {
 }
 
 /* The navigation menu links */
-.sidenav a {
+/*.sidenav a {
   padding: 8px 8px 8px 32px;
   text-decoration: none;
-  font-size: 25px;
+  font-size: 12px;
   color: #818181;
   display: block;
   transition: 0.3s;
-}
+}*/
 
 /* When you mouse over the navigation links, change their color */
 .sidenav a:hover {
@@ -1080,7 +1171,6 @@ div[id$="head"] {
 /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
 #mainpanel {
   transition: margin-left .5s;
-  padding: 20px;
 }
 
 /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */

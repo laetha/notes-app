@@ -3,6 +3,13 @@
 $sqlpath .= "/sql-connect.php";
 include_once($sqlpath);
 
+$parsepath = $_SERVER['DOCUMENT_ROOT'];
+$parsepath .= "/plugins/Parsedown.php";
+include_once($parsepath);
+
+$Parsedown = new Parsedown();
+ 
+
 
 $value = $_REQUEST['value'];
 $dndcheck = $_REQUEST['dndcheck'];
@@ -35,8 +42,10 @@ $sqldata = mysqli_query($dbcon, $sql) or die('error getting data');
 while($row =  mysqli_fetch_array($sqldata, MYSQLI_ASSOC)) {
 
     if (strlen($value) >= 3){
-    $body = $row['body'];
-
+      $body = $row['body'];
+      /*$re = '/\[(.*?)\]\(.*?\)/i';
+      $subst = '$1';
+      $body = preg_replace($re, $subst, $body);*/
 
     $valuepos = stripos($body,$value);
     $samplestart = $valuepos - 50;
@@ -44,9 +53,9 @@ while($row =  mysqli_fetch_array($sqldata, MYSQLI_ASSOC)) {
       $samplestart = 0;
     }
     //$sampleend = $valuepos + 50;
-    $bodysample = substr($body,$samplestart, 200);
+    $bodysample = substr($body,$samplestart);
     $title = str_ireplace($value,"<span style=\"background-color:yellow;\">$value</span>",$row['title']);
-  echo ('<div onClick=showpanel("'.$row['id'].'")><span class="greentitle" style="cursor:pointer;">'.$title.'</span><br/>');
+  echo ('<div class="searchresult" onClick=showpanel("'.$row['id'].'")><span class="tealtitle" style="cursor:pointer;">'.$title.'</span><br/>');
   ?>
 <style>
    .highlight {
@@ -56,14 +65,15 @@ while($row =  mysqli_fetch_array($sqldata, MYSQLI_ASSOC)) {
   }
   </style>
   <?php
-  $bodysample = str_ireplace($value,"<span class=\"highlight\">$value</span>",$bodysample);
+  $bodysample = $Parsedown->text(str_ireplace($value,"<span class=\"highlight\">$value</span>",$bodysample));
   
 
   if (strpos($bodysample, $value) !== false) {
+      $bodysample = preg_replace("/\<h1(.*)\>(.*)\<\/h1\>/","", $bodysample); //remove <h1>
       echo $bodysample;
      }
 
-echo ('<hr>');
+//echo ('<hr>');
 echo ('</div>');
     }
   
@@ -74,7 +84,7 @@ if ($dndcheck == 'true'){
 $sql = "SELECT * FROM world WHERE title LIKE '%$value%' AND worlduser LIKE 'tarfuin'";
 $sqldata = mysqli_query($dndcon, $sql) or die('error getting data');
 while($row =  mysqli_fetch_array($sqldata, MYSQLI_ASSOC)) {
-  echo ('<div class="greentitle" onClick="showDnD(\''.$row['title'].'\')">'.$row['title']);
+  echo ('<div class="tealtitle" onClick="showDnD(\''.$row['title'].'\')">'.$row['title']);
   //echo ('<a class="livesearch" href="https://dnd.bkconnor.com/tools/world/world.php?id='.$row['title'].'" target="_BLANK""><div><span class="greentitle" style="font-size:18px; cursor:pointer;">'.$row['title'].'</span><br/>');
   echo ('<hr>');
   echo ('</div>');
@@ -87,7 +97,7 @@ while($row =  mysqli_fetch_array($sqldata, MYSQLI_ASSOC)) {
 
   if ($row['worlduser'] == 'tarfuin'){
     if (strlen($value) >= 3){
-    $body = $row['body'];
+    $body = $Parsedown->text($row['body']);
     $npcfaction = $row['npc_faction'];
     $npclocation = $row['npc_location'];
     $npcdeity = $row['npc_deity'];
@@ -105,9 +115,9 @@ while($row =  mysqli_fetch_array($sqldata, MYSQLI_ASSOC)) {
       $samplestart = 0;
     }
     //$sampleend = $valuepos + 50;
-    $bodysample = substr($body,$samplestart, 200);
+    $bodysample = substr($body,$samplestart, 300);
     $title = str_ireplace($value,"<span style=\"background-color:yellow;\">$value</span>",$row['title']);
-    echo ('<div class="greentitle" onClick="showDnD(\''.$row['title'].'\')">'.$row['title']);
+    echo ('<div class="tealtitle" onClick="showDnD(\''.$row['title'].'\')">'.$row['title']);
     echo ('<span class="livesearch">');
   //echo ('<a class="livesearch" href="https://dnd.bkconnor.com/tools/world/world.php?id='.$row['title'].'" target="_BLANK"><div><span class="greentitle" style="cursor:pointer;">'.$title.'</span><br/>');
   ?>

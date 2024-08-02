@@ -8,23 +8,6 @@
 		<link rel="stylesheet" type="text/css" href="/selectize/css/selectize.default.css" />
 
 		<title><?php echo $pgtitle; ?>Notes</title>
-		<?php
-		/*$handle = opendir(dirname(realpath(__FILE__)).'/assets/images/bg/');
-		while( $entry = readdir($handle) )
-		{
-		    if( $entry != '.' && $entry != '..' )
-		    {
-		        $files[] = $entry;
-		    }
-		}
-
-		closedir($handle);
-
-		sort($files);
-
-		  $i = rand(0, count($files)-1); // generate random number size of the array
-		  $selectedBg = "$files[$i]"; // set variable equal to which random filename was chosen
-	*/	?>
 	</head>
 	<!--<body id="headbody" style="background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),  url(/assets/images/bg/<?php echo $selectedBg; ?>) no-repeat center center fixed;	-webkit-background-size: cover;	-moz-background-size: cover;	-o-background-size: cover;	background-size: cover;	opacity:0.9;"> -->
 	<body id="headbody" style="background-color: #1c2127;">

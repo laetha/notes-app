@@ -14,3 +14,12 @@ $sql = "DELETE FROM notes WHERE id=$id";
 				else {
           echo "Error: " . $sql . "<br>" . $dbcon->error;
         }
+
+$sql1 = "DELETE FROM notes WHERE lineage LIKE '$id-%' || lineage LIKE '%-$id-%'";
+        if ($dbcon->query($sql1) === TRUE) {
+          echo ($id.' deleted');
+        }
+         
+				else {
+          echo "Error: " . $sql1 . "<br>" . $dbcon->error;
+        }

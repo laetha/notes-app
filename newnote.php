@@ -6,7 +6,7 @@ $title = 'Untitled';
 $body = '';
 $edited = date('ymdHi');
 
-$sql = "INSERT INTO notes (title,type,body,lineage,edited) VALUES ('$title','','$body','','$edited')";
+$sql = "INSERT INTO notes (title,type,body,lineage,edited,viewed) VALUES ('$title','','$body','','$edited','$edited')";
 
         if ($dbcon->query($sql) === TRUE) {
           $last_id = $dbcon->insert_id;
