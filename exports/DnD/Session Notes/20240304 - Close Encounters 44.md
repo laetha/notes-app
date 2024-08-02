@@ -1,5 +1,0 @@
-*   The party resumes in the drow lair. The Drow they had charmed tells them about [#Schevra the Caller](https://dnd.bkconnor.com/tools/world/world.php?id=4263) 's secret stash, then goes to report to Schevra.
-*   They leave the lair to take a short rest, then attempt to sneak back in to confront Schevra.
-*   They loot schevra's cache and find a potion of storm giant strength, a dagger of venom, and 10k gold
-*   The party kills [#Schevra the Caller](https://dnd.bkconnor.com/tools/world/world.php?id=4263) as she was talking to [#Sanguine](https://dnd.bkconnor.com/tools/world/world.php?id=4165) , but they are now potentially on the radar of [#Cruor](https://dnd.bkconnor.com/tools/world/world.php?id=4254)
-*   A drow ‘friend’ they made named [#Kyle Jusztambra](https://dnd.bkconnor.com/tools/world/world.php?id=4409) was convinced not to fight them, and ultimately fled Schevra's lair.

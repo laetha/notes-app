@@ -1,1 +1,0 @@
-Here is where I plan my trips!
