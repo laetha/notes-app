@@ -30,7 +30,7 @@
    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap.min.css">
    <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.1/css/responsive.bootstrap.min.css">
-   <link rel="stylesheet" type="text/css" href="/theme-gruvbox.css?<?php echo time(); ?>" />
+   <link rel="stylesheet" type="text/css" href="/theme-default.css?<?php echo time(); ?>" />
    <link rel="manifest" href="manifest.json">
 
 
@@ -47,7 +47,7 @@
         <input id="searchbar" type="text" onkeyup="livesearch()" style="text-align:left; color:black;"></input><input id="dndcheck" type="checkbox" style="margin-left: 5px;"> DnD</input>
         <div id="left-pane">
         <!--<button class="btn btn-primary" id="expandcollapse" onClick="expandCollapse()">Expand All</button>-->
-        <div id="createnote" onClick="newNote()"><strong>Create New +</strong></div>
+        <div id="createnote" onClick="newNote()"><em>Create New +</em></div>
 
         <!-- <input type="text" class="nonav" id="newnote" style="background-color:#1f2123; color:#fff; width:80%; text-align:left;"></input><button class="btn btn-success nonav" onClick="createNote()" id="notebutton">&#10004;</button> -->
         <div id="toc">
@@ -784,14 +784,6 @@ body {
   padding-bottom:300px;
 }
 
-p strong {
-    color: var(--strong);
-}
-
-strong {
-  color: var(--strong);
-}
-
 .maintext {
   font-family:arial;
 	font-size: 16px;
@@ -1105,6 +1097,16 @@ div[id$="head"] {
 
     --ck-color-link-default: hsl(190, 100%, 75%);
 
+    /* Theme Content */
+        /* toolbar background color */
+    --ck-custom-background: var(--main-background);
+    /* main background color */
+    --ck-color-base-background: var(--main-background);
+    /* Border, usually set to the same as background */
+    --ck-color-base-border: var(--main-background);
+    --ck-color-mention-text: var(--link-text);
+}
+
    /* The side navigation menu */
 .sidenav {
   padding-left: 5px;
@@ -1155,7 +1157,66 @@ div[id$="head"] {
   padding: 0 0 0 0;
 }
 
+
+/* THEME CONTENT */
+.maintext {
+    color: var(--text);
 }
+
+input[type="checkbox"] {
+    accent-color: var(--h3);
+}
+
+body {
+    background-color: var(--main-background);
+}
+
+.ck-content a {
+    color: var(--ck-color-mention-text);
+  }
+
+p strong {
+    color: var(--strong);
+}
+
+strong {
+  color: var(--strong);
+}
+
+em {
+  color: var(--em);
+}
+
+
+h1 {
+    color: var(--h1);
+}
+
+h2 {
+    color: var(--h2);
+}
+
+h3 {
+    color: var(--h3);
+}
+
+h4 {
+    color: var(--h4);
+}
+
+.mainbox {
+    background-color: var(--main-background);
+}
+
+#nav-pane {
+    background-color: var(--sidebar-background);
+}
+
+.ck-content pre code {
+    color: var(--code);
+  }
+
+
 
   </style>
 
