@@ -30,7 +30,7 @@
    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap.min.css">
    <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.1/css/responsive.bootstrap.min.css">
-   <link rel="stylesheet" type="text/css" href="/theme-default.css?<?php echo time(); ?>" />
+   <link rel="stylesheet" type="text/css" href="/theme-gruvbox.css?<?php echo time(); ?>" />
    <link rel="manifest" href="manifest.json">
 
 
@@ -40,14 +40,14 @@
      <div class="col-md-12">
 
    </div>
-     <div class="body sidebartext col-xs-12" style="padding-left:0%; padding-right: 0%;" id="body">
+     <div class="body maintext col-xs-12" style="padding-left:0%; padding-right: 0%;" id="body">
      <div id="menustatus" class="nonav">closed</div>
       <div class="sidenav" id="nav-pane" height="100%">
         <a href="javascript:void(0)" class="closebtn" onclick="toggleNav()">&times;</a>
         <input id="searchbar" type="text" onkeyup="livesearch()" style="text-align:left; color:black;"></input><input id="dndcheck" type="checkbox" style="margin-left: 5px;"> DnD</input>
         <div id="left-pane">
         <!--<button class="btn btn-primary" id="expandcollapse" onClick="expandCollapse()">Expand All</button>-->
-        <div id="createnote" style="color:#42f486;" onClick="newNote()">Create New +</div>
+        <div id="createnote" onClick="newNote()"><strong>Create New +</strong></div>
 
         <!-- <input type="text" class="nonav" id="newnote" style="background-color:#1f2123; color:#fff; width:80%; text-align:left;"></input><button class="btn btn-success nonav" onClick="createNote()" id="notebutton">&#10004;</button> -->
         <div id="toc">
@@ -479,11 +479,11 @@ var allHeads = document.querySelectorAll("[id$='head']");
 for (let x=0;x<allHeads.length;x++){
   let currentHead = allHeads[x].id;
   $('#' + currentHead).css('backdrop-filter','brightness(100%)');
-  $('#' + currentHead).css('color','#e8e8e8');
+  $('#' + currentHead).css('color','var(--text)');
 }
 
 $('#' + bodyID + 'head').css('backdrop-filter','brightness(150%)');
-$('#' + bodyID + 'head').css('color','#00e7ff');
+$('#' + bodyID + 'head').css('color','var(--link-text)');
 
 $.ajax({
     url : 'getbody.php',
@@ -573,6 +573,7 @@ $.ajax({
       
       $("input:checked").each(function() {
         $(this).closest("li").addClass('strike');
+        //$(this).removeProperty('webkit-appearance');
       });
 
       $("input:not(:checked)").each(function() {
@@ -783,6 +784,20 @@ body {
   padding-bottom:300px;
 }
 
+p strong {
+    color: var(--strong);
+}
+
+strong {
+  color: var(--strong);
+}
+
+.maintext {
+  font-family:arial;
+	font-size: 16px;
+	text-align:left;
+}
+
   .ck.ck-editor__editable_inline > :first-child {
     margin-top: 5px;
   }
@@ -868,7 +883,6 @@ p {
 }
 
 .ck-content pre code {
-  color: #aebaff;
   font-size: 1.3em;
 }
 
@@ -970,7 +984,7 @@ li {
 
 div[id$="children"] {
   backdrop-filter: brightness(125%);
-  border-left: 1px solid #8096ec;
+  border-left: 1px solid var(--h2);
   margin-left: 10px;
 }
 
@@ -1105,16 +1119,6 @@ div[id$="head"] {
   padding-top: 20px; /* Place content 60px from the top */
   transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
 }
-
-/* The navigation menu links */
-/*.sidenav a {
-  padding: 8px 8px 8px 32px;
-  text-decoration: none;
-  font-size: 12px;
-  color: #818181;
-  display: block;
-  transition: 0.3s;
-}*/
 
 /* When you mouse over the navigation links, change their color */
 .sidenav a:hover {
