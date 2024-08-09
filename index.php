@@ -30,7 +30,7 @@
    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap.min.css">
    <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.1/css/responsive.bootstrap.min.css">
-   <link rel="stylesheet" type="text/css" href="/theme-default.css?<?php echo time(); ?>" />
+   <link rel="stylesheet" type="text/css" href="/themes/theme-gruvbox.css?<?php echo time(); ?>" />
    <link rel="manifest" href="manifest.json">
 
 
