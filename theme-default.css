@@ -1,0 +1,50 @@
+:root {
+    /* toolbar background color */
+    --ck-custom-background: #1c2127;
+    /* main background color */
+    --ck-color-base-background: #1c2127;
+    /* Border, usually set to the same as background */
+    --ck-color-base-border: #393a3a;
+
+    --ck-color-mention-text: #00e7ff;
+    --h1: #00e7ff;
+    --h2: #e0adde;
+    --h3: #0b8dff;
+    --h4: #eeae75;
+    --main-background: #1c2127;
+    --strong: #ff7bc5;
+
+}
+
+.ck-content a {
+    color: var(--ck-color-mention-text);
+  }
+
+p strong {
+    color: var(--strong);
+}
+
+
+h1 {
+    color: var(--h1);
+}
+
+h2 {
+    color: var(--h2);
+}
+
+h3 {
+    color: var(--h3);
+}
+
+h4 {
+    color: var(--h4);
+}
+
+.mainbox {
+    background-color: var(--main-background);
+}
+
+#nav-pane {
+    background-color: var(--main-background);
+}

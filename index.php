@@ -30,6 +30,7 @@
    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap.min.css">
    <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.1/css/responsive.bootstrap.min.css">
+   <link rel="stylesheet" type="text/css" href="/theme-default.css?<?php echo time(); ?>" />
    <link rel="manifest" href="manifest.json">
 
 
@@ -41,7 +42,7 @@
    </div>
      <div class="body sidebartext col-xs-12" style="padding-left:0%; padding-right: 0%;" id="body">
      <div id="menustatus" class="nonav">closed</div>
-      <div class="sidenav" id="nav-pane" height="100%" style="background-color:#181c20;">
+      <div class="sidenav" id="nav-pane" height="100%">
         <a href="javascript:void(0)" class="closebtn" onclick="toggleNav()">&times;</a>
         <input id="searchbar" type="text" onkeyup="livesearch()" style="text-align:left; color:black;"></input><input id="dndcheck" type="checkbox" style="margin-left: 5px;"> DnD</input>
         <div id="left-pane">
@@ -62,12 +63,6 @@
         </div>
       </div>
 
-
-      <!--<div class="col-sm-10 nonav" id="editnote">
-        <div id="noteid" class="nonav"></div>
-        <textarea type="text" id="notebody" style="background-color:#1f2123; color:#fff; margin-left:0px;"></textarea><div id="namesuggest"></div>
-        <div id="toreplace" class="nonav"></div>
-      </div>-->
       <div class="col-md-8 col-sm-12" id="mainpanel" style="padding-left:0px; padding-right:0px;">
       <div id="test"></div>
         <div id="container" class="nonav" style="min-height:400px;">
@@ -788,29 +783,14 @@ body {
   padding-bottom:300px;
 }
 
-.mainbox {
-  background-color: #1c2127;
-}
-
-  .ck .ck-editor__main > .ck-editor__editable.ck-read-only {
-  background-color: #1F2123;
-}
-
   .ck.ck-editor__editable_inline > :first-child {
     margin-top: 5px;
   }
 
-h3 {
-  color: #0b8dff;
-}
 
 .strike {
   color: #828282;
   text-decoration: line-through;
-}
-
-strong {
-  color: #ff7bc5;;
 }
 
 #dropmenu {
@@ -883,10 +863,6 @@ div.folderpreview:hover {
   transition: 0.0s !important;
 }
 
-p strong {
-  color: #ff7bc5;;
-}
-
 p {
   margin: 0 0 5px;
 }
@@ -898,7 +874,6 @@ p {
 
 h1 {
   border-bottom: 2px solid #808080;
-  color:#00e7ff;
 }
 
 .folderpreview {
@@ -953,14 +928,12 @@ h1 {
 }
 
 h2 {
-	color: #e0adde;
   border-bottom: 1px solid #808080;;
   font-size: 1.6em;
   margin-top:30px;
 }
 
 h4 {
-  color: #eeae75;
   margin-top: 20px;
 }
 
@@ -1005,16 +978,10 @@ div[id$="head"] {
   cursor: pointer;
 }
 
-.ck-content a {
-  color: #00e7ff;
-  
-}
 
 .ck-content a:hover {
-  color: #00a0b0;
-  
+    opacity: 0.7;  
 }
-
 
 :root {
     /* Overrides the border radius setting in the theme. */
@@ -1024,11 +991,7 @@ div[id$="head"] {
     --ck-font-size-base: 14px;
 
     /* Helper variables to avoid duplication in the colors. */
-    --ck-custom-background: #1c2127;
     --ck-custom-foreground: hsl(255, 3%, 18%);
-    --ck-color-base-background: #1c2127;
-    --ck-background-base: #1c2127;
-    --ck-color-base-border: #393a3a;
     --ck-custom-white: hsl(0, 0%, 100%);
 
     /* -- Overrides generic colors. ------------------------------------------------------------- */
@@ -1036,7 +999,6 @@ div[id$="head"] {
     --ck-color-base-foreground: var(--ck-custom-background);
     --ck-color-focus-border: hsl(208, 90%, 62%);
     --ck-color-text: hsl(0, 0%, 98%);
-    --ck-color-mention-text: #00e7ff;
     --ck-color-shadow-drop: hsla(0, 0%, 0%, 0.2);
     --ck-color-shadow-inner: hsla(0, 0%, 0%, 0.1);
 
