@@ -1,0 +1,22 @@
+/* MODIFIED 2023-12-19 */
+
+:root {
+
+  --main-background: #2f3136;
+  --sidebar-background: #141414;
+  --text: #5dbcd2;
+  --strong: rgb(158, 138, 255);
+  --em: rgb(186, 192, 79);
+  --h1: #c7c400; /* CyberYellow: fcf601, FullYellow: fffb00, H1Yellow: c7c400 */
+  --h2: #b9adff;
+  --h3: #52c1da;
+  --h4: #67c073; /*6fcf7f*/
+  --h5: #de87ca; /*d8d8d8*/
+  --h6: #b4b4b4;
+  --link: rgb(214, 105, 188);
+
+  --code: rgb(160, 186, 248);
+  --code-background: rgb(54, 57, 63);
+ 
+}
+

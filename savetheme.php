@@ -14,6 +14,8 @@ $strongcolor = $_REQUEST['strongColor'];
 $emcolor = $_REQUEST['emColor'];
 $codecolor = $_REQUEST['codeColor'];
 $linkcolor = $_REQUEST['linkColor'];
+$codebg = $_REQUEST['codeBG'];
+$checkbox = $_REQUEST['checkboxColor'];
 $body = ':root {
 
     --text: '.$textcolor.';
@@ -23,11 +25,11 @@ $body = ':root {
     --h4: '.$h4color.';
     --main-background:'.$backgroundcolor.';
     --sidebar-background: '.$navcolor.';
+    --code-background: '.$codebg.';
     --strong: '.$strongcolor.';
     --em: '.$emcolor.';
     --code: '.$codecolor.';
     --link-text: '.$linkcolor.';
-
 }';
 
   echo file_put_contents('themes/'.$filename.'.css', $body);

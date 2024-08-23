@@ -35,7 +35,7 @@
    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap.min.css">
    <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.1/css/responsive.bootstrap.min.css">
-   <link rel="stylesheet" type="text/css" href="/themes/theme-<?php echo $theme; ?>.css?<?php echo time(); ?>" />
+   <link rel="stylesheet" type="text/css" href="/themes/<?php echo $theme; ?>.css?<?php echo time(); ?>" />
    <link rel="manifest" href="manifest.json">
 
 
@@ -163,6 +163,7 @@ else if(navToggle == 'open'){
 });
 
 $(document).ready(function(){
+  $('')
   $("h1").text('');
   leftpane();
   showpanel('<?php echo $pageid; ?>');
@@ -582,7 +583,6 @@ $.ajax({
       
       $("input:checked").each(function() {
         $(this).closest("li").addClass('strike');
-        //$(this).removeProperty('webkit-appearance');
       });
 
       $("input:not(:checked)").each(function() {
@@ -818,8 +818,8 @@ body {
 }
 
 .ck-editor__editable.ck-content .todo-list .todo-list__label > span[contenteditable="false"] > input[checked]::before {
-  background: #01537b;
-  border-color: #00abff;
+  background: var(--h3);
+  border-color: var(--h3);
 }
 
 .folderpreview {
@@ -881,10 +881,6 @@ div.folderpreview:hover {
 
 p {
   margin: 0 0 5px;
-}
-
-.ck-content pre code {
-  font-size: 1.3em;
 }
 
 h1 {
@@ -1172,9 +1168,6 @@ div[id$="head"] {
     color: var(--text);
 }
 
-input[type="checkbox"] {
-    accent-color: var(--h3);
-}
 
 body {
     background-color: var(--main-background);
@@ -1223,7 +1216,13 @@ h4 {
 
 .ck-content pre code {
     color: var(--code);
+    font-size: 1.3em;
   }
+
+.ck-content pre {
+  background: var(--code-background);
+}
+
 
 
 

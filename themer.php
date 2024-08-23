@@ -23,7 +23,7 @@
    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap.min.css">
    <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.1/css/responsive.bootstrap.min.css">
-   <link rel="stylesheet" type="text/css" href="/themes/theme-<?php echo $theme; ?>.css?<?php echo time(); ?>" />
+   <link rel="stylesheet" type="text/css" href="/themes/<?php echo $theme; ?>.css?<?php echo time(); ?>" />
    <link rel="manifest" href="manifest.json">
    <link rel="stylesheet" href="plugins/Coloris-main/dist/coloris.min.css" />
    <script src="plugins/Coloris-main/dist/coloris.min.js"></script>
@@ -53,7 +53,8 @@
       <h4>Sub headers will look like this</h4>
       Here is some text in between every bit of <a href="">header to let you see how it's</a> looking at each stage of work.
       <div>
-      <pre style="background-color: #262626;; border: 1px solid white;"><code>Code will look like this.</code></pre>
+      <pre style="border: 1px solid white;"><code>Code will look like this.</code></pre>
+      <input type="checkbox" checked> Checkboxes will look like this</input>
       </div>
   </div>
   <div class="col-md-2">
@@ -71,9 +72,12 @@
       <li><input type="radio" id="em" name="element"> - Em <span id="currentem"></span></li>
       <li><input type="radio" id="code" name="element"> - Code <span id="currentcode"></span></li>
       <li><input type="radio" id="a" name="element"> - Links <span id="currenta"></span></li>
+      <li><input type="radio" id="checkbox" name="element"> - Checkbox <span id="currentcheckbox"></span></li>
 
+      <br>
       <li><input type="radio" id="background" name="element"> - Background <span id="currentbackground"></span></li>
       <li><input type="radio" id="nav" name="element"> - Nav <span id="currentnav"></span></li>
+      <li><input type="radio" id="codebg" name="element"> - Code<span id="currentcodebg"></span></li>
     </ul>
     <input type="text" id="savename" placeholder="theme name..." style="color: black;">  <button class="btn btn-primary" id="savebutton">Save</button>
     <p>------</p>
@@ -125,6 +129,12 @@
       
       $('#currenta').css('background-color',style.getPropertyValue('--link-text'));
       $('#currenta').html(style.getPropertyValue('--link-text'));
+
+      $('#currentcodebg').css('background-color',style.getPropertyValue('--code-background'));
+      $('#currentcodebg').html(style.getPropertyValue('--code-background'));
+
+      $('#currentcheckbox').css('background-color',style.getPropertyValue('--link-text'));
+      $('#currentcheckbox').html(style.getPropertyValue('--link-text'));
       
       $.ajax({
     url : 'getthemes.php',
@@ -202,11 +212,14 @@ $('#savebutton').click(function (){
   var emColor = $('#currentem').html();
   var codeColor = $('#currentcode').html();
   var linkColor = $('#currenta').html();
+  var codeBG = $('#currentcodebg').html();
+  //var checkboxColor = $('#currentcheckbox').html();
+
 
   $.ajax({
     url : 'savetheme.php',
     type: 'GET',
-    data : { "filename" : filename, "textColor" : textColor, "h1Color" : h1Color, "h2Color" : h2Color, "h3Color" : h3Color, "h4Color" : h4Color, "backgroundColor" : backgroundColor, "navColor" : navColor, "strongColor" : strongColor, "emColor" : emColor, "codeColor" : codeColor, "linkColor" : linkColor },
+    data : { "filename" : filename, "textColor" : textColor, "h1Color" : h1Color, "h2Color" : h2Color, "h3Color" : h3Color, "h4Color" : h4Color, "backgroundColor" : backgroundColor, "navColor" : navColor, "strongColor" : strongColor, "emColor" : emColor, "codeColor" : codeColor, "linkColor" : linkColor, codeBG: codeBG, },
     success: function(data)
     {
      window.href()
@@ -308,6 +321,10 @@ h4 {
 
 pre code {
     color: var(--code);
+}
+
+pre  {
+    background: var(--code-background);
 }
 
 </style>
