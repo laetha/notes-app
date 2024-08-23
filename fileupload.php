@@ -60,7 +60,7 @@ if(isset($_FILES['upload']) && strlen($_FILES['upload']['name']) > 1) {
                 $re .= ' Width x Height = '. $width .' x '. $height .' >>> The minimum Width x Height must be: '. $imgset['minwidth']. ' x '. $imgset['minheight']; 
             } 
  
-            if($_FILES['upload']['size'] > $imgset['maxsize']*1000){ 
+            if($_FILES['upload']['size'] > $imgset['maxsize']*5000){ 
                 $re .= ' >>> Maximum file size must be: '. $imgset['maxsize']. ' KB.'; 
             } 
         } 

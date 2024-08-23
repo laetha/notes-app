@@ -9,17 +9,10 @@
    $headpath = $_SERVER['DOCUMENT_ROOT'];
    $headpath .= "/header.php";
    include_once($headpath);
-   if (empty($_GET['id'])) {
-    $sql = "SELECT id, viewed FROM notes ORDER BY viewed DESC LIMIT 1";
-    $sqldata = mysqli_query($dbcon, $sql) or die('error getting data');
-    while($row =  mysqli_fetch_array($sqldata, MYSQLI_ASSOC)) {
-      $pageid = $row['id'];
+    $theme = $_GET['theme'];
+    if ($theme == ''){
+      $theme = 'default';
     }
-   }
-   else {
-    $pageid = $_GET['id'];
-   }
-
 
    ?>
    <script src="/plugins/ckeditor/build/ckeditor.js" type="text/javascript"></script>
@@ -30,7 +23,7 @@
    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap.min.css">
    <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.1/css/responsive.bootstrap.min.css">
-   <link rel="stylesheet" type="text/css" href="/themes/theme-default.css?<?php echo time(); ?>" />
+   <link rel="stylesheet" type="text/css" href="/themes/theme-<?php echo $theme; ?>.css?<?php echo time(); ?>" />
    <link rel="manifest" href="manifest.json">
    <link rel="stylesheet" href="plugins/Coloris-main/dist/coloris.min.css" />
    <script src="plugins/Coloris-main/dist/coloris.min.js"></script>
@@ -84,16 +77,13 @@
     </ul>
     <input type="text" id="savename" placeholder="theme name..." style="color: black;">  <button class="btn btn-primary" id="savebutton">Save</button>
     <p>------</p>
-    <p>load existing template...</p>
-    <select id="loadtemplate" style="color:black;">
-      <option>
-        default
-      </option>
-      <option>
-        gruvbox
-      </option>
+    <p>load existing theme...</p>
+    <select id="loadtheme" style="color:black;">
   </select>
-  <button class="btn btn-info">Load</button>
+  <button id="loadbutton" class="btn btn-info">Load</button>
+  <button id="usebutton" class="btn btn-success">Use on Site</button>
+  <p>---------</p>
+  <a href="index.php"><button class="btn btn-warning">Go to Site</btn></a>
   </div>
   
 </div>
@@ -101,7 +91,7 @@
   </div>
 
   <script>
-    $(document).ready(function(){
+    $(document).ready(function setColors(){
       var style = getComputedStyle(document.body);
       $('#currenttext').css('background-color',style.getPropertyValue('--text'));
       $('#currenttext').html(style.getPropertyValue('--text'));
@@ -134,7 +124,21 @@
       $('#currentcode').html(style.getPropertyValue('--code'));
       
       $('#currenta').css('background-color',style.getPropertyValue('--link-text'));
-      $('#currenta').html(style.getPropertyValue('--link-text'));    
+      $('#currenta').html(style.getPropertyValue('--link-text'));
+      
+      $.ajax({
+    url : 'getthemes.php',
+    type: 'GET',
+    success: function(data)
+    {
+      $('#loadtheme').append(data);
+    },
+    error: function (jqXHR, status, errorThrown)
+    {
+
+    }
+    });
+
     });
 
 
@@ -205,7 +209,7 @@ $('#savebutton').click(function (){
     data : { "filename" : filename, "textColor" : textColor, "h1Color" : h1Color, "h2Color" : h2Color, "h3Color" : h3Color, "h4Color" : h4Color, "backgroundColor" : backgroundColor, "navColor" : navColor, "strongColor" : strongColor, "emColor" : emColor, "codeColor" : codeColor, "linkColor" : linkColor },
     success: function(data)
     {
-     $('#test').html(h3Color);
+     window.href()
     },
     error: function (jqXHR, status, errorThrown)
     {
@@ -213,6 +217,28 @@ $('#savebutton').click(function (){
     }
     });
 
+});
+
+$('#loadbutton').click(function (){
+  var themeName = $('#loadtheme').val();
+  window.location.replace('themer.php?theme=' + themeName);
+});
+
+$('#usebutton').click(function (){
+  var themeName = $('#loadtheme').val();
+  $.ajax({
+    url : 'usetheme.php',
+    type: 'GET',
+    data : { "filename" : themeName },
+    success: function(data)
+    {
+
+    },
+    error: function (jqXHR, status, errorThrown)
+    {
+
+    }
+    });
 });
 
     </script>

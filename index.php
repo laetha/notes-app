@@ -19,6 +19,11 @@
    else {
     $pageid = $_GET['id'];
    }
+   $sql = "SELECT current FROM themes WHERE id=1";
+   $sqldata = mysqli_query($dbcon, $sql) or die('error getting data');
+   while($row =  mysqli_fetch_array($sqldata, MYSQLI_ASSOC)) {
+     $theme = $row['current'];
+   }
 
 
    ?>
@@ -30,7 +35,7 @@
    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap.min.css">
    <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.1/css/responsive.bootstrap.min.css">
-   <link rel="stylesheet" type="text/css" href="/themes/theme-gruvbox.css?<?php echo time(); ?>" />
+   <link rel="stylesheet" type="text/css" href="/themes/theme-<?php echo $theme; ?>.css?<?php echo time(); ?>" />
    <link rel="manifest" href="manifest.json">
 
 
@@ -58,6 +63,10 @@
 
         </div>
 
+        </div>
+        <div id="morenav" style="margin-top: 20px;">
+          <a href="themer.php">Themes</a>
+          <br>Current Theme: <span id="currenttheme"><?php echo $theme; ?></span>
         </div>
         <div class="nonav" id="flex-nav" style="font-size:12px;">
         </div>
