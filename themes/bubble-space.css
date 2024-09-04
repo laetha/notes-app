@@ -1,0 +1,147 @@
+
+/* ~~~~~~~~~~~~~~~~~~ B: GENERAL COLOR VALUES  ~~~~~~~~~~~~~~~~~~ */
+:root {
+    --lblue1: rgb(238, 251, 253);
+    --lblue2: rgba(120, 208, 219, 0.925);
+    --lblue3: rgba(211, 241, 253, 0.897);
+    --lblue5: rgba(140, 222, 243, 0.836);
+    --lblue6: rgb(49, 71, 85);
+    --lblue7: rgb(240, 240, 240);
+
+    --blue1: rgb(120, 187, 218);
+    --blue2: rgb(48, 90, 168);
+    --blue3: rgb(23, 160, 194);
+    --blue4: rgb(91, 148, 196);
+    --blue5: rgb(82, 144, 216);
+    --blue6: rgb(17, 116, 155);
+    --blue7: rgb(0, 153, 255);
+    --blue8: rgba(48, 100, 168, 0.486);
+    --blue9: rgb(0, 204, 255);
+
+    --dblue1: rgb(1, 1, 8);
+    --dblue2: rgba(8, 18, 41, 0.824);
+    --dblue3: rgb(3, 5, 21);
+    --dblue4: rgb(3, 7, 34);
+    --dblue5: rgb(1, 1, 20);
+
+    --purple1: rgba(191, 117, 201, 0.548);
+    --purple2: rgb(133, 72, 161);
+    --purple3: rgb(127, 136, 216);
+    --purple4: rgb(74, 18, 100);
+    --purple5: rgba(238, 168, 215, 0.514);
+    --purple6: rgb(232, 211, 238);
+
+    --pink1: rgb(88, 17, 59);
+    --pink2: rgb(68, 9, 65);
+    --pink3: rgb(255, 192, 250);
+    --pink4: rgb(233, 27, 154);
+    --pink5: rgb(165, 23, 78);
+    --pink6: rgb(226, 138, 152);
+    --pink7: pink;
+    --pink8: rgb(199, 114, 199);
+    --pink9: rgb(233, 167, 211);
+    --pink10: rgb(251, 241, 252);
+    --pink11: rgb(180, 93, 134);
+    --pink12: rgb(244, 226, 245);
+    --pink13: rgb(221, 149, 205);
+    --pink14: rgb(231, 81, 174);
+
+    --teal1: rgb(37, 140, 153);
+    --teal2: rgb(110, 190, 214);
+    --teal3: rgb(6, 80, 80);
+    --teal4: rgba(37, 166, 226, 0.479);
+
+    --green1: rgb(238, 247, 238);
+    --green2: rgb(209, 245, 210);
+    --green3: rgb(172, 226, 173);
+    --green4: rgb(181, 233, 183);
+    --green5: rgb(135, 241, 139);
+    --green6: rgb(116, 221, 147);
+    --green7: rgb(26, 88, 68);
+    --green8: rgb(41, 136, 41);
+    --green9: rgb(131, 199, 131);
+    --green10: rgb(182, 241, 159);
+    --green11: rgb(105, 209, 118);
+    --green12: rgb(69, 163, 148);
+    --green13: rgb(81, 192, 140);
+    --green14: rgba(131, 205, 240, 0.411);
+    --green15: rgba(98,217,241,0.2433924299947331);
+    --green16: rgb(109, 216, 198);
+    --green17: rgb(55, 179, 158);
+    
+    --gray1:  rgb(135, 137, 150);
+    --gray2: rgb(176, 176, 176);
+    --gray3: rgb(149, 175, 151);
+
+    --gold1: rgb(141, 108, 15);--gold2: rgb(184, 121, 28);
+    --gold3: rgb(192, 150, 58);
+    --gold4: rgba(241, 229, 205, 0.671);
+    --gold5: rgb(194, 179, 151);
+    --gold6: rgb(185, 135, 42);
+
+    --peach1: rgb(235, 228, 188);
+    --peach2: rgb(218, 211, 172);
+
+    --cream1: rgb(241, 234, 227);
+    --cream2: rgba(233, 189, 108, 0.829);
+    --cream3: rgb(184, 141, 49);
+    --cream4: rgb(231, 196, 143);
+    --cream5: rgb(233, 224, 205);
+    --cream6: rgb(238, 231, 226);
+    --cream7: rgba(240, 209, 152, 0.829);
+
+    --brown1: rgb(110, 68, 19);
+    --brown2: rgba(231, 186, 127, 0.753);
+    --brown3: rgba(138, 94, 28, 0.651);
+    --brown4: rgb(34, 19, 5);
+    --brown5: rgb(136, 89, 36);
+    --brown6: rgb(148, 102, 58);
+    --brown7: rgb(83, 47, 13);
+    --brown8: rgb(184, 125, 58);
+    --brown9: rgb(155, 130, 101);
+
+    --red1: rgb(5, 0, 0);
+    --red2: rgb(20, 5, 5);
+    --red3: rgb(214, 60, 60);
+    --red4: rgba(255, 0, 0, 0.226);
+    --red5: rgb(151, 25, 25);
+    --red6: red;
+    --red7: rgb(245, 140, 140);
+    --red8: rgb(39, 3, 3);
+    --red9: rgb(122, 23, 23);
+    --red10: rgb(238, 61, 61);
+    --red11: rgb(212, 129, 129);
+    --red12: rgb(134, 44, 44);
+    --red13: rgba(58, 8, 8, 0.452);
+
+    --size-normal: 18px;
+
+/* * =================== PART V. SPACE VARIABLES =================== */
+/* ~~~~~~~~~~~~~~~~~~ SPACE A: Colors  ~~~~~~~~~~~~~~~~~~ */
+/*@ SPACE A1 Basic Colors*/
+
+    --main-background: var(--dblue1);
+    --background-primary-alt: transparent;
+    --sidebar-background: var(--dblue2);
+    --background-secondary-alt: var(--dblue1);
+
+    --text: var(--lblue7);
+    --font: 'arial';
+
+  
+/* * _______________________________________________________________*/
+
+    --strong: var(--pink14);
+    --em: var(--blue9);
+    --link-text: rgb(57, 110, 112);
+    --code: var(--purple3);
+
+
+    /* # Header Colors*/
+    --h1: rgb(175, 38, 141);
+    --h2: rgb(97, 75, 196);
+    --h3: rgb(36, 141, 160);
+    --h4: rgb(38, 116, 206);
+    --h5: rgb(145, 56, 204);
+    --h6: rgb(190, 134, 30);
+}

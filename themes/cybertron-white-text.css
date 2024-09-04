@@ -1,6 +1,7 @@
 /* MODIFIED 2023-12-19 */
 
 :root {
+  --font: arial;
 
   --main-background: #2f3136;
   --sidebar-background: #141414;

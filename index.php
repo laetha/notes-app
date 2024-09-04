@@ -148,7 +148,6 @@ else if(navToggle == 'open'){
       ClassicEditor.create( document.querySelector( '#editor' ), {
 
     //removePlugins: [ 'Title' ],
-
     autosave: {
         save( editor ) {
             return saveData( editor.getData() );
@@ -541,7 +540,7 @@ $.ajax({
       ClassicEditor
     .create( document.querySelector( '#editor' ), {
       //removePlugins: [ 'Title' ],
-      addPlugins: ['MentionCustomization'],
+
       initialData: newData[1],
       simpleUpload: {
           // The URL that the images are uploaded to.
@@ -794,7 +793,7 @@ body {
 }
 
 .maintext {
-  font-family:arial;
+  font-family:var(--font);
 	font-size: 16px;
 	text-align:left;
 }

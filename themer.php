@@ -199,7 +199,7 @@ function changeColor(){
 
 $('#savebutton').click(function (){
 
-  var filename = 'theme-' + $('#savename').val();
+  var filename = $('#savename').val();
 
   var textColor = $('#currenttext').html();
   var h1Color = $('#currenth1').html();
@@ -245,7 +245,6 @@ $('#usebutton').click(function (){
     data : { "filename" : themeName },
     success: function(data)
     {
-
     },
     error: function (jqXHR, status, errorThrown)
     {
