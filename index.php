@@ -37,8 +37,8 @@
    <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.1/css/responsive.bootstrap.min.css">
    <link rel="stylesheet" type="text/css" href="/themes/<?php echo $theme; ?>.css?<?php echo time(); ?>" />
    <link rel="manifest" href="manifest.json">
-
-
+   <div class="bg-overlay"></div>
+   <div class="background-image"></div>
    <div class="mainbox col-lg-12 col-xs-12" style="padding-right:0%;">
 
      <!-- Page Header -->
@@ -276,7 +276,7 @@ function leftpane(){
         var indent = '';
         var navigation = '';
         for (let x = 1; x <= lineage.length; x++){
-          indent += '&nbsp;&nbsp;';
+          indent += '&nbsp;';
         }
         if (lineage.length !== 1){
           $('#' + parent + 'nav').html('<svg onClick=shownav(' + parent + ') xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right-short" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8"/></svg>');
@@ -310,9 +310,9 @@ function leftpane(){
 }
 
 function sortItems(){
-
   // get all divs with id including "children"
-  var allParents = document.querySelectorAll("[id$='children']");
+  var allParents = document.querySelectorAll("[id$='children'], [id='toc']");
+  var tocItem = document.getElementById('toc');
 
   var parentItems = new Array();
   // for each 'children' div
@@ -794,7 +794,7 @@ body {
 
 .maintext {
   font-family:var(--font);
-	font-size: 16px;
+	font-size: 1em;
 	text-align:left;
 }
 
@@ -1103,13 +1103,44 @@ div[id$="head"] {
 
     /* Theme Content */
         /* toolbar background color */
-    --ck-custom-background: var(--main-background);
+    --ck-custom-background: #00000000;
     /* main background color */
-    --ck-color-base-background: var(--main-background);
+    --ck-color-base-background: #00000000;
     /* Border, usually set to the same as background */
-    --ck-color-base-border: var(--main-background);
+    --ck-color-base-border: var(--h4);
     --ck-color-mention-text: var(--link-text);
 }
+
+.background-image {
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  display: block;
+  background-image: var(--bg-image);
+  width: 1920px;
+  height: 1080px;
+  -webkit-filter: blur(5px);
+  -moz-filter: blur(5px);
+  -o-filter: blur(5px);
+  -ms-filter: blur(5px);
+  filter: blur(5px);
+  z-index: -50;
+}
+
+.bg-overlay {
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  display: block;
+  background-color: var(--main-background);
+  opacity: 0.9;
+  width: 1920px;
+  height: 1080px;
+  z-index: -40;
+}
+
 
    /* The side navigation menu */
 .sidenav {
@@ -1169,7 +1200,9 @@ div[id$="head"] {
 
 
 body {
-    background-color: var(--main-background);
+    /*background-color: var(--main-background); */
+    /*background-image: url('themes/tokyo-night.png'); */
+
 }
 
 .ck-content a {
@@ -1206,7 +1239,8 @@ h4 {
 }
 
 .mainbox {
-    background-color: var(--main-background);
+    /*background-color: var(--main-background);*/
+    background-color: transparent;
 }
 
 #nav-pane {

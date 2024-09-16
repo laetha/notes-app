@@ -11,6 +11,7 @@ while($row =  mysqli_fetch_array($sqldata, MYSQLI_ASSOC)) {
     echo ('<option>'.$currenttheme.'</option>');
 }
 foreach($files as $file){
+    if ($file )
     $file = rtrim($file,".css");
     if ($file !== $currenttheme){
         echo ('<option id="'.$file.'">'.$file.'</option>');

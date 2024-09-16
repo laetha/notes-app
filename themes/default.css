@@ -13,5 +13,5 @@
     --code: #c6c1f3;
     --code-background: #101316;
     --link-text: #00e7ff;
-
+    --bg-image: var(--main-background);
 }

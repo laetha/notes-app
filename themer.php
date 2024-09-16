@@ -27,7 +27,8 @@
    <link rel="manifest" href="manifest.json">
    <link rel="stylesheet" href="plugins/Coloris-main/dist/coloris.min.css" />
    <script src="plugins/Coloris-main/dist/coloris.min.js"></script>
-
+   <div class="bg-overlay"></div>
+   <div class="background-image"></div>
    <div class="mainbox col-lg-12 col-xs-12" style="padding-right:0%;">
 
      <!-- Page Header -->
@@ -259,6 +260,34 @@ $('#usebutton').click(function (){
 
 /* THEME CONTENT */
 
+.background-image {
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  display: block;
+  background-image: var(--bg-image);
+  width: 1920px;
+  height: 1080px;
+  -webkit-filter: blur(5px);
+  -moz-filter: blur(5px);
+  -o-filter: blur(5px);
+  -ms-filter: blur(5px);
+  filter: blur(5px);
+  z-index: -50;
+}
+
+.bg-overlay {
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  display: block;
+  background-color: var(--main-background);
+  width: 1920px;
+  height: 1080px;
+  z-index: -40;
+}
 
 .maintext {
     color: var(--text);
@@ -268,9 +297,6 @@ input[type="checkbox"] {
     accent-color: var(--h3);
 }
 
-body {
-    background-color: var(--main-background);
-}
 
 a {
     color: var(--link-text);
@@ -311,7 +337,7 @@ h4 {
 }
 
 .mainbox {
-    background-color: var(--main-background);
+    background-color: transparent;
 }
 
 #nav-pane {
