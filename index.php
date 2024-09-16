@@ -312,7 +312,6 @@ function leftpane(){
 function sortItems(){
   // get all divs with id including "children"
   var allParents = document.querySelectorAll("[id$='children'], [id='toc']");
-  var tocItem = document.getElementById('toc');
 
   var parentItems = new Array();
   // for each 'children' div
@@ -362,6 +361,22 @@ function sortItems(){
     }
 
   }
+changeColors()
+}
+
+function changeColors(){
+  //Change the color of the root items
+  var rootItems = document.querySelectorAll("[id='toc']");
+  rootItems = $(rootItems).children();
+  var tocColors = ['#51e1e9','#54b6f8','#437cf3','#6f51f4','#9446f8','#c952ed','#e54f9b','#e3365e'];
+  var x = 0;
+  for (let i=0;i<rootItems.length;i++){
+    if (rootItems[i].id.includes('head')){
+    $(rootItems[i]).css('color',tocColors[x]);
+    $('#test').html(i);
+    x++;
+    }
+  }
 }
 
 function toggleside(){
@@ -378,15 +393,10 @@ function shownav(value){
   var navID = '#' + value + 'children';
   var navNav = '#' + value + 'nav';
   $(navID).toggle();
-  //if ($(navNav).is(':visible')){
     $(navNav).html('<svg onClick=shownav(' + value + ') xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right-short" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8"/></svg>');
     $(navNav).attr('name','right-arrow');
-  //}
-  /*else {
-    $(navNav).html('<svg onClick=shownav('+ value +') xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-down-short" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8 4a.5.5 0 0 1 .5.5v5.793l2.146-2.147a.5.5 0 0 1 .708.708l-3 3a.5.5 0 0 1-.708 0l-3-3a.5.5 0 1 1 .708-.708L7.5 10.293V4.5A.5.5 0 0 1 8 4"/></svg>');
-    $(navNav).attr('name','down-arrow');
-  }*/
-}
+
+  }
 
 $('#delno').click(function(){
   $('#delwarning').modal('toggle');
@@ -493,6 +503,7 @@ for (let x=0;x<allHeads.length;x++){
 
 $('#' + bodyID + 'head').css('backdrop-filter','brightness(150%)');
 $('#' + bodyID + 'head').css('color','var(--link-text)');
+changeColors();
 
 $.ajax({
     url : 'getbody.php',
