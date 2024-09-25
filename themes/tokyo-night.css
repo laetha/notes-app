@@ -15,4 +15,13 @@
     --link-text: #09c1dc;
     --font: 'JetBrains';
     --bg-image: url('/themes/tokyo-night.jpg');
+    
+    --gradient0: #51e1e9;
+    --gradient1: #54b6f8;
+    --gradient2: #437cf3;
+    --gradient3: #6f51f4;
+    --gradient4: #9446f8;
+    --gradient5: #c952ed;
+    --gradient6: #e54f9b;
+    --gradient7: #e3365e;
 }

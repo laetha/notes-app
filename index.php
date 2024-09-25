@@ -181,17 +181,27 @@ $(document).ready(function(){
 
 function exportAll(){
   <?php
+  $dir = 'exports';
 
-$dir = "exports";
-if(file_exists($dir)){
-    $di = new RecursiveDirectoryIterator($dir);
-    $di->setFlags(RecursiveDirectoryIterator::SKIP_DOTS);
-    $ri = new RecursiveIteratorIterator($di);
-    foreach ( $ri as $file ) {
-          $file->isDir() ?  rmdir($file) : unlink($file);
-    }
+  // Temporarily Remove Critical Files
+  rename($dir.'/.stfolder', 'temp/.stfolder');
+  rename($dir.'/.obsidian', 'temp/.obsidian');
+
+// Delete All Files
+  $files = new RecursiveIteratorIterator(
+    new RecursiveDirectoryIterator($dir, RecursiveDirectoryIterator::SKIP_DOTS),
+    RecursiveIteratorIterator::CHILD_FIRST
+);
+$excludeDirs = ['.stfolder','.obsidian'];
+
+foreach ($files as $fileinfo) {
+    $todo = ($fileinfo->isDir() ? 'rmdir' : 'unlink');
+    $todo($fileinfo->getRealPath());
 }
 
+
+// Remake All Files
+$allFiles =  array();
 $sql = "SELECT title,body,lineage FROM notes";
 $sqldata = mysqli_query($dbcon, $sql) or die('error getting data');
 while($row =  mysqli_fetch_array($sqldata, MYSQLI_ASSOC)) {
@@ -208,7 +218,7 @@ while($row =  mysqli_fetch_array($sqldata, MYSQLI_ASSOC)) {
     while($row =  mysqli_fetch_array($sqldata1, MYSQLI_ASSOC)) { 
 
       $newpath = $newpath.$row['title'].'/';
-
+      array_push($allFiles,$newpath.$title.'.md');
     }
   }
 
@@ -219,6 +229,12 @@ while($row =  mysqli_fetch_array($sqldata, MYSQLI_ASSOC)) {
 
   echo file_put_contents('exports/'.$newpath.$title.'.md', $body);
 }
+
+// Replace Critical Files
+rename('temp/.stfolder', $dir.'/.stfolder');
+rename('temp/.obsidian', $dir.'/.obsidian');
+
+
   ?>
 }
 
@@ -368,14 +384,21 @@ function changeColors(){
   //Change the color of the root items
   var rootItems = document.querySelectorAll("[id='toc']");
   rootItems = $(rootItems).children();
-  var tocColors = ['#51e1e9','#54b6f8','#437cf3','#6f51f4','#9446f8','#c952ed','#e54f9b','#e3365e'];
+  var style = getComputedStyle(document.body);
+
   var x = 0;
   for (let i=0;i<rootItems.length;i++){
-    if (rootItems[i].id.includes('head')){
-    $(rootItems[i]).css('color',tocColors[x]);
-    $('#test').html(i);
-    x++;
+    let currentColor = 'var(--gradient' + x + ')';
+    if (rootItems[i].id.includes('children')){
+      let borderCall = '1px solid ' + currentColor;
+      $(rootItems[i]).css('border-left',borderCall);
+      x++;
+  }
+
+    else if (rootItems[i].id.includes('head')){
+      $(rootItems[i]).css('color',currentColor);
     }
+
   }
 }
 
@@ -991,7 +1014,7 @@ li {
 
 div[id$="children"] {
   backdrop-filter: brightness(125%);
-  border-left: 1px solid var(--h2);
+  /*border-left: 1px solid var(--h2);*/
   margin-left: 10px;
 }
 
@@ -1210,11 +1233,11 @@ div[id$="head"] {
 }
 
 
-body {
+/*body {
     /*background-color: var(--main-background); */
-    /*background-image: url('themes/tokyo-night.png'); */
+    /*background-image: url('themes/tokyo-night.png'); 
 
-}
+}*/
 
 .ck-content a {
     color: var(--ck-color-mention-text);

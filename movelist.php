@@ -3,7 +3,7 @@ $sqlpath .= "/sql-connect.php";
 include_once($sqlpath);
 
 $moveList = array();
-$sql = "SELECT * FROM notes";
+$sql = "SELECT * FROM notes ORDER BY title ASC";
 $sqldata = mysqli_query($dbcon, $sql) or die('error getting data');
 while($row =  mysqli_fetch_array($sqldata, MYSQLI_ASSOC)) {
 

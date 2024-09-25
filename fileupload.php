@@ -8,7 +8,7 @@ $upload_dir = array(
 $imgset = array( 
     'maxsize' => 5000, 
     'maxwidth' => 4096, 
-    'maxheight' => 3000, 
+    'maxheight' => 4096, 
     'minwidth' => 10, 
     'minheight' => 10, 
     'type' => array('bmp', 'gif', 'jpg', 'jpeg', 'png', 'webp'), 
@@ -35,8 +35,10 @@ function setFName($p, $fn, $ex, $i){
  
 $re = ''; 
 if(isset($_FILES['upload']) && strlen($_FILES['upload']['name']) > 1) { 
+
+    $cleanname = str_replace(' ','_',basename($_FILES['upload']['name']));
  
-    define('F_NAME', preg_replace('/\.(.+?)$/i', '', basename($_FILES['upload']['name'])));   
+    define('F_NAME', preg_replace('/\.(.+?)$/i', '', $cleanname));   
  
     // Get filename without extension 
     $sepext = explode('.', strtolower($_FILES['upload']['name'])); 
@@ -86,8 +88,11 @@ if(isset($_FILES['upload']) && strlen($_FILES['upload']['name']) > 1) {
                     'message' => 'Unable to upload the file!' 
                 ] 
             ]; 
-        } 
-    }else{ 
+        }
+
+
+    }
+    else{ 
         $response = [ 
             'error' => [ 
                 'message' => 'Error: '.$re 
