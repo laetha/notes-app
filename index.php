@@ -768,7 +768,7 @@ function saveData(value){
     },
     error: function (jqXHR, status, errorThrown)
     {
-      $('#lastsaved').html(status)
+     $('#lastsaved').html(status);
     }
 
 
