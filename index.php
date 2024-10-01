@@ -65,6 +65,14 @@
 
         </div>
         <div id="morenav" style="margin-top: 20px;">
+        <div class="dropdown">
+          <button class="btn btn-info dropdown-toggle" type="button" data-toggle="dropdown" style="display:inline-block; background-color:green; border-radius:10px; padding:0px 5px 0px 5px;">templates
+          <span class="caret"></span></button>
+          <ul class="dropdown-menu" style="position:absolute;">
+            <li onclick="template('daily')">Daily</li>
+            <li onclick="template('dnd')">DnD</li>
+          </ul>
+        </div>
           <a href="themer.php">Themes</a>
           <br>Current Theme: <span id="currenttheme"><?php echo $theme; ?></span>
         </div>
@@ -611,7 +619,6 @@ $.ajax({
       </div>\
         <button class="btn btn-danger" id="delnote" onClick="delWarning()" style="background-color:#a00; border-radius:10px; padding:0px 5px 0px 5px;">Delete</button>\
         <button class="btn btn-info" style="display:inline-block; background-color:#0043c4; border-radius:10px; padding:0px 5px 0px 5px;" onClick="goBack()">Back</button>'
-      
         );
       
       $("input:checked").each(function() {
@@ -809,6 +816,26 @@ function showDnD(value){
 
     }
     });
+}
+
+function template(value){
+  if (value == 'daily'){
+    var noteTitle = document.querySelector("h1");
+    var noteBody = $(noteTitle).html();
+    var currentDate = new Date();
+    var fullDate = String(currentDate.getFullYear()) + String(currentDate.getMonth() + 1).padStart(2, '0') + String(currentDate.getDate()).padStart(2, '0');
+    noteBody =  fullDate + ' - ';
+    //$('#test').html(noteBody);
+    var currentData = editor.getData();
+    currentData = currentData.slice(2);
+    editor.setData(noteBody + currentData);
+  }
+  else if (value == 'dnd'){
+
+  }
+  else{
+
+  }
 }
 
 
