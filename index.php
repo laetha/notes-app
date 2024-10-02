@@ -192,8 +192,8 @@ function exportAll(){
   $dir = 'exports';
 
   // Temporarily Remove Critical Files
-  rename($dir.'/.stfolder', 'temp/.stfolder');
-  rename($dir.'/.obsidian', 'temp/.obsidian');
+  //rename($dir.'/.stfolder', 'temp/.stfolder');
+  //rename($dir.'/.obsidian', 'temp/.obsidian');
 
 // Delete All Files
   $files = new RecursiveIteratorIterator(
@@ -203,9 +203,12 @@ function exportAll(){
 $excludeDirs = ['.stfolder','.obsidian'];
 
 foreach ($files as $fileinfo) {
+    $delpath = realpath($fileinfo);
+    if (!str_contains($delpath,'.stfolder') && !str_contains($delpath,'.obsidian')){
     $todo = ($fileinfo->isDir() ? 'rmdir' : 'unlink');
     $todo($fileinfo->getRealPath());
-}
+    }
+  }
 
 
 // Remake All Files
@@ -239,8 +242,8 @@ while($row =  mysqli_fetch_array($sqldata, MYSQLI_ASSOC)) {
 }
 
 // Replace Critical Files
-rename('temp/.stfolder', $dir.'/.stfolder');
-rename('temp/.obsidian', $dir.'/.obsidian');
+//rename('temp/.stfolder', $dir.'/.stfolder');
+//rename('temp/.obsidian', $dir.'/.obsidian');
 
 
   ?>
@@ -831,7 +834,14 @@ function template(value){
     editor.setData(noteBody + currentData);
   }
   else if (value == 'dnd'){
-
+    var currentData = editor.getData();
+    var newData = '\nRace: \
+    \nEstablishment: \
+    \nLocation: \
+    \nFaction: \
+    \nDeity: \
+    \nTitle: '; 
+    editor.setData(currentData + newData);
   }
   else{
 
