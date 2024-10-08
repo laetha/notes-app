@@ -10,7 +10,7 @@ $doctitle = '';
 
 // Fetch the document title and lineage
 while ($row = mysqli_fetch_array($sqldata, MYSQLI_ASSOC)) {
-    $doctitle = $row['title'];
+    $doctitle = $row['id'].'-'.$row['title'];
     /*$heirarchy = explode('-', $row['lineage']);
     array_pop($heirarchy); // Exclude the last entry
 

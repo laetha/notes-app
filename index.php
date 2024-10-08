@@ -87,11 +87,12 @@
 
 
        <!-- <input type="text" id="filepath" value=""></input> -->
-        <div id="fileID" class="nonav"></div>
+        <div id="fileID"></div>
         <div id="noteHistory" class="nonav"></div>
           <textarea name="editor" id="editor" class="nonav"></textarea>
           <div id="folderPreview"></div><p>
           <div class="col-md-12" id="lastsaved"></div>
+          <div class="col-md-12" id="references"></div>
           <div class="col-md-12" id="dndshow"></div>
 
         </div>
@@ -153,7 +154,7 @@ else if(navToggle == 'open'){
 
       var noteHistory = '';
 
-      ClassicEditor.create( document.querySelector( '#editor' ), {
+     ClassicEditor.create( document.querySelector( '#editor' ), {
 
     //removePlugins: [ 'Title' ],
     autosave: {
@@ -506,7 +507,7 @@ $.ajax({
 }
 
 function showpanel(value){
-  var docID = '<?php echo $pageid; ?>';
+
   $('#dndshow').html('');
   $('#mainpanel').addClass('nonav');
   $('#container').addClass('nonav');
@@ -570,6 +571,7 @@ $.ajax({
       url: 'getmentions.php',
       type: 'GET',
       success: function(data){
+        var docID = $('#fileID').html();
         dndMentions = new Array();
         noteMentions = new Array();
         var allMentions = JSON.parse(data);
@@ -644,6 +646,27 @@ $.ajax({
       }
     });
 
+      var docID = $('#fileID').html();
+
+      $.ajax ({
+        url: 'getreferences.php',
+        type: 'GET',
+        data: { 'docid' : docID },
+        success: function(referenceData){
+          var referenceList = JSON.parse(referenceData);
+          if (referenceList === undefined || referenceList.length == 0){
+            $('#references').html('');
+          }
+          else {
+            $('#references').html('References:<br/>');
+          }
+          for (x=0; x < referenceList.length; x++){
+            $('#references').append('<div class="col-md-2">' + referenceList[x] + '</div>')
+          }
+        }
+      });
+
+
       $.ajax ({
         url: 'folderpreview.php',
         type: 'GET',
@@ -676,6 +699,8 @@ $.ajax({
     }
     });
 
+
+    history.pushState(null, "", location.href.split("?")[0]);
   }
 
 function exportNote(){
@@ -1124,6 +1149,10 @@ body {
 	font-size:12px;
 	display:inline-block;
 	padding: 0px 0px 0px 0px;
+  }
+
+  .searchresult img {
+    width:60px;
   }
   
   h2 {
