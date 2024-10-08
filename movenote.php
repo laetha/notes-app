@@ -21,5 +21,4 @@ while($row =  mysqli_fetch_array($sqldata, MYSQLI_ASSOC)) {
               else {
             
       }
-
 }

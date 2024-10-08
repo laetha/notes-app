@@ -11,7 +11,7 @@ $doctitle = '';
 // Fetch the document title and lineage
 while ($row = mysqli_fetch_array($sqldata, MYSQLI_ASSOC)) {
     $doctitle = $row['title'];
-    $heirarchy = explode('-', $row['lineage']);
+    /*$heirarchy = explode('-', $row['lineage']);
     array_pop($heirarchy); // Exclude the last entry
 
     // Build the full path based on the hierarchy
@@ -31,7 +31,7 @@ while ($row = mysqli_fetch_array($sqldata, MYSQLI_ASSOC)) {
     // Ensure fullpath ends with a trailing slash
     if ($fullpath !== '') {
         $fullpath .= '/';
-    }
+    }*/
 }
 
 // Base upload directory

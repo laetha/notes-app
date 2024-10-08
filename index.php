@@ -973,8 +973,355 @@ function template(value){
 	  --ck-color-base-background: #00000000;
 	  /* Border, usually set to the same as background */
 	  --ck-color-base-border: var(--h4);
-	  --ck-color-mention-text: var(--link-text);
+	  --ck-color-mention-text: var(--link-text);    
   }
+
+body {
+	opacity: 1.0;
+	padding-bottom:300px;
+  }
+  
+  .maintext {
+	font-family:var(--font);
+	  font-size: 1em;
+	  text-align:left;
+  }
+  
+	.ck.ck-editor__editable_inline > :first-child {
+	  margin-top: 5px;
+	}
+  
+  
+  .strike {
+	color: #828282;
+	text-decoration: line-through;
+  }
+  
+  #dropmenu {
+	background-color:black;
+  
+  }
+  .image-inline img{
+	height: 400px !important;
+  }
+  
+  .ck-editor__editable.ck-content .todo-list .todo-list__label > span[contenteditable="false"] > input[checked]::before {
+	background: var(--h3);
+	border-color: var(--h3);
+  }
+  
+  .folderpreview {
+	height:250px;
+	overflow:hidden;
+	border: 1px solid white;
+	opacity: 75%;
+	cursor: pointer;
+  }
+  
+  .folderpreview img {
+	max-width: 100%;
+	height: 200px;
+  }
+  
+  div.folderpreview:hover {
+	background-color: #424548;
+  }
+  
+  .folderpreview h1{
+	font-size: 16px;
+	margin-top: 10px;
+  }
+  
+  .folderpreview {
+	font-size: 1em;
+  }
+  
+  .dropdown-item {
+	color: #e8e8e8;
+  }
+  
+  .dropdown-item:hover {
+	background-color: grey;
+  }
+  
+  .modal-body {
+	background-color: #1F2123;
+  }
+  
+  .dropdown-menu {
+	background-color:#1F2123;
+  }
+  
+  .tealtitle {
+	color:#00e7ff;
+	font-size:16px;
+  }
+  
+  .livesearch {
+  
+	padding: 0px !important;
+	text-decoration: none;
+	font-size: 12px !important;
+	color: #818181;
+	display: block;
+	transition: 0.0s !important;
+  }
+  
+  p {
+	margin: 0 0 5px;
+  }
+  
+  h1 {
+	border-bottom: 2px solid #808080;
+  }
+  
+  .folderpreview {
+	font-size: 14px;
+  }
+  
+  .folderpreview h1 {
+	font-size:20px;
+  }
+  .folderpreview h2 {
+	font-size:18px;
+	margin-top:5px;
+  }
+  .folderpreview h3 {
+	font-size:16px;
+  }
+  .folderpreview h4 {
+	font-size:14px;
+  }
+  
+  .searchresult {
+	font-size: 14px;
+	height:170px;
+	overflow:hidden;
+	border-top: 1px solid #808080;
+	margin-bottom: 20px;
+	padding-bottom: 10px;
+	opacity: 0.95;
+  }
+  
+  .searchresult h1 {
+	font-size:20px;
+	margin-top:5px;
+  }
+  .searchresult h2 {
+	font-size:18px;
+	margin-top:5px;
+  }
+  .searchresult h3 {
+	font-size:16px;
+	margin-top:5px;
+  }
+  .searchresult h4 {
+	font-size:14px;
+	margin-top:5px;
+  }
+  
+  .searchresult a {
+	font-size:12px;
+	display:inline-block;
+	padding: 0px 0px 0px 0px;
+  }
+  
+  h2 {
+	border-bottom: 1px solid #808080;;
+	font-size: 1.6em;
+	margin-top:30px;
+  }
+  
+  h4 {
+	margin-top: 20px;
+  }
+  
+  h2, h3, h4 {
+	margin-bottom: 3px;
+  }
+  
+  .ck-content pre {
+	background: #262626;;
+  }
+  
+  .sidebartext {
+	color: #e8e8e8;
+  }
+  
+  #filetitle {
+	background-color: #1F2123;
+	font-size: 2em;
+	text-align:left;
+	border: 1px solid #1f2123;
+	container-name: filetitle;
+	max-width:100%;
+  }
+  
+  @container filetitle (min-width: 700px) {
+	#filetitle {
+	  font-size: 1em;
+	}
+  }
+  
+  li {
+	margin-bottom:2px;
+  }
+  
+  div[id$="children"] {
+	backdrop-filter: brightness(125%);
+	/*border-left: 1px solid var(--h2);*/
+	margin-left: 10px;
+  }
+  
+  div[id$="head"] {
+	cursor: pointer;
+  }
+  
+  
+  .ck-content a:hover {
+	  opacity: 0.7;  
+  }
+  
+  
+  .background-image {
+	position: fixed;
+	top:0;
+	left: 0;
+	right: 0;
+	z-index: 1;
+	display: block;
+	background-image: var(--bg-image);
+	width: 1920px;
+	height: 1080px;
+	-webkit-filter: blur(5px);
+	-moz-filter: blur(5px);
+	-o-filter: blur(5px);
+	-ms-filter: blur(5px);
+	filter: blur(5px);
+	z-index: -50;
+  }
+  
+  .bg-overlay {
+	position: fixed;
+	left: 0;
+	right: 0;
+	z-index: 1;
+	display: block;
+	background-color: var(--main-background);
+	opacity: 0.9;
+	width: 1920px;
+	height: 1080px;
+	z-index: -40;
+  }
+  
+  
+	 /* The side navigation menu */
+  .sidenav {
+	padding-left: 5px;
+	height: 100%; /* 100% Full-height */
+	width: 0px; /* 0 width - change this with JavaScript */
+	position: fixed; /* Stay in place */
+	z-index: 1; /* Stay on top */
+	top: 0; /* Stay at the top */
+	left: 0;
+	background-color: #111; /* Black*/
+	overflow-x: hidden; /* Disable horizontal scroll */
+	padding-top: 20px; /* Place content 60px from the top */
+	transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+  }
+  
+  /* When you mouse over the navigation links, change their color */
+  .sidenav a:hover {
+	color: #f1f1f1;
+  }
+  
+  /* Position and style the close button (top right corner) */
+  .sidenav .closebtn {
+	position: absolute;
+	top: 0;
+	right: 25px;
+	font-size: 36px;
+	margin-left: 50px;
+  }
+  
+  /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+  #mainpanel {
+	transition: margin-left .5s;
+  }
+  
+  /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+  @media screen and (max-height: 450px) {
+	.sidenav {padding-top: 15px;}
+	.sidenav a {font-size: 18px;}
+  }
+  
+  .livesearchtext h1{
+	font-size: 12px;
+  }
+  
+  .livesearchtext a {
+	font-size: 12px;
+	display: inline-block;
+	padding: 0 0 0 0;
+  }
+  
+  
+  /* THEME CONTENT */
+  .maintext {
+	  color: var(--text);
+  }
+  
+  
+  .ck-content a {
+	  color: var(--ck-color-mention-text);
+	}
+  
+  p strong {
+	  color: var(--strong);
+  }
+  
+  strong {
+	color: var(--strong);
+  }
+  
+  em {
+	color: var(--em);
+  }
+  
+  
+  h1 {
+	  color: var(--h1);
+  }
+  
+  h2 {
+	  color: var(--h2);
+  }
+  
+  h3 {
+	  color: var(--h3);
+  }
+  
+  h4 {
+	  color: var(--h4);
+  }
+  
+  .mainbox {
+	  /*background-color: var(--main-background);*/
+	  background-color: transparent;
+  }
+  
+  #nav-pane {
+	  background-color: var(--sidebar-background);
+  }
+  
+  .ck-content pre code {
+	  color: var(--code);
+	  font-size: 1.3em;
+	}
+  
+  .ck-content pre {
+	background: var(--code-background);
+  }  
 </style>
 
    <?php
