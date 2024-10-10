@@ -81,7 +81,7 @@
       </div>
 
       <div class="col-md-8 col-sm-12" id="mainpanel" style="padding-left:0px; padding-right:0px;">
-      <div id="test"></div>
+      <div id="test"><a onclick="importDnD()">Import DnD</a></div>
         <div id="container" class="nonav" style="min-height:400px;">
         <!-- <input type="text" id="filetitle" value=""></input> -->
 
@@ -848,6 +848,21 @@ function showDnD(value){
     }
     });
 }
+
+function importDnD(){
+  $.ajax ({
+    url : 'importNPC.php',
+    type: 'GET',
+    success: function(data){
+
+    },
+    error: function (jqXHR, status, errorThrown)
+    {
+
+    }
+  });
+}
+
 
 function template(value){
   if (value == 'daily'){
