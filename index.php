@@ -87,7 +87,7 @@
 
 
        <!-- <input type="text" id="filepath" value=""></input> -->
-        <div id="fileID"></div>
+        <div id="fileID" class="nonav"></div>
         <div id="noteHistory" class="nonav"></div>
           <textarea name="editor" id="editor" class="nonav"></textarea>
           <div id="folderPreview"></div><p>
@@ -590,6 +590,7 @@ $.ajax({
       //removePlugins: [ 'Title' ],
 
       initialData: newData[1],
+
       simpleUpload: {
           // The URL that the images are uploaded to.
           uploadUrl: 'fileupload.php?docid=' + docID
@@ -618,6 +619,7 @@ $.ajax({
     } )
     .then( editor => {
         window.editor = editor;
+
         $('.ck-toolbar__items').prepend('<div style="background-color:#c7c5c5; border-radius:10px; padding:0px 5px 0px 5px;" id="navtoggle" onClick="toggleNav()"><img src="/assets/list.svg" /></button>');
         $('.ck-toolbar__items').append('<div id="subnote" style="background-color:#004f5b; border-radius:10px; padding:0px 5px 0px 5px;" onClick="createNote()">New Sub-note</div>\
         <div class="dropdown" style="display:inline-block;">\
