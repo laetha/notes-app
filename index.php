@@ -851,7 +851,7 @@ function showDnD(value){
 
 function importDnD(){
   $.ajax ({
-    url : 'importNPC.php',
+    url : 'importRace.php',
     type: 'GET',
     success: function(data){
 
