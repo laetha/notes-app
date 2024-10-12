@@ -220,6 +220,10 @@ while($row =  mysqli_fetch_array($sqldata, MYSQLI_ASSOC)) {
   $title = $row['title'];
   $remtitle = '# '.$row['title'];
   $body = ltrim(substr($row['body'],strlen($remtitle)));
+
+    // Remove <!--processed--> markers from the body content
+    $body = preg_replace('/<!--processed-[^>]*-->/', '', $body);
+
   $path = explode('-', $row['lineage']);
   array_pop($path);
   $newpath = '';
@@ -763,12 +767,18 @@ function saveData(value){
   for (i=0; i < mentionArray.length; i++){
     // get the innerHTML of [data-mention]
     var mentionText = mentionArray[i].innerHTML;
+
+        // Check if this mention has already been processed
+        if (newValue.includes('<!--processed-' + mentionText + '-->')) {
+        continue;  // Skip if already processed
+    }
+
+
     noteMentionID = noteMentions.indexOf(mentionText);
     // count and number the amount of mentions
     dndMentionID = dndMentions.indexOf(mentionText);
     if (noteMentionID != -1){
-      mentionReplace = '[' + mentionText + '](https://notes.bkconnor.com?id=' + noteMentions[noteMentionID + 1] + ')';
-      regex = new RegExp(mentionText,"g");
+      mentionReplace = '[' + mentionText + '](https://notes.bkconnor.com?id=' + noteMentions[noteMentionID + 1] + ')<!--processed-' + mentionText + '-->';      regex = new RegExp(mentionText,"g");
       newValue = newValue.replaceAll(regex, mentionReplace);
       noteMentionID = -1;
     }
@@ -851,14 +861,14 @@ function showDnD(value){
 
 function importDnD(){
   $.ajax ({
-    url : 'importRace.php',
+    url : 'imports/importNPC.php',
     type: 'GET',
     success: function(data){
-
+      console.log(data);
     },
     error: function (jqXHR, status, errorThrown)
     {
-
+      console.log(jqXHR + status + errorThrown);
     }
   });
 }
