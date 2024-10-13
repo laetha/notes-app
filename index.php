@@ -81,7 +81,7 @@
       </div>
 
       <div class="col-md-8 col-sm-12" id="mainpanel" style="padding-left:0px; padding-right:0px;">
-      <div id="test"><a onclick="importDnD()">Import DnD</a></div>
+      <div id="test" class="nonav"><a onclick="importDnD()">Import DnD</a></div>
         <div id="container" class="nonav" style="min-height:400px;">
         <!-- <input type="text" id="filetitle" value=""></input> -->
 
@@ -667,7 +667,7 @@ $.ajax({
             $('#references').html('References:<br/>');
           }
           for (x=0; x < referenceList.length; x++){
-            $('#references').append('<div class="col-md-2">' + referenceList[x] + '</div>')
+            $('#references').append('<div class="col-md-4" style="border-bottom: 1px solid var(--h2);">' + referenceList[x] + '</div>')
           }
         }
       });
@@ -861,7 +861,7 @@ function showDnD(value){
 
 function importDnD(){
   $.ajax ({
-    url : 'imports/importNPC.php',
+    url : 'imports/fix.php',
     type: 'GET',
     success: function(data){
       console.log(data);

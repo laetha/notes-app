@@ -50,6 +50,7 @@ $sepext = explode('.', strtolower($_FILES['upload']['name']));
 $type = end($sepext); // Get the file extension
 
 // Clean the document title for the filename
+$cleanname = str_replace(["'", '"'], '', $doctitle);
 $cleanname = str_replace(' ', '_', $doctitle);
 if ($cleanname) {
     $filename = $cleanname . '.' . $type; // Combine cleaned title with extension
