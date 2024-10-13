@@ -17,9 +17,14 @@ $sql = "SELECT * FROM notes WHERE title LIKE '%$value%'";
 $sqldata = mysqli_query($dbcon, $sql) or die('error getting data');
 while($row =  mysqli_fetch_array($sqldata, MYSQLI_ASSOC)) {
   $lineage = $row['lineage'];
-  $sql1 = "SELECT * FROM notes WHERE lineage LIKE '%$lineage-%'";
+  $id = $row['id'];
+  echo ('<div onClick="showpanel('.$row['id'].')" style="margin-bottom:10px;"><span class="greentitle" style="font-size:18px; cursor:pointer;">'.$row['title'].'</span><br/>');
+  echo ('<hr>');
+  echo ('</div>');
+
+  $sql1 = "SELECT * FROM notes WHERE lineage LIKE '%$lineage-%' && id NOT LIKE '$id'";
   $sql1data = mysqli_query($dbcon, $sql1) or die('error getting data');
-  while($row1 =  mysqli_fetch_array($sql1data, MYSQLI_ASSOC)) { 
+  while($row1 =  mysqli_fetch_array($sql1data, MYSQLI_ASSOC)){
     $path = explode("-",$row1['lineage']);
     $pathstring = '';
     foreach ($path as $x){
@@ -30,7 +35,7 @@ while($row =  mysqli_fetch_array($sqldata, MYSQLI_ASSOC)) {
       }
     }
 
-  echo ('<div onClick=showpanel("'.$row1['id'].'")><span class="greentitle" style="font-size:18px; cursor:pointer;">'.$pathstring.'</span><br/>');
+  echo ('<div onClick=showpanel("'.$row1['id'].'")"><span class="greentitle" style="font-size:18px; cursor:pointer;">'.$pathstring.'</span><br/>');
   echo ('<hr>');
   echo ('</div>');
   }
@@ -43,19 +48,22 @@ while($row =  mysqli_fetch_array($sqldata, MYSQLI_ASSOC)) {
 
     if (strlen($value) >= 3){
       $body = $row['body'];
-      /*$re = '/\[(.*?)\]\(.*?\)/i';
-      $subst = '$1';
-      $body = preg_replace($re, $subst, $body);*/
+     
+    // Find the position of the first newline
+    $first_newline_pos = strpos($body, "\n");
 
     $valuepos = stripos($body,$value);
     $samplestart = $valuepos - 50;
     if ($samplestart <= 0){
       $samplestart = 0;
     }
-    //$sampleend = $valuepos + 50;
-    $bodysample = substr($body,$samplestart);
-    $title = str_ireplace($value,"<span style=\"background-color:yellow;\">$value</span>",$row['title']);
-  echo ('<div class="searchresult" onClick=showpanel("'.$row['id'].'")><span class="tealtitle" style="cursor:pointer;">'.$title.'</span><br/>');
+    
+    // Ensure the match happens after the first newline, or if no newline exists
+    if ($first_newline_pos === false || $valuepos > $first_newline_pos) {
+      $bodysample = substr($body,$samplestart);
+      $title = str_ireplace($value,"<span style=\"background-color:yellow;\">$value</span>",$row['title']);
+      echo ('<div class="searchresult" onClick=showpanel("'.$row['id'].'")><span class="tealtitle" style="cursor:pointer;">'.$title.'</span><br/>');
+    
   ?>
 <style>
    .highlight {
@@ -76,10 +84,11 @@ while($row =  mysqli_fetch_array($sqldata, MYSQLI_ASSOC)) {
 //echo ('<hr>');
 echo ('</div>');
     }
+  }
   
 }
 
-if ($dndcheck == 'true'){
+/*if ($dndcheck == 'true'){
 
 $sql = "SELECT * FROM world WHERE title LIKE '%$value%' AND worlduser LIKE 'tarfuin'";
 $sqldata = mysqli_query($dndcon, $sql) or die('error getting data');
@@ -175,7 +184,7 @@ echo ('</span></div>');
   }
   
 }
-}
+}*/
 
 
 

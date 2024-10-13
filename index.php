@@ -63,7 +63,6 @@
 
         </div>
 
-        </div>
         <div id="morenav" style="margin-top: 20px;">
         <div class="dropdown">
           <button class="btn btn-info dropdown-toggle" type="button" data-toggle="dropdown" style="display:inline-block; background-color:green; border-radius:10px; padding:0px 5px 0px 5px;">templates
@@ -76,7 +75,10 @@
           <a href="themer.php">Themes</a>
           <br>Current Theme: <span id="currenttheme"><?php echo $theme; ?></span>
         </div>
-        <div class="nonav" id="flex-nav" style="font-size:12px;">
+
+        </div>
+
+        <div class="nonav" id="flex-nav" style="font-size:12px; margin-top: 20px;">
         </div>
       </div>
 
@@ -365,7 +367,7 @@ function sortItems(){
     }
 
     //sort alphabetically, reversed if certain parents
-    if (allParents[i].id == '93children' || allParents[i].id == '58children' || allParents[i].id == '259children'){
+    if (allParents[i].id == '93children' || allParents[i].id == '58children' || allParents[i].id == '259children' || allParents[i].id == '101children'){
       childrenIndex.sort();
       childrenIndex.reverse();
     }
@@ -630,7 +632,9 @@ $.ajax({
         <button type="button" data-toggle="modal" data-target="#dropmenu" style="background-color:purple; border-radius:10px; padding:0px 5px 0px 5px;">Move</button>\
       </div>\
         <button class="btn btn-danger" id="delnote" onClick="delWarning()" style="background-color:#a00; border-radius:10px; padding:0px 5px 0px 5px;">Delete</button>\
-        <button class="btn btn-info" style="display:inline-block; background-color:#0043c4; border-radius:10px; padding:0px 5px 0px 5px;" onClick="goBack()">Back</button>'
+        <button class="btn btn-info" style="display:inline-block; background-color:#0043c4; border-radius:10px; padding:0px 5px 0px 5px;" onClick="goBack()">Back</button>\
+        <button class="btn btn-info" style="display:inline-block; background-color:pink; border-radius:10px; padding:0px 5px 0px 5px;" onClick="goUp()">Up</button>'
+
         );
       
       $("input:checked").each(function() {
@@ -748,6 +752,18 @@ function goBack(){
   
 }
 
+function goUp(){
+  var fileID = $('#fileID').html();
+  $.ajax ({
+    type: 'GET',
+    url: 'goup.php',
+    data: { 'fileID' : fileID },
+    success: function(data){
+      showpanel(data);
+    }   
+  });
+}
+
 function saveData(value){
   var noteTitle = $(".ck-content h1").text();
   var noteID = $('#fileID').html();
@@ -798,7 +814,7 @@ function saveData(value){
     success: function(data)
     {
       $('#lastsaved').html(data);
-      leftpane();
+      //leftpane();
       $("input:checked").each(function() {
         $(this).closest("li").addClass('strike');
       });
@@ -1146,8 +1162,8 @@ body {
   }
   
   .searchresult {
-	font-size: 14px;
-	height:170px;
+	font-size: 12px;
+	height:130px;
 	overflow:hidden;
 	border-top: 1px solid #808080;
 	margin-bottom: 20px;
