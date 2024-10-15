@@ -83,7 +83,7 @@
       </div>
 
       <div class="col-md-8 col-sm-12" id="mainpanel" style="padding-left:0px; padding-right:0px;">
-      <div id="test" class="nonav"><a onclick="importDnD()">Import DnD</a></div>
+      <div id="test"></div>
         <div id="container" class="nonav" style="min-height:400px;">
         <!-- <input type="text" id="filetitle" value=""></input> -->
 
@@ -175,28 +175,27 @@ else if(navToggle == 'open'){
 $(document).ready(function(){
   $('')
   $("h1").text('');
-  leftpane();
-  showpanel('<?php echo $pageid; ?>');
+  leftpane().always(function(){
+    showpanel('<?php echo $pageid; ?>');
+  });
+
   if (window.innerWidth > 800) {
     $('#menustatus').html('closed');
 
   }
   else {
     $('#menustatus').html('open');
-    $('body').css('padding-top','20px');
+    //$('body').css('padding-top','20px');
 
   }
   toggleNav();
   exportAll();
+
 });
 
 function exportAll(){
   <?php
   $dir = 'exports';
-
-  // Temporarily Remove Critical Files
-  //rename($dir.'/.stfolder', 'temp/.stfolder');
-  //rename($dir.'/.obsidian', 'temp/.obsidian');
 
 // Delete All Files
   $files = new RecursiveIteratorIterator(
@@ -248,10 +247,6 @@ while($row =  mysqli_fetch_array($sqldata, MYSQLI_ASSOC)) {
   echo file_put_contents('exports/'.$newpath.$title.'.md', $body);
 }
 
-// Replace Critical Files
-//rename('temp/.stfolder', $dir.'/.stfolder');
-//rename('temp/.obsidian', $dir.'/.obsidian');
-
 
   ?>
 }
@@ -288,7 +283,7 @@ function livesearch(){
 
 function leftpane(){
   $('#toc').html('');
-  $.ajax({
+  return $.ajax({
     url: 'getleftpane.php',
     type: 'GET',
     success: function(data)
@@ -297,10 +292,14 @@ function leftpane(){
      //var newHTML = '';
      for (let i = 0; i < newData.length; i = i + 2){
       var j = i + 1;
+      //Set all the items with no children
       if (!newData[i].includes('-')){
       $('#toc').append('<div id="' + newData[i] + 'head" onClick=showpanel(' + newData[i] + ')>' + '<div style="display:inline-block;" name="right-arrow" id="' + newData[i] + 'nav"></div>' + newData[j] + '</div>'
       + '<div class="nonav" id="' + newData[i] + 'children"></div>');
      }
+
+
+     //set all items with children, or that are children
       else {
         var lineage = newData[i].split("-");
         var currentID = lineage[lineage.length -1];
@@ -309,15 +308,18 @@ function leftpane(){
         var parentHead = '#' + parent + 'head';
         var indent = '';
         var navigation = '';
+        //extend the indent for every level of nesting
         for (let x = 1; x <= lineage.length; x++){
           indent += '&nbsp;';
         }
+        //if an item has children, add a navigation arrow
         if (lineage.length !== 1){
           $('#' + parent + 'nav').html('<svg onClick=shownav(' + parent + ') xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right-short" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8"/></svg>');
           if (lineage.length !== 2){
           $('#' + parent + 'head').css('margin-left','-15px');
           }
         }
+        //append all the children to the current head
         $(parentDIV).append('<div id="' + currentID + 'head" onClick=showpanel(' + currentID + ')>' + indent + '<div style="display:inline-block;" name="right-arrow" id="' + currentID + 'nav"></div>' + newData[j] + '</div>'
       + '<div class="nonav" id="' + currentID + 'children"></div>');
 
@@ -517,6 +519,8 @@ function showpanel(value){
   $('#dndshow').html('');
   $('#mainpanel').addClass('nonav');
   $('#container').addClass('nonav');
+  
+  //Add this note to the note history string
   if (noteHistory == ''){
     noteHistory = value;
   }
@@ -528,14 +532,17 @@ function showpanel(value){
   $('#noteHistory').html(noteHistory);
 
 
+  //Delete the old editor instance
   editor.destroy().catch( error => {
     console.log( error );
 } );
 
+// Clear the note title
 $("h1").text('');
 
 var bodyID = value;
 
+//get all the parent divs in the left nav and change their brightness and color
 var allHeads = document.querySelectorAll("[id$='head']");
 for (let x=0;x<allHeads.length;x++){
   let currentHead = allHeads[x].id;
@@ -543,9 +550,24 @@ for (let x=0;x<allHeads.length;x++){
   $('#' + currentHead).css('color','var(--text)');
 }
 
+//highlight the current note in colored text
 $('#' + bodyID + 'head').css('backdrop-filter','brightness(150%)');
 $('#' + bodyID + 'head').css('color','var(--link-text)');
 changeColors();
+
+// Expand the hierarchy of the currently open panel
+function getParentDivsWithHeadID(element) {
+    return $(element).parents('div').filter(function() {
+        return this.id.includes('children');
+    });
+}
+var currentDIV = $('#' + bodyID + 'head');  // Ensure 'bodyID' is defined correctly
+var parentDivs = getParentDivsWithHeadID(currentDIV);
+console.log(bodyID);
+console.log(parentDivs);
+for (let x = 0; x < parentDivs.length; x++) {
+    parentDivs.eq(x).removeClass('nonav');  // Use .eq() to access elements in jQuery object
+}
 
 $.ajax({
     url : 'getbody.php',
@@ -668,7 +690,7 @@ $.ajax({
             $('#references').html('');
           }
           else {
-            $('#references').html('References:<br/>');
+            $('#references').html('<p><h3>References:</h3></p>');
           }
           for (x=0; x < referenceList.length; x++){
             $('#references').append('<div class="col-md-4" style="border-bottom: 1px solid var(--h2);">' + referenceList[x] + '</div>')
@@ -690,7 +712,7 @@ $.ajax({
             $('#folderPreview').append('<div class="col-md-4 folderpreview" onClick="showpanel(' + folderPreviews[j] + ')">' + marked.parse(folderPreviews[i]) + '</div>'); 
             }
           }
-        },
+        },//BRIAN
         error: function(){
 
         }
@@ -710,7 +732,7 @@ $.ajax({
     });
 
 
-    history.pushState(null, "", location.href.split("?")[0]);
+    history.pushState(null, "", location.href.split("?")[0]);    
   }
 
 function exportNote(){
@@ -1384,6 +1406,7 @@ body {
   
   #nav-pane {
 	  background-color: var(--sidebar-background);
+    z-index: 3;
   }
   
   .ck-content pre code {
