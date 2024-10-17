@@ -54,7 +54,6 @@
         <!--<button class="btn btn-primary" id="expandcollapse" onClick="expandCollapse()">Expand All</button>-->
         <div id="createnote" onClick="newNote()"><em>Create New +</em></div>
 
-        <!-- <input type="text" class="nonav" id="newnote" style="background-color:#1f2123; color:#fff; width:80%; text-align:left;"></input><button class="btn btn-success nonav" onClick="createNote()" id="notebutton">&#10004;</button> -->
         <div id="toc">
 
         </div>
@@ -328,7 +327,7 @@ function leftpane(){
       if (currentID == panelID){
       for (let i=0; i < lineage.length; i++){
         var childDiv = '#' + lineage[i] + 'children';
-        $(childDiv).show();
+        $(childDiv).removeClass('nonav');
         }
       }
 
@@ -435,9 +434,15 @@ function toggleside(){
 function shownav(value){
   var navID = '#' + value + 'children';
   var navNav = '#' + value + 'nav';
-  $(navID).toggle();
-    $(navNav).html('<svg onClick=shownav(' + value + ') xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right-short" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8"/></svg>');
-    $(navNav).attr('name','right-arrow');
+    if ($(navID).hasClass('nonav')){
+    $(navID).removeClass('nonav');
+  }
+  else {
+    $(navID).addClass('nonav');
+  }
+
+  $(navNav).html('<svg onClick=shownav(' + value + ') xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right-short" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8"/></svg>');
+  $(navNav).attr('name','right-arrow');
 
   }
 
@@ -555,6 +560,7 @@ $('#' + bodyID + 'head').css('backdrop-filter','brightness(150%)');
 $('#' + bodyID + 'head').css('color','var(--link-text)');
 changeColors();
 
+
 // Expand the hierarchy of the currently open panel
 function getParentDivsWithHeadID(element) {
     return $(element).parents('div').filter(function() {
@@ -563,11 +569,19 @@ function getParentDivsWithHeadID(element) {
 }
 var currentDIV = $('#' + bodyID + 'head');  // Ensure 'bodyID' is defined correctly
 var parentDivs = getParentDivsWithHeadID(currentDIV);
-console.log(bodyID);
-console.log(parentDivs);
-for (let x = 0; x < parentDivs.length; x++) {
-    parentDivs.eq(x).removeClass('nonav');  // Use .eq() to access elements in jQuery object
-}
+var currentChild = $('#' + bodyID + 'children');
+//$(curentChild).removeClass('nonav');
+
+//Collapse all heirarchies
+var children = $('#toc').find('[id*="children"]');
+
+var filteredChildren = children.not(parentDivs);
+filteredChildren = filteredChildren.not(currentChild);
+// Add 'nonav' to only filteredChildren
+filteredChildren.addClass('nonav');
+
+// remove 'nonav' from parentDivs
+parentDivs.removeClass('nonav');
 
 $.ajax({
     url : 'getbody.php',
