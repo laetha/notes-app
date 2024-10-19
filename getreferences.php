@@ -8,7 +8,7 @@ $checkString = 'notes.bkconnor.com?id='.$docid.')';
 $sql = "SELECT title,id FROM notes WHERE body LIKE '%$checkString%'";
 $sqldata = mysqli_query($dbcon, $sql) or die('error getting data');
 while($row =  mysqli_fetch_array($sqldata, MYSQLI_ASSOC)) {
-  array_push($referenceList,'<a href="https://notes.bkconnor.com?id='.$row['id'].'">@'.$row['title'].'</a>');
+  array_push($referenceList,'<a onclick=showpanel('.$row['id'].')>@'.$row['title'].'</a>');
 }
 
 echo json_encode($referenceList);

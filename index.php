@@ -28,15 +28,7 @@
 
    ?>
    <script src="/plugins/ckeditor/build/ckeditor.js" type="text/javascript"></script>
-   <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js" type="text/javascript"></script>
-   <script src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap.min.js" type="text/javascript"></script>
-   <script src="https://cdn.datatables.net/responsive/2.2.1/js/dataTables.responsive.min.js" type="text/javascript"></script>
-   <script src="https://cdn.datatables.net/responsive/2.2.1/js/responsive.bootstrap.min.js" type="text/javascript"></script>
-   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-   <link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap.min.css">
-   <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.1/css/responsive.bootstrap.min.css">
    <link rel="stylesheet" type="text/css" href="/themes/<?php echo $theme; ?>.css?<?php echo time(); ?>" />
-   <link rel="manifest" href="manifest.json">
    <div class="bg-overlay"></div>
    <div class="background-image"></div>
    <div class="mainbox col-lg-12 col-xs-12" style="padding-right:0%;">
@@ -150,9 +142,6 @@ else if(navToggle == 'open'){
     $('#menustatus').html('closed');
   }
 }
-
-
-
       var noteHistory = '';
 
      ClassicEditor.create( document.querySelector( '#editor' ), {
@@ -185,7 +174,6 @@ $(document).ready(function(){
   else {
     $('#menustatus').html('open');
     //$('body').css('padding-top','20px');
-
   }
   toggleNav();
   exportAll();
@@ -518,6 +506,23 @@ $.ajax({
     });
   
 }
+function showMoveList(){
+  $.ajax({
+      url:'movelist.php',
+      type: 'GET',
+      success: function(data1){
+        var moveList = JSON.parse(data1);
+        $('#dropbody').html('');
+        for (let x = 0; x < moveList.length; x = x + 2){
+        var y = x + 1;
+          $('#dropbody').append('<div class="dropdown-item" onClick="moveNote(\'' + moveList[x] + '\')">' + moveList[y] + '</div>');
+        }
+      },
+      error: function(data1){
+      }
+    });
+}
+
 
 function showpanel(value){
 
@@ -593,22 +598,6 @@ $.ajax({
       var newData = JSON.parse(data);
       $('#fileID').html(value);
 
-      $.ajax({
-      url:'movelist.php',
-      type: 'GET',
-      success: function(data1){
-        var moveList = JSON.parse(data1);
-        $('#dropbody').html('');
-        for (let x = 0; x < moveList.length; x = x + 2){
-        var y = x + 1;
-          $('#dropbody').append('<div class="dropdown-item" onClick="moveNote(\'' + moveList[x] + '\')">' + moveList[y] + '</div>');
-        }
-      },
-      error: function(data1){
-      }
-    });
-
-
     $.ajax({
       url: 'getmentions.php',
       type: 'GET',
@@ -665,7 +654,7 @@ $.ajax({
         $('.ck-toolbar__items').prepend('<div style="background-color:#c7c5c5; border-radius:10px; padding:0px 5px 0px 5px;" id="navtoggle" onClick="toggleNav()"><img src="/assets/list.svg" /></button>');
         $('.ck-toolbar__items').append('<div id="subnote" style="background-color:#004f5b; border-radius:10px; padding:0px 5px 0px 5px;" onClick="createNote()">New Sub-note</div>\
         <div class="dropdown" style="display:inline-block;">\
-        <button type="button" data-toggle="modal" data-target="#dropmenu" style="background-color:purple; border-radius:10px; padding:0px 5px 0px 5px;">Move</button>\
+        <button type="button" data-toggle="modal" data-target="#dropmenu" style="background-color:purple; border-radius:10px; padding:0px 5px 0px 5px;" onclick="showMoveList()">Move</button>\
       </div>\
         <button class="btn btn-danger" id="delnote" onClick="delWarning()" style="background-color:#a00; border-radius:10px; padding:0px 5px 0px 5px;">Delete</button>\
         <button class="btn btn-info" style="display:inline-block; background-color:#0043c4; border-radius:10px; padding:0px 5px 0px 5px;" onClick="goBack()">Back</button>\
@@ -800,7 +789,17 @@ function goUp(){
   });
 }
 
+function getCurrentTime() {
+  var now = new Date();
+  var hours = String(now.getHours()).padStart(2, '0');
+  var minutes = String(now.getMinutes()).padStart(2, '0');
+  var seconds = String(now.getSeconds()).padStart(2, '0');
+  
+  return hours + ':' + minutes + ':' + seconds;
+}
+
 function saveData(value){
+  
   var noteTitle = $(".ck-content h1").text();
   var noteID = $('#fileID').html();
   var mentions = document.querySelectorAll('[data-mention]');
@@ -844,28 +843,36 @@ function saveData(value){
 
   
   $.ajax({
-    url: 'savedata.php',
-    data: { "noteBody" : newValue, "noteTitle" : noteTitle, "noteID" : noteID },
-    type: 'GET',
-    success: function(data)
-    {
-      $('#lastsaved').html(data);
-      //leftpane();
-      $("input:checked").each(function() {
-        $(this).closest("li").addClass('strike');
-      });
-
-      $("input:not(:checked)").each(function() {
-        $(this).closest("li").removeClass('strike');
-      });
-    },
-    error: function (jqXHR, status, errorThrown)
-    {
-     $('#lastsaved').html(status);
+  url: 'savedata.php',  // URL of your PHP file
+  data: {
+    noteBody: newValue, 
+    noteTitle: noteTitle, 
+    noteID: noteID
+  },
+  type: 'GET',
+  dataType: 'json',  // Expect JSON response
+  success: function(response) {
+    if (response.titleUnchanged === false) {
+      // If the title has changed, call leftpane()
+      leftpane();
     }
+    
+    // Handle the rest of your UI updates
+    $('#lastsaved').html('Saved successfully at ' + getCurrentTime());
 
+    $("input:checked").each(function() {
+      $(this).closest("li").addClass('strike');
+    });
 
-  });
+    $("input:not(:checked)").each(function() {
+      $(this).closest("li").removeClass('strike');
+    });
+  },
+  error: function(jqXHR, status, errorThrown) {
+    $('#lastsaved').html(status);
+  }
+});
+
 }
 
 function delWarning(){
