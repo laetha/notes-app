@@ -41,7 +41,7 @@
      <div id="menustatus" class="nonav">closed</div>
       <div class="sidenav" id="nav-pane" height="100%">
         <a href="javascript:void(0)" class="closebtn" onclick="toggleNav()">&times;</a>
-        <input id="searchbar" type="text" onkeyup="livesearch()" style="text-align:left; color:black;"></input><input id="dndcheck" type="checkbox" style="margin-left: 5px;"> DnD</input>
+        <input id="searchbar" type="text" onkeyup="livesearch()" style="text-align:left; color:black;"></input><input id="fullcheck" type="checkbox" style="margin-left: 5px;" checked> Full</input>
         <div id="left-pane">
         <!--<button class="btn btn-primary" id="expandcollapse" onClick="expandCollapse()">Expand All</button>-->
         <div id="createnote" onClick="newNote()"><em>Create New +</em></div>
@@ -89,6 +89,7 @@
           <div class="col-md-12" id="dndshow"></div>
 
         </div>
+        <div id="full-pane"></div>
       </div>
 
 
@@ -242,18 +243,27 @@ while($row =  mysqli_fetch_array($sqldata, MYSQLI_ASSOC)) {
 function livesearch(){
   var value = $('#searchbar').val();
   var searchLength = value.length;
-  var dndCheck = document.getElementById("dndcheck").checked;
   if (searchLength >= 3){
    
   $.ajax({
     url : 'livesearch.php',
     type: 'GET',
-    data : { "value" : value, "dndcheck" : dndCheck },
+    data : { "value" : value },
     success: function(searchdata)
     {
-      $('#flex-nav').html(searchdata);
-      $("#flex-nav").removeClass('nonav');
-      $("#left-pane").addClass('nonav');
+
+      var fullcheck = document.getElementById("fullcheck").checked;
+      
+      if (fullcheck == true){
+        $('#full-pane').html(searchdata);
+        $("#full-pane").removeClass('nonav');
+        $("#container").addClass('nonav');
+      }
+      else {
+        $('#flex-nav').html(searchdata);
+        $("#flex-nav").removeClass('nonav');
+        $("#left-pane").addClass('nonav');        
+      }
     },
     error: function (jqXHR, status, errorThrown)
     {
@@ -263,7 +273,9 @@ function livesearch(){
 }
   else {
       $("#flex-nav").addClass('nonav');
-      $("#left-pane").removeClass('nonav');
+      $("#left-pane").removeClass('nonav');      
+      $("#full-pane").addClass('nonav');
+      $("#container").removeClass('nonav');
   }
  
 }
@@ -529,6 +541,7 @@ function showpanel(value){
   $('#dndshow').html('');
   $('#mainpanel').addClass('nonav');
   $('#container').addClass('nonav');
+  $('#full-pane').addClass('nonav');
   
   //Add this note to the note history string
   if (noteHistory == ''){
@@ -1167,6 +1180,10 @@ body {
 	color:#00e7ff;
 	font-size:16px;
   }
+
+  #full-pane .tealtitle {
+    font-size:20px;
+  }
   
   .livesearch {
   
@@ -1212,6 +1229,10 @@ body {
 	margin-bottom: 20px;
 	padding-bottom: 10px;
 	opacity: 0.95;
+  }
+
+  #full-pane .searchresult {
+    height:150px;
   }
   
   .searchresult h1 {

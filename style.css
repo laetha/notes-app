@@ -1256,7 +1256,7 @@ code {
 
   .greentitle {
 	color:#42f486;
-	font-size:16px;
+	font-size:22px;
   }
 
   .highlight {
@@ -1268,4 +1268,9 @@ code {
   .folderitem {
 	margin-left: 25px;
 	background-color:red;
+  }
+
+  .minipath {
+	font-size: 10px;
+	color: rgb(0, 255, 225);
   }
