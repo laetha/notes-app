@@ -2,29 +2,25 @@
 $sqlpath = $_SERVER['DOCUMENT_ROOT'] . "/sql-connect.php";
 include_once($sqlpath);
 
-$id = $_REQUEST['noteID'];
+$id = (int) $_REQUEST['noteID'];
 $notebodytemp = $_REQUEST['noteBody'];
 $notetitletemp = $_REQUEST['noteTitle'];
-$notebody = html_entity_decode(trim(addslashes($notebodytemp)));
-$notetitle = html_entity_decode(trim(addslashes($notetitletemp)));
+$notebody = mysqli_real_escape_string($dbcon, $notebodytemp);
+$notetitle = html_entity_decode(trim($notetitletemp));
 $edited = date('ymdHi');
 
-// Fetch the original title from the database before updating
+// Fetch the original title from the database without extra processing
 $sql = "SELECT title FROM notes WHERE id = $id";
 $result = mysqli_query($dbcon, $sql);
 
 if ($row = mysqli_fetch_assoc($result)) {
-    $originalTitle = $row['title'];
+    $originalTitle = html_entity_decode(trim($row['title']));
 
-    // Check if the title has changed
-    if ($originalTitle === $notetitle) {
-        $titleUnchanged = true;
-    } else {
-        $titleUnchanged = false;
-    }
+    // Check if the title has changed (decode both sides to ensure consistency)
+    $titleUnchanged = ($originalTitle === $notetitle);
 
     // Update the note in the database
-    $sql = "UPDATE notes SET title='$notetitle', body='$notebody', edited='$edited' WHERE id=$id";
+    $sql = "UPDATE notes SET title='" . mysqli_real_escape_string($dbcon, $notetitle) . "', body='$notebody', edited='$edited' WHERE id=$id";
     if ($dbcon->query($sql) === TRUE) {
         $exportID = $id;
         $sql = "SELECT title, body, lineage FROM notes WHERE id = $exportID";

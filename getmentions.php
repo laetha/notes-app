@@ -10,11 +10,11 @@ while($row =  mysqli_fetch_array($sqldata, MYSQLI_ASSOC)) {
   array_push($mentionList, $notemention, $row['id']);
 }
 
-$sql = "SELECT title,id FROM world WHERE worlduser LIKE 'tarfuin'";
-$sqldata = mysqli_query($dndcon, $sql) or die('error getting data');
+$sql = "SELECT tagname,id FROM tags";
+$sqldata = mysqli_query($dbcon, $sql) or die('error getting data');
 while($row =  mysqli_fetch_array($sqldata, MYSQLI_ASSOC)) {
-  $dndmention = '#'.$row['title'];
-  array_push($mentionList, $dndmention, $row['id']);
+  $tagname = '#'.$row['tagname'];
+  array_push($mentionList, $tagname, $row['id']);
 }
 
 

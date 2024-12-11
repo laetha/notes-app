@@ -27,7 +27,9 @@
 
 
    ?>
+
    <script src="/plugins/ckeditor/build/ckeditor.js" type="text/javascript"></script>
+   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
    <link rel="stylesheet" type="text/css" href="/themes/<?php echo $theme; ?>.css?<?php echo time(); ?>" />
    <div class="bg-overlay"></div>
    <div class="background-image"></div>
@@ -41,10 +43,18 @@
      <div id="menustatus" class="nonav">closed</div>
       <div class="sidenav" id="nav-pane" height="100%">
         <a href="javascript:void(0)" class="closebtn" onclick="toggleNav()">&times;</a>
-        <input id="searchbar" type="text" onkeyup="livesearch()" style="text-align:left; color:black;"></input><input id="fullcheck" type="checkbox" style="margin-left: 5px;" checked> Full</input>
+        <input id="searchbar" type="text" onkeyup="livesearch()" style="text-align:left; color:black;"></input><input id="fullcheck" type="checkbox" style="margin-left: 5px;"> Full</input><input id="viewcheck" type="checkbox" style="margin-left: 5px;"> View</input>
         <div id="left-pane">
         <!--<button class="btn btn-primary" id="expandcollapse" onClick="expandCollapse()">Expand All</button>-->
         <div id="createnote" onClick="newNote()"><em>Create New +</em></div>
+        <div class="dropdown">
+          <button class="btn btn-info dropdown-toggle" type="button" data-toggle="dropdown" style="display:inline-block; background-color:green; border-radius:10px; padding:0px 5px 0px 5px;">templates
+          <span class="caret"></span></button>
+          <ul class="dropdown-menu" style="position:absolute;">
+            <li onclick="template('daily')">Daily</li>
+            <li onclick="template('dnd')">DnD</li>
+          </ul>
+        </div>
 
         <div id="toc">
 
@@ -55,14 +65,8 @@
         </div>
 
         <div id="morenav" style="margin-top: 20px;">
-        <div class="dropdown">
-          <button class="btn btn-info dropdown-toggle" type="button" data-toggle="dropdown" style="display:inline-block; background-color:green; border-radius:10px; padding:0px 5px 0px 5px;">templates
-          <span class="caret"></span></button>
-          <ul class="dropdown-menu" style="position:absolute;">
-            <li onclick="template('daily')">Daily</li>
-            <li onclick="template('dnd')">DnD</li>
-          </ul>
-        </div>
+          <div>Tags</div>
+          <div id="tag-pages"></div>
           <a href="themer.php">Themes</a>
           <br>Current Theme: <span id="currenttheme"><?php echo $theme; ?></span>
         </div>
@@ -73,7 +77,7 @@
         </div>
       </div>
 
-      <div class="col-md-8 col-sm-12" id="mainpanel" style="padding-left:0px; padding-right:0px;">
+      <div class="col-md-12 col-sm-12" id="mainpanel" style="padding-left:0px; padding-right:0px;">
       <div id="test"></div>
         <div id="container" class="nonav" style="min-height:400px;">
         <!-- <input type="text" id="filetitle" value=""></input> -->
@@ -83,14 +87,16 @@
         <div id="fileID" class="nonav"></div>
         <div id="noteHistory" class="nonav"></div>
           <textarea name="editor" id="editor" class="nonav"></textarea>
+          <div id="editor1" class="nonav"></div>
           <div id="folderPreview"></div><p>
           <div class="col-md-12" id="lastsaved"></div>
           <div class="col-md-12" id="references"></div>
           <div class="col-md-12" id="dndshow"></div>
 
         </div>
-        <div id="full-pane"></div>
       </div>
+      <div id="full-pane"></div>
+
 
 
       <!-- Modal -->
@@ -120,7 +126,7 @@
 
 <script>
     var noteMentions = new Array();
-    var dndMentions = new Array();
+    var tagMentions = new Array();
     var navToggle = $('#navtoggle').html();
 
 function toggleNav() {
@@ -130,22 +136,48 @@ function toggleNav() {
     document.getElementById("nav-pane").style.width = "350px";
     if (window.innerWidth > 800) {
       document.getElementById("mainpanel").style.marginLeft = "350px";
+      document.getElementById("full-pane").style.marginLeft = "350px";
+      document.getElementById("mainpanel").style.width = "calc(100% - 350px)";
+      document.getElementById("full-pane").style.width = "calc(100% - 350px)";
+      $('#fullcheck').prop('checked', true);
+    }
+    else {
+      $('#fullcheck').prop('checked', false);
+      document.getElementById("mainpanel").style.marginTop = "40px";
+      document.getElementById("full-pane").style.marginTop = "40px";
+      document.getElementById("nav-pane").style.marginTop = "40px";
     }
     //$('#navtoggle').html('<');
     $('#menustatus').html('open');
+
   }
 else if(navToggle == 'open'){
     document.getElementById("nav-pane").style.width = "0";
     if (window.innerWidth > 800) {
       document.getElementById("mainpanel").style.marginLeft = "0";
+      document.getElementById("full-pane").style.marginLeft = "0";
+      $('#fullcheck').prop('checked', true);
+    }
+    else {
+      $('#fullcheck').prop('checked', false);
+      document.getElementById("mainpanel").style.marginTop = "40px";
+      document.getElementById("full-pane").style.marginTop = "40px";
+      document.getElementById("nav-pane").style.marginTop = "40px";
     }
     //$('#navtoggle').html('>');
     $('#menustatus').html('closed');
   }
 }
+
+
+
       var noteHistory = '';
 
      ClassicEditor.create( document.querySelector( '#editor' ), {
+      licenseKey: 'GPL',
+      toolbar: {
+        items: [ 'highlight','bold', 'italic', '|', 'undo', 'redo', '|', 'numberedList', 'bulletedList' ]
+      },
 
     //removePlugins: [ 'Title' ],
     autosave: {
@@ -153,6 +185,38 @@ else if(navToggle == 'open'){
             return saveData( editor.getData() );
         }
 
+    },
+    highlight: {
+      options: [
+                {
+                    model: 'redMarker',
+                    class: 'tag-dnd',
+                    title: 'DnD',
+                    color: 'var(--ck-highlight-marker-red)',
+                    type: 'marker'
+                },
+                {
+                    model: 'blueMarker',
+                    class: 'tag-work',
+                    title: 'Work',
+                    color: 'var(--ck-highlight-marker-blue)',
+                    type: 'marker'
+                },
+                {
+                    model: 'purpleMarker',
+                    class: 'tag-home',
+                    title: 'Home',
+                    color: 'var(--ck-highlight-marker-purple)',
+                    type: 'marker'
+                },
+                {
+                    model: 'yellowMarker',
+                    class: 'tag-tech',
+                    title: 'Tech',
+                    color: 'var(--ck-highlight-marker-yellow)',
+                    type: 'marker'
+                }
+            ]
     }
 
     // ... other configuration options.
@@ -170,14 +234,19 @@ $(document).ready(function(){
 
   if (window.innerWidth > 800) {
     $('#menustatus').html('closed');
+    $('#fullcheck').prop('checked', true);
 
   }
   else {
     $('#menustatus').html('open');
+    $('#fullcheck').prop('checked', false);
     //$('body').css('padding-top','20px');
   }
+  $('#viewcheck').prop('checked', false);
+
   toggleNav();
   exportAll();
+  
 
 });
 
@@ -293,7 +362,7 @@ function leftpane(){
       var j = i + 1;
       //Set all the items with no children
       if (!newData[i].includes('-')){
-      $('#toc').append('<div id="' + newData[i] + 'head" onClick=showpanel(' + newData[i] + ')>' + '<div style="display:inline-block;" name="right-arrow" id="' + newData[i] + 'nav"></div>' + newData[j] + '</div>'
+      $('#toc').append('<div class="navtext" id="' + newData[i] + 'head" onClick=showpanel(' + newData[i] + ')>' + '<div style="display:inline-block;" name="right-arrow" id="' + newData[i] + 'nav"></div>' + newData[j] + '</div>'
       + '<div class="nonav" id="' + newData[i] + 'children"></div>');
      }
 
@@ -319,7 +388,7 @@ function leftpane(){
           }
         }
         //append all the children to the current head
-        $(parentDIV).append('<div id="' + currentID + 'head" onClick=showpanel(' + currentID + ')>' + indent + '<div style="display:inline-block;" name="right-arrow" id="' + currentID + 'nav"></div>' + newData[j] + '</div>'
+        $(parentDIV).append('<div class="navtext" id="' + currentID + 'head" onClick=showpanel(' + currentID + ')>' + indent + '<div style="display:inline-block;" name="right-arrow" id="' + currentID + 'nav"></div>' + newData[j] + '</div>'
       + '<div class="nonav" id="' + currentID + 'children"></div>');
 
       // Expand the heriarchy of the currently open panel
@@ -334,7 +403,6 @@ function leftpane(){
       }
      }
      sortItems();
-
     },
     error: function (jqXHR, status, errorThrown)
     {
@@ -555,13 +623,8 @@ function showpanel(value){
   $('#noteHistory').html(noteHistory);
 
 
-  //Delete the old editor instance
-  editor.destroy().catch( error => {
-    console.log( error );
-} );
-
 // Clear the note title
-$("h1").text('');
+$(".ck-editor h1").text('');
 
 var bodyID = value;
 
@@ -607,7 +670,7 @@ $.ajax({
     data : { "bodyID" : bodyID },
     success: function(data)
     {
-      $("h1").text(value);
+      $(".ck-content h1").text(value);
       var newData = JSON.parse(data);
       $('#fileID').html(value);
 
@@ -616,21 +679,38 @@ $.ajax({
       type: 'GET',
       success: function(data){
         var docID = $('#fileID').html();
-        dndMentions = new Array();
+        tagMentions = new Array();
         noteMentions = new Array();
         var allMentions = JSON.parse(data);
         for (let i=0; i < allMentions.length; i = i + 2){
           var j = i + 1;
           if (allMentions[i].startsWith('#')){
-            dndMentions.push(allMentions[i],allMentions[j]);
+            tagMentions.push(allMentions[i],allMentions[j]);
           }
           else {
             noteMentions.push(allMentions[i],allMentions[j]);
           }
         }
+        var viewCheck = document.getElementById("viewcheck").checked;
+        if (viewCheck == true){
+          /*editor1Text = marked.parse(newData[1]);
+          editor1Text = editor1Text + '<button class="btn btn-primary" onclick="clearEdit1()">Clear</button>';
+          $('#editor1').html(editor1Text);
+          $('#editor1').removeClass('nonav');*/
+        }
+
+        else {
+            //Delete the old editor instance
+            editor.destroy().catch( error => {
+            console.log( error );
+          } );
         
       ClassicEditor
     .create( document.querySelector( '#editor' ), {
+      licenseKey: 'GPL',
+      toolbar: {
+        items: [ 'highlight','bold', 'italic', '|', 'undo', 'redo', '|', 'numberedList', 'bulletedList' ]
+      },
       //removePlugins: [ 'Title' ],
 
       initialData: newData[1],
@@ -655,15 +735,46 @@ $.ajax({
                 },
                 {
                     marker: '#',
-                    feed: dndMentions,
+                    feed: tagMentions,
                     minimumCharacters: 1
                 }
             ]
-        }
+        },
+        highlight: {
+      options: [
+                {
+                    model: 'redMarker',
+                    class: 'tag-dnd',
+                    title: 'DnD',
+                    color: 'var(--ck-highlight-marker-red)',
+                    type: 'marker'
+                },
+                {
+                    model: 'blueMarker',
+                    class: 'tag-work',
+                    title: 'Work',
+                    color: 'var(--ck-highlight-marker-blue)',
+                    type: 'marker'
+                },
+                {
+                    model: 'purpleMarker',
+                    class: 'tag-home',
+                    title: 'Home',
+                    color: 'var(--ck-highlight-marker-purple)',
+                    type: 'marker'
+                },
+                {
+                    model: 'yellowMarker',
+                    class: 'tag-tech',
+                    title: 'Tech',
+                    color: 'var(--ck-highlight-marker-yellow)',
+                    type: 'marker'
+                }
+            ]
+    }
     } )
     .then( editor => {
         window.editor = editor;
-
         $('.ck-toolbar__items').prepend('<div style="background-color:#c7c5c5; border-radius:10px; padding:0px 5px 0px 5px;" id="navtoggle" onClick="toggleNav()"><img src="/assets/list.svg" /></button>');
         $('.ck-toolbar__items').append('<div id="subnote" style="background-color:#004f5b; border-radius:10px; padding:0px 5px 0px 5px;" onClick="createNote()">New Sub-note</div>\
         <div class="dropdown" style="display:inline-block;">\
@@ -688,6 +799,7 @@ $.ajax({
     .catch( err => {
         console.error( err.stack );
     } );
+  }
 
       },
       error: function(){
@@ -751,6 +863,10 @@ $.ajax({
     history.pushState(null, "", location.href.split("?")[0]);    
   }
 
+function clearEdit1(){
+  $('#editor1').html('');
+}
+
 function exportNote(){
   var exportID = $('#fileID').html();
 
@@ -812,7 +928,7 @@ function getCurrentTime() {
 }
 
 function saveData(value){
-  
+  //$('#test').html(editor.getData());
   var noteTitle = $(".ck-content h1").text();
   var noteID = $('#fileID').html();
   var mentions = document.querySelectorAll('[data-mention]');
@@ -821,8 +937,23 @@ function saveData(value){
   var newValue = value;
   var regex;
   var noteMentionID;
-  var dndMentionID;
+  //var dndMentionID;
   var mentionText;
+
+  // Step 1: Capture all <mark> tags from the editor
+  const editorContent = editor.editing.view.getDomRoot();
+  const marks = editorContent.querySelectorAll('mark');
+  const markDetails = [];
+
+  marks.forEach((mark) => {
+    markDetails.push({
+      text: mark.textContent, // The text inside the <mark>
+      attributes: Array.from(mark.attributes).reduce((acc, attr) => {
+        acc[attr.name] = attr.value;
+        return acc;
+      }, {}),
+    });
+  });
 
   
   // Replace hashtag mentions with hyperlinks to DnD website pages
@@ -840,19 +971,27 @@ function saveData(value){
 
     noteMentionID = noteMentions.indexOf(mentionText);
     // count and number the amount of mentions
-    dndMentionID = dndMentions.indexOf(mentionText);
+    //dndMentionID = dndMentions.indexOf(mentionText);
     if (noteMentionID != -1){
       mentionReplace = '[' + mentionText + '](https://notes.bkconnor.com?id=' + noteMentions[noteMentionID + 1] + ')<!--processed-' + mentionText + '-->';      regex = new RegExp(mentionText,"g");
       newValue = newValue.replaceAll(regex, mentionReplace);
       noteMentionID = -1;
     }
-    if (dndMentionID != -1){
+    /*if (dndMentionID != -1){
       mentionReplace = '[' + mentionText + '](https://dnd.bkconnor.com/tools/world/world.php?id=' + dndMentions[dndMentionID + 1] + ')';
       regex = new RegExp(mentionText,"g");
       newValue = newValue.replaceAll(regex, mentionReplace);
       dndMentionID = -1;
-    }
+    }*/
   }
+
+  // Step 3: Reapply <mark> tags directly to `newValue`
+  markDetails.forEach((detail) => {
+    const regex = new RegExp(detail.text, 'g'); // Match the text of the <mark>
+    const replacement = `<mark${Object.entries(detail.attributes).map(([key, value]) => ` ${key}="${value}"`).join('')}>${detail.text}</mark>`;
+    newValue = newValue.replace(regex, replacement);
+  });
+
 
   
   $.ajax({
@@ -1085,7 +1224,15 @@ function template(value){
 	  --ck-color-widget-blurred-border: hsl(0, 0%, 87%);
 	  --ck-color-widget-hover-border: hsl(43, 100%, 68%);
 	  --ck-color-widget-editable-focus-background: var(--ck-custom-white);
-  
+
+
+    --ck-highlight-marker-red: rgba(255, 0, 30, 0.05);
+    --ck-highlight-marker-green: rgba(0, 255, 51, 0.05);
+    --ck-highlight-marker-blue: rgba(0, 255, 51, 0.05);
+    --ck-highlight-marker-yellow: rgba(243, 247, 2, 0.05);
+    --ck-highlight-marker-purple: rgba(105, 2, 247, 0.05);
+
+
 	  /* -- Overrides the default colors used by the ckeditor5-link package. ---------------------- */
   
 	  --ck-color-link-default: hsl(190, 100%, 75%);
@@ -1099,6 +1246,7 @@ function template(value){
 	  --ck-color-base-border: var(--h4);
 	  --ck-color-mention-text: var(--link-text);    
   }
+
 
 body {
 	opacity: 1.0;
@@ -1126,6 +1274,10 @@ body {
   
   }
   .image-inline img{
+	height: 400px !important;
+  }
+  
+  #editor1 img{
 	height: 400px !important;
   }
   
@@ -1459,6 +1611,27 @@ body {
   .ck-content pre {
 	background: var(--code-background);
   }  
+
+  .tag-dnd {
+    background-color: var(--ck-highlight-marker-red);
+    color: var(--text);
+  }
+  .marker-green {
+    background-color: var(--ck-highlight-marker-green);
+    color: var(--text);
+  }
+  .tag-work {
+    background-color: var(--ck-highlight-marker-blue);
+    color: var(--text);
+  }
+  .tag-tech {
+    background-color: var(--ck-highlight-marker-yellow);
+    color: var(--text);
+  }
+  .tag-home {
+    background-color: var(--ck-highlight-marker-purple);
+    color: var(--text);
+  }
 </style>
 
    <?php
