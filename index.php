@@ -45,8 +45,14 @@
         <a href="javascript:void(0)" class="closebtn" onclick="toggleNav()">&times;</a>
         <input id="searchbar" type="text" onkeyup="livesearch()" style="text-align:left; color:black;"></input><input id="fullcheck" type="checkbox" style="margin-left: 5px;"> Full</input><input id="viewcheck" type="checkbox" style="margin-left: 5px;"> View</input>
         <div id="left-pane">
-        <!--<button class="btn btn-primary" id="expandcollapse" onClick="expandCollapse()">Expand All</button>-->
-        <div id="createnote" onClick="newNote()"><em>Create New +</em></div>
+        
+        <table>
+          <tr>
+            <td><div id="createnote" onClick="newNote()"><em>Create New +</em></div></td>
+            <td><div id="dailynote" style="padding-left:25px;" onClick="newNote('daily')"><em>Daily +</em></div></td>
+          </tr>
+        </table>
+
         <div class="dropdown">
           <button class="btn btn-info dropdown-toggle" type="button" data-toggle="dropdown" style="display:inline-block; background-color:green; border-radius:10px; padding:0px 5px 0px 5px;">templates
           <span class="caret"></span></button>
@@ -156,6 +162,8 @@ else if(navToggle == 'open'){
     if (window.innerWidth > 800) {
       document.getElementById("mainpanel").style.marginLeft = "0";
       document.getElementById("full-pane").style.marginLeft = "0";
+      document.getElementById("mainpanel").style.width = "calc(100%)";
+      document.getElementById("full-pane").style.width = "calc(100%)";
       $('#fullcheck').prop('checked', true);
     }
     else {
@@ -402,6 +410,20 @@ function leftpane(){
 
       }
      }
+
+     $.ajax ({
+    url: 'gettags.php',
+    type: 'GET',
+    success: function(data) {
+      var allTags = JSON.parse(data);
+      var tagsDiv = '';
+      for (let x=0;x<allTags.length;x++){
+        tagsDiv = tagsDiv + '<div>' + allTags[x] + '</div>';
+      }
+      $('#tag-pages').html(tagsDiv);
+    }
+  });
+
      sortItems();
     },
     error: function (jqXHR, status, errorThrown)
@@ -410,6 +432,8 @@ function leftpane(){
     }
 
   });
+
+
 }
 
 function sortItems(){
@@ -564,14 +588,15 @@ function createNote(){
 });*/
 
 
-function newNote(){
+function newNote(value){
 
 
-//var bodyID = value;
+var dailyStatus = value;
 
 $.ajax({
     url : 'newnote.php',
     type: 'GET',
+    data: { 'dailyStatus' : dailyStatus },
     success: function(data)
     {
       leftpane();
@@ -693,10 +718,10 @@ $.ajax({
         }
         var viewCheck = document.getElementById("viewcheck").checked;
         if (viewCheck == true){
-          /*editor1Text = marked.parse(newData[1]);
+          editor1Text = marked.parse(newData[1]);
           editor1Text = editor1Text + '<button class="btn btn-primary" onclick="clearEdit1()">Clear</button>';
           $('#editor1').html(editor1Text);
-          $('#editor1').removeClass('nonav');*/
+          $('#editor1').removeClass('nonav');
         }
 
         else {
@@ -937,23 +962,8 @@ function saveData(value){
   var newValue = value;
   var regex;
   var noteMentionID;
-  //var dndMentionID;
+  var tagMentionID;
   var mentionText;
-
-  // Step 1: Capture all <mark> tags from the editor
-  const editorContent = editor.editing.view.getDomRoot();
-  const marks = editorContent.querySelectorAll('mark');
-  const markDetails = [];
-
-  marks.forEach((mark) => {
-    markDetails.push({
-      text: mark.textContent, // The text inside the <mark>
-      attributes: Array.from(mark.attributes).reduce((acc, attr) => {
-        acc[attr.name] = attr.value;
-        return acc;
-      }, {}),
-    });
-  });
 
   
   // Replace hashtag mentions with hyperlinks to DnD website pages
@@ -971,27 +981,20 @@ function saveData(value){
 
     noteMentionID = noteMentions.indexOf(mentionText);
     // count and number the amount of mentions
-    //dndMentionID = dndMentions.indexOf(mentionText);
+    tagMentionID = tagMentions.indexOf(mentionText);
     if (noteMentionID != -1){
-      mentionReplace = '[' + mentionText + '](https://notes.bkconnor.com?id=' + noteMentions[noteMentionID + 1] + ')<!--processed-' + mentionText + '-->';      regex = new RegExp(mentionText,"g");
+      mentionReplace = '[' + mentionText + '](https://notes.bkconnor.com?id=' + noteMentions[noteMentionID + 1] + ')<!--processed-' + mentionText + '-->';
+      regex = new RegExp(mentionText,"g");
       newValue = newValue.replaceAll(regex, mentionReplace);
       noteMentionID = -1;
     }
-    /*if (dndMentionID != -1){
-      mentionReplace = '[' + mentionText + '](https://dnd.bkconnor.com/tools/world/world.php?id=' + dndMentions[dndMentionID + 1] + ')';
+    if (tagMentionID != -1){
+      mentionReplace = '[' + mentionText + ']()<!--processed-' + mentionText + '-->';
       regex = new RegExp(mentionText,"g");
       newValue = newValue.replaceAll(regex, mentionReplace);
-      dndMentionID = -1;
-    }*/
+      tagMentionID = -1;
+    }
   }
-
-  // Step 3: Reapply <mark> tags directly to `newValue`
-  markDetails.forEach((detail) => {
-    const regex = new RegExp(detail.text, 'g'); // Match the text of the <mark>
-    const replacement = `<mark${Object.entries(detail.attributes).map(([key, value]) => ` ${key}="${value}"`).join('')}>${detail.text}</mark>`;
-    newValue = newValue.replace(regex, replacement);
-  });
-
 
   
   $.ajax({
@@ -1051,40 +1054,6 @@ function deleteNote(){
   });
 }
 
-function showDnD(value){
-  //value = value.replace(/\_/g, ' ');
-
-  $.ajax({
-    url : 'getdnd.php',
-    type: 'GET',
-    data : { "bodyID" : value },
-    success: function(data)
-    {
-      var newdata = data;
-      $('#dndshow').html(newdata);
-    },
-    error: function (jqXHR, status, errorThrown)
-    {
-
-    }
-    });
-}
-
-function importDnD(){
-  $.ajax ({
-    url : 'imports/fix.php',
-    type: 'GET',
-    success: function(data){
-      console.log(data);
-    },
-    error: function (jqXHR, status, errorThrown)
-    {
-      console.log(jqXHR + status + errorThrown);
-    }
-  });
-}
-
-
 function template(value){
   if (value == 'daily'){
     var noteTitle = document.querySelector("h1");
@@ -1142,7 +1111,7 @@ function template(value){
   
 	  /* -- Overrides the default .ck-button class colors. ---------------------------------------- */
   
-	  --ck-color-button-default-background: var(--ck-custom-background);
+	  --ck-color-button-default-background: var(--main-background);
 	  --ck-color-button-default-hover-background: hsl(270, 1%, 22%);
 	  --ck-color-button-default-active-background: hsl(270, 2%, 20%);
 	  --ck-color-button-default-active-shadow: hsl(270, 2%, 23%);
@@ -1166,12 +1135,12 @@ function template(value){
   
 	  /* -- Overrides the default .ck-dropdown class colors. -------------------------------------- */
   
-	  --ck-color-dropdown-panel-background: var(--ck-custom-background);
+	  --ck-color-dropdown-panel-background: var(--main-background);
 	  --ck-color-dropdown-panel-border: var(--ck-custom-foreground);
   
 	  /* -- Overrides the default .ck-dialog class colors. ----------------------------------- */
   
-	  --ck-color-dialog-background: var(--ck-custom-background);
+	  --ck-color-dialog-background: var(--main-background);
 	  --ck-color-dialog-form-header-border: var(--ck-custom-border);
   
 	  /* -- Overrides the default .ck-splitbutton class colors. ----------------------------------- */
@@ -1181,7 +1150,7 @@ function template(value){
   
 	  /* -- Overrides the default .ck-input class colors. ----------------------------------------- */
   
-	  --ck-color-input-background: var(--ck-custom-background);
+	  --ck-color-input-background: var(--main-background);
 	  --ck-color-input-border: hsl(257, 3%, 43%);
 	  --ck-color-input-text: hsl(0, 0%, 98%);
 	  --ck-color-input-disabled-background: hsl(255, 4%, 21%);
@@ -1190,23 +1159,23 @@ function template(value){
   
 	  /* -- Overrides the default .ck-labeled-field-view class colors. ---------------------------- */
   
-	  --ck-color-labeled-field-label-background: var(--ck-custom-background);
+	  --ck-color-labeled-field-label-background: var(--main-background);
   
 	  /* -- Overrides the default .ck-list class colors. ------------------------------------------ */
   
-	  --ck-color-list-background: var(--ck-custom-background);
+	  --ck-color-list-background: var(--main-background);
 	  --ck-color-list-button-hover-background: var(--ck-custom-foreground);
 	  --ck-color-list-button-on-background: hsl(208, 88%, 52%);
 	  --ck-color-list-button-on-text: var(--ck-custom-white);
   
 	  /* -- Overrides the default .ck-balloon-panel class colors. --------------------------------- */
   
-	  --ck-color-panel-background: var(--ck-custom-background);
+	  --ck-color-panel-background: var(--main-background);
 	  --ck-color-panel-border: var(--ck-custom-border);
   
 	  /* -- Overrides the default .ck-toolbar class colors. --------------------------------------- */
   
-	  --ck-color-toolbar-background: var(--ck-custom-background);
+	  --ck-color-toolbar-background: var(--main-background);
 	  --ck-color-toolbar-border: var(--ck-custom-border);
   
 	  /* -- Overrides the default .ck-tooltip class colors. --------------------------------------- */

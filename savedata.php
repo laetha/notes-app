@@ -9,6 +9,7 @@ $notebody = mysqli_real_escape_string($dbcon, $notebodytemp);
 $notetitle = html_entity_decode(trim($notetitletemp));
 $edited = date('ymdHi');
 
+
 // Fetch the original title from the database without extra processing
 $sql = "SELECT title FROM notes WHERE id = $id";
 $result = mysqli_query($dbcon, $sql);
@@ -18,7 +19,9 @@ if ($row = mysqli_fetch_assoc($result)) {
 
     // Check if the title has changed (decode both sides to ensure consistency)
     $titleUnchanged = ($originalTitle === $notetitle);
-
+    if ($id == 1530){
+        $notebody = '';
+    }
     // Update the note in the database
     $sql = "UPDATE notes SET title='" . mysqli_real_escape_string($dbcon, $notetitle) . "', body='$notebody', edited='$edited' WHERE id=$id";
     if ($dbcon->query($sql) === TRUE) {
@@ -52,10 +55,15 @@ if ($row = mysqli_fetch_assoc($result)) {
 
         // Echo the result: true if title is unchanged, false if it changed
         echo json_encode(["titleUnchanged" => $titleUnchanged]);
+
+
     } else {
         echo "Error: " . $sql . "<br>" . $dbcon->error;
     }
 } else {
     echo "Error: Could not fetch the original title.";
 }
+
+
+
 ?>
