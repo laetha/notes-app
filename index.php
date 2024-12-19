@@ -46,14 +46,12 @@
         <input id="searchbar" type="text" onkeyup="livesearch()" style="text-align:left; color:black;"></input><input id="fullcheck" type="checkbox" style="margin-left: 5px;"> Full</input><input id="viewcheck" type="checkbox" style="margin-left: 5px;"> View</input>
         <div id="left-pane">
         
-        <table>
+        <table style="margin-top:5px; margin-bottom: 3px;">
           <tr>
-            <td><div id="createnote" onClick="newNote()"><em>Create New +</em></div></td>
-            <td><div id="dailynote" style="padding-left:25px;" onClick="newNote('daily')"><em>Daily +</em></div></td>
-          </tr>
-        </table>
-
-        <div class="dropdown">
+            <td><div id="createnote" onClick="newNote()"><em>New +</em></div></td>
+            <td><div id="dailynote" style="padding-left:20px;" onClick="newNote('daily')"><em>Daily +</em></div></td>
+            <td>
+            <div class="dropdown"  style="padding-left:20px;">
           <button class="btn btn-info dropdown-toggle" type="button" data-toggle="dropdown" style="display:inline-block; background-color:green; border-radius:10px; padding:0px 5px 0px 5px;">templates
           <span class="caret"></span></button>
           <ul class="dropdown-menu" style="position:absolute;">
@@ -61,6 +59,13 @@
             <li onclick="template('dnd')">DnD</li>
           </ul>
         </div>
+            </td>
+            <td><div id="collapse" style="padding-left:10px;" onClick="collapseAll()"><em>Collapse -</em></div></td>
+          </tr>
+        </table>
+        <hr>
+
+
 
         <div id="toc">
 
@@ -71,10 +76,12 @@
         </div>
 
         <div id="morenav" style="margin-top: 20px;">
-          <div>Tags</div>
+          <h4>Tags</h4>
           <div id="tag-pages"></div>
-          <a href="themer.php">Themes</a>
-          <br>Current Theme: <span id="currenttheme"><?php echo $theme; ?></span>
+          <div id="theme-picker" class="nonav">
+            <a href="themer.php">Themes</a>
+            <br>Current Theme: <span id="currenttheme"><?php echo $theme; ?></span>
+          </div>
         </div>
 
         </div>
@@ -135,6 +142,15 @@
     var tagMentions = new Array();
     var navToggle = $('#navtoggle').html();
 
+function collapseAll(){
+  let allChildren = document.querySelectorAll("[id$='children']");
+  for (let x = 0; x < allChildren.length; x++){
+    $(allChildren[x]).addClass('nonav');
+  }
+  
+}
+
+
 function toggleNav() {
   navToggle = $('#menustatus').html();
 
@@ -192,7 +208,7 @@ else if(navToggle == 'open'){
      ClassicEditor.create( document.querySelector( '#editor' ), {
       licenseKey: 'GPL',
       toolbar: {
-        items: [ 'highlight','bold', 'italic', '|', 'undo', 'redo', '|', 'numberedList', 'bulletedList' ]
+        items: [ 'imageUpload', 'bold', 'italic','link', 'numberedList', 'bulletedList' ]
       },
 
     //removePlugins: [ 'Title' ],
@@ -496,7 +512,7 @@ function sortItems(){
     }
 
   }
-changeColors()
+changeColors();
 }
 
 function changeColors(){
@@ -519,6 +535,8 @@ function changeColors(){
     }
 
   }
+
+
 }
 
 function toggleside(){
@@ -742,7 +760,7 @@ $.ajax({
     .create( document.querySelector( '#editor' ), {
       licenseKey: 'GPL',
       toolbar: {
-        items: [ 'highlight','bold', 'italic', '|', 'undo', 'redo', '|', 'numberedList', 'bulletedList' ]
+        items: [ 'imageUpload', 'bold', 'italic','link', 'numberedList', 'bulletedList' ]
       },
       //removePlugins: [ 'Title' ],
 
@@ -809,13 +827,13 @@ $.ajax({
     .then( editor => {
         window.editor = editor;
         $('.ck-toolbar__items').prepend('<div style="background-color:#c7c5c5; border-radius:10px; padding:0px 5px 0px 5px;" id="navtoggle" onClick="toggleNav()"><img src="/assets/list.svg" /></button>');
-        $('.ck-toolbar__items').append('<div id="subnote" style="background-color:#004f5b; border-radius:10px; padding:0px 5px 0px 5px;" onClick="createNote()">New Sub-note</div>\
+        $('.ck-toolbar__items').append('<div id="subnote" style="background-color:#004f5b65; border-radius:10px; padding:0px 5px 0px 5px;" onClick="createNote()"><img src="icons/edit-icon.png" /></div>\
         <div class="dropdown" style="display:inline-block;">\
-        <button type="button" data-toggle="modal" data-target="#dropmenu" style="background-color:purple; border-radius:10px; padding:0px 5px 0px 5px;" onclick="showMoveList()">Move</button>\
+        <button type="button" data-toggle="modal" data-target="#dropmenu" style="background-color:#9c00aa65; border-radius:10px; padding:0px 5px 0px 5px;" onclick="showMoveList()"><img src="icons/move-icon.png" /></button>\
       </div>\
-        <button class="btn btn-danger" id="delnote" onClick="delWarning()" style="background-color:#a00; border-radius:10px; padding:0px 5px 0px 5px;">Delete</button>\
-        <button class="btn btn-info" style="display:inline-block; background-color:#0043c4; border-radius:10px; padding:0px 5px 0px 5px;" onClick="goBack()">Back</button>\
-        <button class="btn btn-info" style="display:inline-block; background-color:pink; border-radius:10px; padding:0px 5px 0px 5px;" onClick="goUp()">Up</button>'
+        <button class="btn btn-danger" id="delnote" onClick="delWarning()" style="background-color:#a0000065; border-radius:10px; padding:0px 5px 0px 5px;"><img src="icons/trash-icon.png" /></button>\
+        <button class="btn btn-info" style="display:inline-block; background-color:#0043c465; border-radius:10px; padding:0px 5px 0px 5px;" onClick="goBack()"><img src="icons/left-arrow-icon.png" /></button>\
+        <button class="btn btn-info" style="display:inline-block; background-color:#f8adff65; border-radius:10px; padding:0px 5px 0px 5px;" onClick="goUp()"><img src="icons/up-arrow-icon.png" /></button>'
 
         );
       
@@ -1491,7 +1509,7 @@ body {
 	left: 0;
 	background-color: #111; /* Black*/
 	overflow-x: hidden; /* Disable horizontal scroll */
-	padding-top: 20px; /* Place content 60px from the top */
+	padding-top: 10px; /* Place content 60px from the top */
 	transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
   }
   
