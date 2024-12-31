@@ -211,7 +211,7 @@ else if(navToggle == 'open'){
         items: [ 'imageUpload', 'bold', 'italic','link', 'numberedList', 'bulletedList' ]
       },
 
-    //removePlugins: [ 'Title' ],
+    //removePlugins: [ 'Markdown' ],
     autosave: {
         save( editor ) {
             return saveData( editor.getData() );
@@ -762,7 +762,7 @@ $.ajax({
       toolbar: {
         items: [ 'imageUpload', 'bold', 'italic','link', 'numberedList', 'bulletedList' ]
       },
-      //removePlugins: [ 'Title' ],
+      //removePlugins: [ 'Markdown' ],
 
       initialData: newData[1],
 
@@ -1491,7 +1491,6 @@ body {
 	z-index: 1;
 	display: block;
 	background-color: var(--main-background);
-	opacity: 0.9;
 	width: 1920px;
 	height: 1080px;
 	z-index: -40;
